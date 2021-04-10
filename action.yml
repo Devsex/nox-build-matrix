@@ -4,6 +4,9 @@ inputs:
   noxfile:
     description: Path to the Noxfile to generate a matrix for.
     default: "noxfile.py"
+  keywords:
+    description: Keyword list to apply to the sessions returned. Equivalent to the `-k` option.
+    default: ""
 outputs:
   matrix:
     description: The generated build matrix.
@@ -12,3 +15,4 @@ runs:
   image: Dockerfile
   args:
     - ${{ inputs.noxfile }}
+    - ${{ inputs.keywords }}

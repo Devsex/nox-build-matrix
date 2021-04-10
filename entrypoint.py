@@ -18,6 +18,8 @@ manifest_obj = manifest.Manifest(
         posargs=[],
     ),
 )
+if sys.argv[2]:
+    manifest_obj.filter_by_keywords(sys.argv[2])
 
 session_list = [
     session.friendly_name

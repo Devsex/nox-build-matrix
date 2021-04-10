@@ -12,3 +12,7 @@ def single_version(session):
 @nox.parametrize("param", ["a", "b", "c"])
 def parametrized(session, param):
     pass
+
+@nox.session(python="3.9")
+def ignored(session, param):
+    pass
