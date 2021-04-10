@@ -1,0 +1,8 @@
+name: Nox Build Matrix
+description: Generate a build matrix for a Noxfile
+outputs:
+  matrix:
+    description: The generated build matrix.
+runs:
+  using: docker
+  image: Dockerfile
