@@ -26,4 +26,4 @@ jobs:
       - name: Setup Nox
         uses: excitedleigh/setup-nox@v2.0.0
       - name: Run session
-        run: nox -s "${{ matrix.session }} -f test/noxfile.py"
+        run: nox -s "${{ matrix.session }}" -f test/noxfile.py
