@@ -10,8 +10,9 @@ inputs:
 outputs:
   matrix:
     description: The generated build matrix.
-icon: list
-color: purple
+branding:
+  icon: list
+  color: purple
 author: nint8835
 runs:
   using: docker
