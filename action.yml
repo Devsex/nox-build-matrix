@@ -1,8 +1,14 @@
-name: Nox Build Matrix
+name: Generate Nox Build Matrix
 description: Generate a build matrix for a Noxfile
+inputs:
+  noxfile:
+    description: Path to the Noxfile to generate a matrix for.
+    default: "noxfile.py"
 outputs:
   matrix:
     description: The generated build matrix.
 runs:
   using: docker
   image: Dockerfile
+  args:
+    - ${{ inputs.noxfile }}
