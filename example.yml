@@ -9,7 +9,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Get Matrix
-        uses: nint8835/nox-build-matrix@v1
+        uses: nint8835/nox-build-matrix@v1.0.0
         id: matrix
     outputs:
       matrix: ${{ steps.matrix.outputs.matrix }}
