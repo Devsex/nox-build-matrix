@@ -1,0 +1,876 @@
+2023-05-15T07:17:23.9902592Z ##[group]Run github/codeql-action/analyze@v2
+2023-05-15T07:17:23.9902957Z with:
+2023-05-15T07:17:23.9903195Z   category: /language:python
+2023-05-15T07:17:23.9903501Z   output: ../results
+2023-05-15T07:17:23.9903798Z   upload: always
+2023-05-15T07:17:23.9904080Z   cleanup-level: brutal
+2023-05-15T07:17:23.9985395Z   add-snippets: false
+2023-05-15T07:17:23.9985752Z   skip-queries: false
+2023-05-15T07:17:23.9986102Z   checkout_path: /home/runner/work/simplemma/simplemma
+2023-05-15T07:17:23.9986419Z   upload-database: true
+2023-05-15T07:17:23.9986909Z   wait-for-processing: true
+2023-05-15T07:17:23.9987433Z   token: ***
+2023-05-15T07:17:23.9987675Z   matrix: {
+  "language": "python"
+}
+2023-05-15T07:17:23.9988005Z   expect-error: false
+2023-05-15T07:17:23.9988319Z env:
+2023-05-15T07:17:23.9988575Z   CODEQL_ACTION_FEATURE_MULTI_LANGUAGE: false
+2023-05-15T07:17:23.9988923Z   CODEQL_ACTION_FEATURE_SANDWICH: false
+2023-05-15T07:17:23.9989274Z   CODEQL_ACTION_FEATURE_SARIF_COMBINE: true
+2023-05-15T07:17:23.9989584Z   CODEQL_ACTION_FEATURE_WILL_UPLOAD: true
+2023-05-15T07:17:23.9990118Z   CODEQL_ACTION_VERSION: 2.3.3
+2023-05-15T07:17:23.9990441Z   CODEQL_ACTION_ANALYSIS_KEY: .github/workflows/codeql.yml:analyze
+2023-05-15T07:17:23.9990848Z   CODEQL_WORKFLOW_STARTED_AT: 2023-05-15T07:16:46.230Z
+2023-05-15T07:17:23.9991277Z   CODEQL_PYTHON: /home/runner/work/simplemma/codeql-action-python-autoinstall/bin/python
+2023-05-15T07:17:23.9992448Z   CODEQL_RAM: 5919
+2023-05-15T07:17:23.9992679Z   CODEQL_THREADS: 2
+2023-05-15T07:17:23.9992980Z ##[endgroup]
+2023-05-15T07:17:24.9365765Z [command]/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/codeql version --format=terse
+2023-05-15T07:17:25.8223129Z 2.13.1
+2023-05-15T07:17:25.8476750Z ##[group]Extracting python
+2023-05-15T07:17:25.8482371Z [command]/home/runner/work/simplemma/codeql-action-python-autoinstall/bin/python /home/runner/work/_actions/github/codeql-action/v2/python-setup/find_site_packages.py
+2023-05-15T07:17:25.8776480Z /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages
+2023-05-15T07:17:25.8833829Z Setting LGTM_INDEX_IMPORT_PATH=/home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages
+2023-05-15T07:17:25.8834521Z 
+2023-05-15T07:17:25.8836444Z [command]/home/runner/work/simplemma/codeql-action-python-autoinstall/bin/python -c import sys; print(sys.version_info[0])
+2023-05-15T07:17:25.9000745Z 3
+2023-05-15T07:17:25.9035845Z Setting LGTM_PYTHON_SETUP_VERSION=3
+2023-05-15T07:17:25.9036385Z 
+2023-05-15T07:17:27.5407783Z [command]/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/codeql database trace-command /home/runner/work/_temp/codeql_databases/python -- /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/python/tools/autobuild.sh
+2023-05-15T07:17:28.8328384Z Running command in /home/runner/work/simplemma/simplemma: [/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/python/tools/autobuild.sh]
+2023-05-15T07:17:28.9756137Z [2023-05-15 07:17:28] [build-stderr] /bin/sh: 1: python2: not found
+2023-05-15T07:17:29.0144724Z [2023-05-15 07:17:29] [build-stdout] Source root appears to be the real root.
+2023-05-15T07:17:29.0145351Z [2023-05-15 07:17:29] [build-stdout] Trying to guess Python version based on installed versions
+2023-05-15T07:17:29.0145896Z [2023-05-15 07:17:29] [build-stdout] Wanted to run Python 2, but it is not available. Using Python 3 instead
+2023-05-15T07:17:29.0146475Z [2023-05-15 07:17:29] [build-stdout] This script is running Python 3, but Python 2 is also available (as 'python3')
+2023-05-15T07:17:29.0147063Z [2023-05-15 07:17:29] [build-stdout] Calling python3 /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/python/tools/get_venv_lib.py
+2023-05-15T07:17:29.0556886Z [2023-05-15 07:17:29] [build-stdout] Calling python3 -S /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/python/tools/python_tracer.py -v -z all -c /home/runner/work/_temp/codeql_databases/python/working/trap_cache -p /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages -p /home/runner/.local/lib/python3.10/site-packages -R /home/runner/work/simplemma/simplemma
+2023-05-15T07:17:29.5748132Z [2023-05-15 07:17:29] [build-stdout] [INFO] Extraction will use the Python 3 standard library.
+2023-05-15T07:17:29.5749346Z [2023-05-15 07:17:29] [build-stdout] [INFO] sys_path is: ['/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/python/tools', '/usr/lib/python310.zip', '/usr/lib/python3.10', '/usr/lib/python3.10/lib-dynload']
+2023-05-15T07:17:29.5750238Z [2023-05-15 07:17:29] [build-stdout] [INFO] Python version 3.10.6
+2023-05-15T07:17:29.5908020Z [2023-05-15 07:17:29] [build-stdout] [INFO] Python extractor version 5.34
+2023-05-15T07:17:29.6759931Z [2023-05-15 07:17:29] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/simplemma/tests/test_dictionary_factory.py in 18ms
+2023-05-15T07:17:29.6968328Z [2023-05-15 07:17:29] [build-stdout] [INFO] [1] Extracted file /home/runner/work/simplemma/simplemma/tests/test_tokenizer.py in 36ms
+2023-05-15T07:17:29.7086979Z [2023-05-15 07:17:29] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/simplemma/tests/strategies/defaultrules/test_de.py in 41ms
+2023-05-15T07:17:29.7141189Z [2023-05-15 07:17:29] [build-stdout] [WARN] [2] Failed to find .defaultrules, no parent package of Python module at /home/runner/work/simplemma/simplemma/simplemma/strategies/rules.py
+2023-05-15T07:17:29.7186779Z [2023-05-15 07:17:29] [build-stdout] [WARN] [2] Failed to find .lemmatization_strategy, no parent package of Python module at /home/runner/work/simplemma/simplemma/simplemma/strategies/rules.py
+2023-05-15T07:17:29.7332072Z [2023-05-15 07:17:29] [build-stdout] [INFO] [1] Extracted file /home/runner/work/simplemma/simplemma/tests/strategies/defaultrules/test_fi.py in 45ms
+2023-05-15T07:17:29.7375886Z [2023-05-15 07:17:29] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/simplemma/simplemma/strategies/rules.py in 27ms
+2023-05-15T07:17:29.7469681Z [2023-05-15 07:17:29] [build-stdout] [WARN] [2] Failed to find .dictionary_lookup, no parent package of Python module at /home/runner/work/simplemma/simplemma/simplemma/strategies/default.py
+2023-05-15T07:17:29.7488347Z [2023-05-15 07:17:29] [build-stdout] [WARN] [2] Failed to find .hyphen_removal, no parent package of Python module at /home/runner/work/simplemma/simplemma/simplemma/strategies/default.py
+2023-05-15T07:17:29.7489611Z [2023-05-15 07:17:29] [build-stdout] [WARN] [2] Failed to find .rules, no parent package of Python module at /home/runner/work/simplemma/simplemma/simplemma/strategies/default.py
+2023-05-15T07:17:29.7490556Z [2023-05-15 07:17:29] [build-stdout] [WARN] [2] Failed to find .prefix_decomposition, no parent package of Python module at /home/runner/work/simplemma/simplemma/simplemma/strategies/default.py
+2023-05-15T07:17:29.7491606Z [2023-05-15 07:17:29] [build-stdout] [WARN] [2] Failed to find .greedy_dictionary_lookup, no parent package of Python module at /home/runner/work/simplemma/simplemma/simplemma/strategies/default.py
+2023-05-15T07:17:29.7492749Z [2023-05-15 07:17:29] [build-stdout] [WARN] [2] Failed to find .affix_decomposition, no parent package of Python module at /home/runner/work/simplemma/simplemma/simplemma/strategies/default.py
+2023-05-15T07:17:29.7520939Z [2023-05-15 07:17:29] [build-stdout] [WARN] [1] Failed to find .strategies, Package at /home/runner/work/simplemma/simplemma/simplemma has no module strategies
+2023-05-15T07:17:29.7800932Z [2023-05-15 07:17:29] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/simplemma/simplemma/strategies/default.py in 42ms
+2023-05-15T07:17:29.8260165Z [2023-05-15 07:17:29] [build-stdout] [INFO] [1] Extracted file /home/runner/work/simplemma/simplemma/simplemma/lemmatizer.py in 93ms
+2023-05-15T07:17:29.8272392Z [2023-05-15 07:17:29] [build-stdout] [INFO] [1] Extracted folder /home/runner/work/simplemma/simplemma/training in 1ms
+2023-05-15T07:17:29.8313501Z [2023-05-15 07:17:29] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/simplemma/simplemma/strategies/defaultrules/de.py in 51ms
+2023-05-15T07:17:29.8421630Z [2023-05-15 07:17:29] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/simplemma/simplemma/strategies/defaultprefixes/ru.py in 10ms
+2023-05-15T07:17:29.8490529Z [2023-05-15 07:17:29] [build-stdout] [INFO] [1] Extracted file /home/runner/work/simplemma/simplemma/simplemma/strategies/defaultprefixes/de.py in 20ms
+2023-05-15T07:17:29.8552827Z [2023-05-15 07:17:29] [build-stdout] [INFO] [1] Extracted file /home/runner/work/simplemma/simplemma/tests/__init__.py in 3ms
+2023-05-15T07:17:29.8559630Z [2023-05-15 07:17:29] [build-stdout] [INFO] [1] Extracted folder /home/runner/work/simplemma/simplemma/simplemma/strategies/fallback in 1ms
+2023-05-15T07:17:29.8668189Z [2023-05-15 07:17:29] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/simplemma/simplemma/strategies/defaultrules/fi.py in 23ms
+2023-05-15T07:17:29.8811719Z [2023-05-15 07:17:29] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/simplemma/simplemma/__init__.py in 14ms
+2023-05-15T07:17:29.8833815Z [2023-05-15 07:17:29] [build-stdout] [INFO] [1] Extracted file /home/runner/work/simplemma/simplemma/tests/strategies/defaultrules/test_en.py in 27ms
+2023-05-15T07:17:29.8848882Z [2023-05-15 07:17:29] [build-stdout] [INFO] [1] Extracted folder /home/runner/work/simplemma/simplemma/tests/strategies in 1ms
+2023-05-15T07:17:29.8896859Z [2023-05-15 07:17:29] [build-stdout] [WARN] [2] Failed to find .defaultprefixes, no parent package of Python module at /home/runner/work/simplemma/simplemma/simplemma/strategies/prefix_decomposition.py
+2023-05-15T07:17:29.8915322Z [2023-05-15 07:17:29] [build-stdout] [WARN] [1] Failed to find .lemmatization_strategy, no parent package of Python module at /home/runner/work/simplemma/simplemma/simplemma/strategies/greedy_dictionary_lookup.py
+2023-05-15T07:17:29.8916704Z [2023-05-15 07:17:29] [build-stdout] [WARN] [1] Failed to find ..utils, no parent package of Python module at /home/runner/work/simplemma/simplemma/simplemma/strategies/greedy_dictionary_lookup.py
+2023-05-15T07:17:29.9088232Z [2023-05-15 07:17:29] [build-stdout] [INFO] [1] Extracted file /home/runner/work/simplemma/simplemma/simplemma/strategies/greedy_dictionary_lookup.py in 23ms
+2023-05-15T07:17:29.9125582Z [2023-05-15 07:17:29] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/simplemma/simplemma/strategies/prefix_decomposition.py in 32ms
+2023-05-15T07:17:29.9283965Z [2023-05-15 07:17:29] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/simplemma/tests/strategies/defaultrules/test_nl.py in 13ms
+2023-05-15T07:17:29.9953652Z [2023-05-15 07:17:29] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/simplemma/simplemma/token_sampler.py in 67ms
+2023-05-15T07:17:29.9987595Z [2023-05-15 07:17:29] [build-stdout] [INFO] [2] Extracted folder /home/runner/work/simplemma/simplemma/training/eval in 3ms
+2023-05-15T07:17:30.0166123Z [2023-05-15 07:17:30] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/simplemma/simplemma/strategies/lemmatization_strategy.py in 15ms
+2023-05-15T07:17:30.2111016Z [2023-05-15 07:17:30] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/simplemma/tests/test_lemmatizer.py in 195ms
+2023-05-15T07:17:30.2431338Z [2023-05-15 07:17:30] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/simplemma/simplemma/utils.py in 32ms
+2023-05-15T07:17:30.4168791Z [2023-05-15 07:17:30] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/re.py in 172ms
+2023-05-15T07:17:30.4347926Z [2023-05-15 07:17:30] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/simplemma/simplemma/strategies/defaultrules/nl.py in 16ms
+2023-05-15T07:17:30.4383583Z [2023-05-15 07:17:30] [build-stdout] [WARN] [2] Failed to find .lemmatization_fallback_strategy, no parent package of Python module at /home/runner/work/simplemma/simplemma/simplemma/strategies/fallback/raise_error.py
+2023-05-15T07:17:30.4490908Z [2023-05-15 07:17:30] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/simplemma/simplemma/strategies/fallback/raise_error.py in 13ms
+2023-05-15T07:17:30.4623148Z [2023-05-15 07:17:30] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/simplemma/simplemma/strategies/defaultrules/generic.py in 11ms
+2023-05-15T07:17:30.4714401Z [2023-05-15 07:17:30] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/simplemma/simplemma/strategies/defaultprefixes/__init__.py in 7ms
+2023-05-15T07:17:30.4740701Z [2023-05-15 07:17:30] [build-stdout] [INFO] [2] Extracted folder /home/runner/work/simplemma/simplemma/simplemma/strategies/defaultrules in 1ms
+2023-05-15T07:17:30.4920730Z [2023-05-15 07:17:30] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/simplemma/simplemma/strategies/defaultrules/pl.py in 16ms
+2023-05-15T07:17:30.4939073Z [2023-05-15 07:17:30] [build-stdout] [INFO] [2] Extracted folder /home/runner/work/simplemma/simplemma/tests/strategies/defaultrules in 1ms
+2023-05-15T07:17:30.5783183Z [2023-05-15 07:17:30] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/functools.py in 668ms
+2023-05-15T07:17:30.5866568Z [2023-05-15 07:17:30] [build-stdout] [INFO] [1] Extracted file /home/runner/work/simplemma/simplemma/tests/strategies/defaultprefixes/test_prefixes_ru.py in 8ms
+2023-05-15T07:17:31.1379271Z [2023-05-15 07:17:31] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/sre_compile.py in 642ms
+2023-05-15T07:17:31.2649664Z [2023-05-15 07:17:31] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/simplemma/training/dictionary_pickler.py in 126ms
+2023-05-15T07:17:31.2659121Z [2023-05-15 07:17:31] [build-stdout] [INFO] [2] Extracted folder /usr/lib/python3.10/logging in 1ms
+2023-05-15T07:17:31.2759641Z [2023-05-15 07:17:31] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/simplemma/tests/strategies/defaultprefixes/test_prefixes_de.py in 8ms
+2023-05-15T07:17:31.8847230Z [2023-05-15 07:17:31] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/sre_parse.py in 1297ms
+2023-05-15T07:17:31.9202148Z [2023-05-15 07:17:31] [build-stdout] [INFO] [1] Extracted file /home/runner/work/simplemma/simplemma/setup.py in 34ms
+2023-05-15T07:17:31.9384705Z [2023-05-15 07:17:31] [build-stdout] [INFO] [1] Extracted file /home/runner/work/simplemma/simplemma/tests/strategies/defaultrules/test_rules.py in 17ms
+2023-05-15T07:17:31.9438727Z [2023-05-15 07:17:31] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/enum.py in 666ms
+2023-05-15T07:17:31.9778789Z [2023-05-15 07:17:31] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/simplemma/simplemma/strategies/hyphen_removal.py in 34ms
+2023-05-15T07:17:31.9853495Z [2023-05-15 07:17:31] [build-stdout] [INFO] [2] Extracted module _functools in 7ms
+2023-05-15T07:17:32.0889005Z [2023-05-15 07:17:32] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/reprlib.py in 149ms
+2023-05-15T07:17:32.1109177Z [2023-05-15 07:17:32] [build-stdout] [INFO] [1] Extracted file /home/runner/work/simplemma/simplemma/simplemma/strategies/defaultrules/ru.py in 22ms
+2023-05-15T07:17:33.1774513Z [2023-05-15 07:17:33] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/collections/__init__.py in 1065ms
+2023-05-15T07:17:33.2945462Z [2023-05-15 07:17:33] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/pickle.py in 1308ms
+2023-05-15T07:17:33.2964853Z [2023-05-15 07:17:33] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/copyreg.py in 118ms
+2023-05-15T07:17:33.3028133Z [2023-05-15 07:17:33] [build-stdout] [INFO] [2] Extracted module unicodedata in 6ms
+2023-05-15T07:17:33.3035456Z [2023-05-15 07:17:33] [build-stdout] [INFO] [2] Extracted folder /home/runner/work/simplemma/simplemma/simplemma in 1ms
+2023-05-15T07:17:33.4891603Z [2023-05-15 07:17:33] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/types.py in 192ms
+2023-05-15T07:17:33.5038632Z [2023-05-15 07:17:33] [build-stdout] [INFO] [1] Extracted file /home/runner/work/simplemma/simplemma/simplemma/strategies/dictionary_lookup.py in 14ms
+2023-05-15T07:17:33.9863906Z [2023-05-15 07:17:33] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/_collections_abc.py in 682ms
+2023-05-15T07:17:33.9995091Z [2023-05-15 07:17:33] [build-stdout] [INFO] [2] Extracted module _collections in 8ms
+2023-05-15T07:17:34.0180805Z [2023-05-15 07:17:34] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/simplemma/simplemma/strategies/defaultrules/en.py in 22ms
+2023-05-15T07:17:34.1013355Z [2023-05-15 07:17:34] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/abc.py in 83ms
+2023-05-15T07:17:34.1047160Z [2023-05-15 07:17:34] [build-stdout] [INFO] [2] Extracted folder /usr/lib/python3.10/collections in 1ms
+2023-05-15T07:17:34.1132336Z [2023-05-15 07:17:34] [build-stdout] [INFO] [2] Extracted module _pickle in 6ms
+2023-05-15T07:17:35.2198521Z [2023-05-15 07:17:35] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/argparse.py in 1715ms
+2023-05-15T07:17:35.2354962Z [2023-05-15 07:17:35] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/struct.py in 15ms
+2023-05-15T07:17:35.3424803Z [2023-05-15 07:17:35] [build-stdout] [INFO] [1] Extracted file /home/runner/work/simplemma/simplemma/training/eval/udscore.py in 106ms
+2023-05-15T07:17:35.3525133Z [2023-05-15 07:17:35] [build-stdout] [INFO] [1] Extracted file /home/runner/work/simplemma/simplemma/simplemma/strategies/fallback/lemmatization_fallback_strategy.py in 10ms
+2023-05-15T07:17:35.3610068Z [2023-05-15 07:17:35] [build-stdout] [INFO] [1] Extracted module _weakref in 8ms
+2023-05-15T07:17:35.4009427Z [2023-05-15 07:17:35] [build-stdout] [INFO] [1] Extracted file /home/runner/work/simplemma/simplemma/tests/strategies/test_strategies.py in 39ms
+2023-05-15T07:17:35.4733940Z [2023-05-15 07:17:35] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/doctest.py in 1358ms
+2023-05-15T07:17:35.4899317Z [2023-05-15 07:17:35] [build-stdout] [INFO] [1] Extracted file /home/runner/work/simplemma/simplemma/tests/test_language_detector.py in 88ms
+2023-05-15T07:17:35.4996472Z [2023-05-15 07:17:35] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/simplemma/simplemma/tokenizer.py in 25ms
+2023-05-15T07:17:35.5022137Z [2023-05-15 07:17:35] [build-stdout] [INFO] [2] Extracted folder /home/runner/work/simplemma/simplemma/tests in 1ms
+2023-05-15T07:17:35.6111588Z [2023-05-15 07:17:35] [build-stdout] [INFO] [1] Extracted file /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages/setuptools/__init__.py in 118ms
+2023-05-15T07:17:35.6140981Z [2023-05-15 07:17:35] [build-stdout] [INFO] [1] Extracted folder /home/runner/work/simplemma/simplemma/simplemma/strategies/defaultprefixes in 1ms
+2023-05-15T07:17:35.7213333Z [2023-05-15 07:17:35] [build-stdout] [INFO] [1] Extracted file /home/runner/work/simplemma/simplemma/simplemma/language_detector.py in 108ms
+2023-05-15T07:17:35.8161215Z [2023-05-15 07:17:35] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/sre_constants.py in 94ms
+2023-05-15T07:17:35.8303046Z [2023-05-15 07:17:35] [build-stdout] [INFO] [1] Extracted file /home/runner/work/simplemma/simplemma/simplemma/strategies/defaultrules/__init__.py in 12ms
+2023-05-15T07:17:35.8719998Z [2023-05-15 07:17:35] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/distutils/errors.py in 40ms
+2023-05-15T07:17:35.8794636Z [2023-05-15 07:17:35] [build-stdout] [INFO] [1] Extracted module _thread in 6ms
+2023-05-15T07:17:35.9519508Z [2023-05-15 07:17:35] [build-stdout] [INFO] [1] Extracted file /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages/setuptools/monkey.py in 70ms
+2023-05-15T07:17:36.5967175Z [2023-05-15 07:17:36] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/logging/__init__.py in 1093ms
+2023-05-15T07:17:36.6034767Z [2023-05-15 07:17:36] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages/setuptools/_deprecation_warning.py in 6ms
+2023-05-15T07:17:36.6122297Z [2023-05-15 07:17:36] [build-stdout] [INFO] [2] Extracted module itertools in 8ms
+2023-05-15T07:17:36.6336652Z [2023-05-15 07:17:36] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages/setuptools/logging.py in 21ms
+2023-05-15T07:17:36.7210679Z [2023-05-15 07:17:36] [build-stdout] [INFO] [1] Extracted file /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages/setuptools/dist.py in 766ms
+2023-05-15T07:17:37.0164977Z [2023-05-15 07:17:37] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/warnings.py in 382ms
+2023-05-15T07:17:37.6474978Z [2023-05-15 07:17:37] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/pprint.py in 629ms
+2023-05-15T07:17:37.7105687Z [2023-05-15 07:17:37] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/distutils/log.py in 61ms
+2023-05-15T07:17:37.7404263Z [2023-05-15 07:17:37] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/simplemma/tests/test_token_sampler.py in 28ms
+2023-05-15T07:17:37.8029106Z [2023-05-15 07:17:37] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/pdb.py in 1080ms
+2023-05-15T07:17:37.8041689Z [2023-05-15 07:17:37] [build-stdout] [INFO] [1] Extracted folder /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages/setuptools/extern in 1ms
+2023-05-15T07:17:37.8588145Z [2023-05-15 07:17:37] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages/_distutils_hack/__init__.py in 111ms
+2023-05-15T07:17:37.8660203Z [2023-05-15 07:17:37] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/io.py in 60ms
+2023-05-15T07:17:37.8726184Z [2023-05-15 07:17:37] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/distutils/debug.py in 5ms
+2023-05-15T07:17:37.8758754Z [2023-05-15 07:17:37] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages/setuptools/config/__init__.py in 22ms
+2023-05-15T07:17:38.1800715Z [2023-05-15 07:17:38] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/operator.py in 304ms
+2023-05-15T07:17:38.1924508Z [2023-05-15 07:17:38] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/distutils/__init__.py in 11ms
+2023-05-15T07:17:38.1944537Z [2023-05-15 07:17:38] [build-stdout] [INFO] [1] Extracted folder /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages/setuptools/command in 2ms
+2023-05-15T07:17:38.3789087Z [2023-05-15 07:17:38] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/weakref.py in 502ms
+2023-05-15T07:17:38.3858193Z [2023-05-15 07:17:38] [build-stdout] [INFO] [2] Extracted module time in 6ms
+2023-05-15T07:17:38.4668570Z [2023-05-15 07:17:38] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/cmd.py in 269ms
+2023-05-15T07:17:38.4692121Z [2023-05-15 07:17:38] [build-stdout] [INFO] [1] Extracted module _abc in 5ms
+2023-05-15T07:17:38.4813684Z [2023-05-15 07:17:38] [build-stdout] [INFO] [1] Extracted file /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages/setuptools/command/__init__.py in 11ms
+2023-05-15T07:17:38.4924886Z [2023-05-15 07:17:38] [build-stdout] [INFO] [1] Extracted module _struct in 5ms
+2023-05-15T07:17:38.4954315Z [2023-05-15 07:17:38] [build-stdout] [INFO] [1] Extracted module _sre in 5ms
+2023-05-15T07:17:38.5007483Z [2023-05-15 07:17:38] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/collections/abc.py in 7ms
+2023-05-15T07:17:38.5163783Z [2023-05-15 07:17:38] [build-stdout] [INFO] [1] Extracted module _io in 16ms
+2023-05-15T07:17:38.7026544Z [2023-05-15 07:17:38] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/copy.py in 186ms
+2023-05-15T07:17:38.7042829Z [2023-05-15 07:17:38] [build-stdout] [INFO] [1] Extracted folder /usr/lib/python3.10/unittest in 1ms
+2023-05-15T07:17:38.7055424Z [2023-05-15 07:17:38] [build-stdout] [INFO] [1] Extracted module builtins in 1ms
+2023-05-15T07:17:38.8967231Z [2023-05-15 07:17:38] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/tokenize.py in 504ms
+2023-05-15T07:17:38.9804321Z [2023-05-15 07:17:38] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/signal.py in 84ms
+2023-05-15T07:17:39.2145539Z [2023-05-15 07:17:39] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/textwrap.py in 233ms
+2023-05-15T07:17:39.5614648Z [2023-05-15 07:17:39] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/contextlib.py in 346ms
+2023-05-15T07:17:39.9505426Z [2023-05-15 07:17:39] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages/setuptools/config/setupcfg.py in 388ms
+2023-05-15T07:17:39.9660741Z [2023-05-15 07:17:39] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/simplemma/simplemma/strategies/fallback/default.py in 14ms
+2023-05-15T07:17:39.9700941Z [2023-05-15 07:17:39] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages/_distutils_hack/override.py in 4ms
+2023-05-15T07:17:40.6559625Z [2023-05-15 07:17:40] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/os.py in 685ms
+2023-05-15T07:17:40.6634336Z [2023-05-15 07:17:40] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/inspect.py in 1957ms
+2023-05-15T07:17:40.6696116Z [2023-05-15 07:17:40] [build-stdout] [INFO] [1] Extracted module atexit in 5ms
+2023-05-15T07:17:40.7925020Z [2023-05-15 07:17:40] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/_compat_pickle.py in 134ms
+2023-05-15T07:17:40.9447252Z [2023-05-15 07:17:40] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/lzma.py in 275ms
+2023-05-15T07:17:41.1686499Z [2023-05-15 07:17:41] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/code.py in 224ms
+2023-05-15T07:17:41.2148406Z [2023-05-15 07:17:41] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages/setuptools/discovery.py in 422ms
+2023-05-15T07:17:41.2294694Z [2023-05-15 07:17:41] [build-stdout] [INFO] [2] Extracted module posix in 14ms
+2023-05-15T07:17:41.3694568Z [2023-05-15 07:17:41] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/getopt.py in 140ms
+2023-05-15T07:17:41.3775007Z [2023-05-15 07:17:41] [build-stdout] [INFO] [2] Extracted module _operator in 7ms
+2023-05-15T07:17:41.7405680Z [2023-05-15 07:17:41] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/distutils/util.py in 359ms
+2023-05-15T07:17:42.6819931Z [2023-05-15 07:17:42] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/typing.py in 1511ms
+2023-05-15T07:17:42.7262299Z [2023-05-15 07:17:42] [build-stdout] [INFO] [1] Extracted file /home/runner/work/simplemma/simplemma/tests/test_dictionary_pickler.py in 44ms
+2023-05-15T07:17:43.4590950Z [2023-05-15 07:17:43] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/threading.py in 731ms
+2023-05-15T07:17:43.5460276Z [2023-05-15 07:17:43] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/importlib/__init__.py in 85ms
+2023-05-15T07:17:43.6776022Z [2023-05-15 07:17:43] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/fnmatch.py in 129ms
+2023-05-15T07:17:43.9703717Z [2023-05-15 07:17:43] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/distutils/fancy_getopt.py in 291ms
+2023-05-15T07:17:44.2256900Z [2023-05-15 07:17:44] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/pydoc.py in 2483ms
+2023-05-15T07:17:44.6847918Z [2023-05-15 07:17:44] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/traceback.py in 459ms
+2023-05-15T07:17:44.7815645Z [2023-05-15 07:17:44] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/linecache.py in 96ms
+2023-05-15T07:17:44.8538695Z [2023-05-15 07:17:44] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/distutils/spawn.py in 72ms
+2023-05-15T07:17:44.9233048Z [2023-05-15 07:17:44] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/token.py in 69ms
+2023-05-15T07:17:45.3231097Z [2023-05-15 07:17:45] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/subprocess.py in 1351ms
+2023-05-15T07:17:45.4431154Z [2023-05-15 07:17:45] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/gettext.py in 518ms
+2023-05-15T07:17:45.4487673Z [2023-05-15 07:17:45] [build-stdout] [INFO] [2] Extracted module _warnings in 5ms
+2023-05-15T07:17:45.5265044Z [2023-05-15 07:17:45] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/http/__init__.py in 77ms
+2023-05-15T07:17:45.5374707Z [2023-05-15 07:17:45] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/lib2to3/__init__.py in 11ms
+2023-05-15T07:17:45.5433856Z [2023-05-15 07:17:45] [build-stdout] [INFO] [2] Extracted module pwd in 5ms
+2023-05-15T07:17:45.5445918Z [2023-05-15 07:17:45] [build-stdout] [INFO] [2] Extracted folder /home/runner/work/simplemma/simplemma/tests/strategies/defaultprefixes in 1ms
+2023-05-15T07:17:45.6877813Z [2023-05-15 07:17:45] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/dis.py in 361ms
+2023-05-15T07:17:45.8039630Z [2023-05-15 07:17:45] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/_compression.py in 117ms
+2023-05-15T07:17:45.8103429Z [2023-05-15 07:17:45] [build-stdout] [INFO] [1] Extracted module _lzma in 6ms
+2023-05-15T07:17:45.8601693Z [2023-05-15 07:17:45] [build-stdout] [INFO] [1] Extracted file /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages/setuptools/extern/__init__.py in 49ms
+2023-05-15T07:17:45.8649236Z [2023-05-15 07:17:45] [build-stdout] [INFO] [1] Extracted folder /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages/setuptools in 1ms
+2023-05-15T07:17:45.8663712Z [2023-05-15 07:17:45] [build-stdout] [INFO] [1] Extracted module _posixsubprocess in 5ms
+2023-05-15T07:17:45.8683372Z [2023-05-15 07:17:45] [build-stdout] [INFO] [1] Extracted folder /usr/lib/python3.10/http in 2ms
+2023-05-15T07:17:45.8703260Z [2023-05-15 07:17:45] [build-stdout] [INFO] [1] Extracted folder /usr/lib/python3.10/email in 0ms
+2023-05-15T07:17:46.4980372Z [2023-05-15 07:17:46] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/platform.py in 625ms
+2023-05-15T07:17:46.5224744Z [2023-05-15 07:17:46] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/difflib.py in 975ms
+2023-05-15T07:17:46.5753402Z [2023-05-15 07:17:46] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/simplemma/simplemma/dictionary_factory.py in 52ms
+2023-05-15T07:17:46.8832519Z [2023-05-15 07:17:46] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages/setuptools/config/expand.py in 306ms
+2023-05-15T07:17:47.0841565Z [2023-05-15 07:17:47] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/distutils/cmd.py in 199ms
+2023-05-15T07:17:47.2467539Z [2023-05-15 07:17:47] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/http/server.py in 745ms
+2023-05-15T07:17:47.2471307Z [2023-05-15 07:17:47] [build-stdout] [INFO] [1] Extracted folder /usr/lib/python3.10/importlib in 1ms
+2023-05-15T07:17:47.5747607Z [2023-05-15 07:17:47] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/sysconfig.py in 489ms
+2023-05-15T07:17:47.8727855Z [2023-05-15 07:17:47] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/socket.py in 622ms
+2023-05-15T07:17:48.2845268Z [2023-05-15 07:17:48] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/urllib/parse.py in 709ms
+2023-05-15T07:17:48.4191846Z [2023-05-15 07:17:48] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/distutils/file_util.py in 133ms
+2023-05-15T07:17:48.4215063Z [2023-05-15 07:17:48] [build-stdout] [INFO] [2] Extracted module sys in 0ms
+2023-05-15T07:17:48.5280688Z [2023-05-15 07:17:48] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/distutils/core.py in 104ms
+2023-05-15T07:17:48.6039487Z [2023-05-15 07:17:48] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/simplemma/simplemma/strategies/affix_decomposition.py in 74ms
+2023-05-15T07:17:48.6062998Z [2023-05-15 07:17:48] [build-stdout] [INFO] [2] Extracted folder /usr/lib/python3.10/html in 1ms
+2023-05-15T07:17:48.6235694Z [2023-05-15 07:17:48] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/importlib/machinery.py in 16ms
+2023-05-15T07:17:49.1675581Z [2023-05-15 07:17:49] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/codecs.py in 543ms
+2023-05-15T07:17:49.1687289Z [2023-05-15 07:17:49] [build-stdout] [INFO] [2] Extracted folder /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages/setuptools/config in 1ms
+2023-05-15T07:17:49.2484575Z [2023-05-15 07:17:49] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/ast.py in 1378ms
+2023-05-15T07:17:49.4640036Z [2023-05-15 07:17:49] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/mimetypes.py in 295ms
+2023-05-15T07:17:49.4711852Z [2023-05-15 07:17:49] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages/setuptools/version.py in 7ms
+2023-05-15T07:17:49.4894833Z [2023-05-15 07:17:49] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages/setuptools/_path.py in 18ms
+2023-05-15T07:17:49.5907359Z [2023-05-15 07:17:49] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/posixpath.py in 338ms
+2023-05-15T07:17:49.6892066Z [2023-05-15 07:17:49] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/distutils/dir_util.py in 199ms
+2023-05-15T07:17:49.8025088Z [2023-05-15 07:17:49] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/py_compile.py in 113ms
+2023-05-15T07:17:49.8996263Z [2023-05-15 07:17:49] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/socketserver.py in 310ms
+2023-05-15T07:17:50.1127724Z [2023-05-15 07:17:50] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages/setuptools/config/pyprojecttoml.py in 309ms
+2023-05-15T07:17:50.1792001Z [2023-05-15 07:17:50] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/heapq.py in 278ms
+2023-05-15T07:17:50.1956120Z [2023-05-15 07:17:50] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/keyword.py in 15ms
+2023-05-15T07:17:50.2769999Z [2023-05-15 07:17:50] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/genericpath.py in 80ms
+2023-05-15T07:17:50.4703772Z [2023-05-15 07:17:50] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/_weakrefset.py in 192ms
+2023-05-15T07:17:50.4722870Z [2023-05-15 07:17:50] [build-stdout] [INFO] [1] Extracted folder /usr/lib/python3.10/distutils in 2ms
+2023-05-15T07:17:50.5129391Z [2023-05-15 07:17:50] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/unittest/__init__.py in 40ms
+2023-05-15T07:17:50.5466920Z [2023-05-15 07:17:50] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/tracemalloc.py in 433ms
+2023-05-15T07:17:50.6463568Z [2023-05-15 07:17:50] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/encodings/__init__.py in 99ms
+2023-05-15T07:17:50.6678234Z [2023-05-15 07:17:50] [build-stdout] [INFO] [2] Extracted module _ast in 21ms
+2023-05-15T07:17:50.6991042Z [2023-05-15 07:17:50] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages/setuptools/extension.py in 31ms
+2023-05-15T07:17:50.9907799Z [2023-05-15 07:17:50] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/bdb.py in 477ms
+2023-05-15T07:17:50.9976956Z [2023-05-15 07:17:50] [build-stdout] [INFO] [1] Extracted module _codecs in 5ms
+2023-05-15T07:17:51.0004551Z [2023-05-15 07:17:50] [build-stdout] [INFO] [1] Extracted folder /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages/_distutils_hack in 1ms
+2023-05-15T07:17:51.6439893Z [2023-05-15 07:17:51] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/locale.py in 938ms
+2023-05-15T07:17:51.6745404Z [2023-05-15 07:17:51] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/email/__init__.py in 29ms
+2023-05-15T07:17:51.7028672Z [2023-05-15 07:17:51] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/encodings/mbcs.py in 27ms
+2023-05-15T07:17:51.7426892Z [2023-05-15 07:17:51] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/distutils/dep_util.py in 38ms
+2023-05-15T07:17:51.8458374Z [2023-05-15 07:17:51] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/_py_abc.py in 100ms
+2023-05-15T07:17:51.8476848Z [2023-05-15 07:17:51] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/http/client.py in 846ms
+2023-05-15T07:17:51.8578436Z [2023-05-15 07:17:51] [build-stdout] [INFO] [1] Extracted module array in 8ms
+2023-05-15T07:17:51.8623483Z [2023-05-15 07:17:51] [build-stdout] [INFO] [1] Extracted folder /usr/lib/python3.10/lib2to3 in 1ms
+2023-05-15T07:17:51.8820407Z [2023-05-15 07:17:51] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages/setuptools/_reqs.py in 32ms
+2023-05-15T07:17:51.9272340Z [2023-05-15 07:17:51] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/unittest/signals.py in 63ms
+2023-05-15T07:17:52.0295250Z [2023-05-15 07:17:52] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/string.py in 148ms
+2023-05-15T07:17:52.0810986Z [2023-05-15 07:17:52] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages/setuptools/_entry_points.py in 51ms
+2023-05-15T07:17:52.0819933Z [2023-05-15 07:17:52] [build-stdout] [INFO] [2] Extracted folder /usr/lib/python3.10/urllib in 1ms
+2023-05-15T07:17:52.1178799Z [2023-05-15 07:17:52] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/tty.py in 30ms
+2023-05-15T07:17:52.1764020Z [2023-05-15 07:17:52] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/email/parser.py in 57ms
+2023-05-15T07:17:52.3598226Z [2023-05-15 07:17:52] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/unittest/runner.py in 183ms
+2023-05-15T07:17:52.6482096Z [2023-05-15 07:17:52] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/dataclasses.py in 719ms
+2023-05-15T07:17:52.8411333Z [2023-05-15 07:17:52] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/unittest/main.py in 193ms
+2023-05-15T07:17:52.8575769Z [2023-05-15 07:17:52] [build-stdout] [INFO] [1] Extracted module readline in 15ms
+2023-05-15T07:17:53.0182149Z [2023-05-15 07:17:53] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/numbers.py in 160ms
+2023-05-15T07:17:53.0249033Z [2023-05-15 07:17:53] [build-stdout] [INFO] [1] Extracted module _locale in 6ms
+2023-05-15T07:17:53.0430769Z [2023-05-15 07:17:53] [build-stdout] [INFO] [1] Extracted file /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages/setuptools/windows_support.py in 17ms
+2023-05-15T07:17:53.1293389Z [2023-05-15 07:17:53] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/stat.py in 86ms
+2023-05-15T07:17:53.2939196Z [2023-05-15 07:17:53] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/configparser.py in 930ms
+2023-05-15T07:17:53.4092675Z [2023-05-15 07:17:53] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages/setuptools/depends.py in 116ms
+2023-05-15T07:17:53.4538708Z [2023-05-15 07:17:53] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/_aix_support.py in 44ms
+2023-05-15T07:17:53.4722510Z [2023-05-15 07:17:53] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages/setuptools/_itertools.py in 13ms
+2023-05-15T07:17:53.4743856Z [2023-05-15 07:17:53] [build-stdout] [INFO] [2] Extracted module _imp in 6ms
+2023-05-15T07:17:53.4849812Z [2023-05-15 07:17:53] [build-stdout] [INFO] [2] Extracted module termios in 9ms
+2023-05-15T07:17:53.8137839Z [2023-05-15 07:17:53] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/_osx_support.py in 327ms
+2023-05-15T07:17:53.8215336Z [2023-05-15 07:17:53] [build-stdout] [INFO] [2] Extracted module errno in 7ms
+2023-05-15T07:17:53.8543857Z [2023-05-15 07:17:53] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/importlib/_bootstrap.py in 725ms
+2023-05-15T07:17:54.1627912Z [2023-05-15 07:17:54] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/csv.py in 341ms
+2023-05-15T07:17:54.2192854Z [2023-05-15 07:17:54] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/selectors.py in 363ms
+2023-05-15T07:17:54.2256792Z [2023-05-15 07:17:54] [build-stdout] [INFO] [1] Extracted module fcntl in 5ms
+2023-05-15T07:17:54.2281496Z [2023-05-15 07:17:54] [build-stdout] [INFO] [1] Extracted folder /home/runner/work/simplemma/simplemma/simplemma/strategies in 1ms
+2023-05-15T07:17:54.2346545Z [2023-05-15 07:17:54] [build-stdout] [INFO] [1] Extracted module _tracemalloc in 5ms
+2023-05-15T07:17:54.3293542Z [2023-05-15 07:17:54] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/distutils/archive_util.py in 165ms
+2023-05-15T07:17:54.3648069Z [2023-05-15 07:17:54] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/unittest/async_case.py in 128ms
+2023-05-15T07:17:54.3745571Z [2023-05-15 07:17:54] [build-stdout] [INFO] [1] Extracted module select in 7ms
+2023-05-15T07:17:54.3826350Z [2023-05-15 07:17:54] [build-stdout] [INFO] [1] Extracted module _csv in 6ms
+2023-05-15T07:17:54.7201188Z [2023-05-15 07:17:54] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/pkgutil.py in 390ms
+2023-05-15T07:17:55.2375747Z [2023-05-15 07:17:55] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/ssl.py in 851ms
+2023-05-15T07:17:55.4524792Z [2023-05-15 07:17:55] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/distutils/dist.py in 730ms
+2023-05-15T07:17:55.6529988Z [2023-05-15 07:17:55] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/email/utils.py in 199ms
+2023-05-15T07:17:55.7762633Z [2023-05-15 07:17:55] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/distutils/extension.py in 122ms
+2023-05-15T07:17:55.8431736Z [2023-05-15 07:17:55] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/tempfile.py in 603ms
+2023-05-15T07:17:55.8668082Z [2023-05-15 07:17:55] [build-stdout] [INFO] [1] Extracted folder /usr/lib/python3.10/asyncio in 3ms
+2023-05-15T07:17:55.9275947Z [2023-05-15 07:17:55] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/distutils/command/bdist.py in 82ms
+2023-05-15T07:17:56.3160778Z [2023-05-15 07:17:56] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/base64.py in 388ms
+2023-05-15T07:17:56.4662255Z [2023-05-15 07:17:56] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/plistlib.py in 689ms
+2023-05-15T07:17:56.4678028Z [2023-05-15 07:17:56] [build-stdout] [INFO] [2] Extracted folder /usr/lib/python3.10/distutils/command in 1ms
+2023-05-15T07:17:57.2331259Z [2023-05-15 07:17:57] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/pathlib.py in 915ms
+2023-05-15T07:17:57.4285655Z [2023-05-15 07:17:57] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/shutil.py in 960ms
+2023-05-15T07:17:57.4347461Z [2023-05-15 07:17:57] [build-stdout] [INFO] [2] Extracted module grp in 5ms
+2023-05-15T07:17:57.4385146Z [2023-05-15 07:17:57] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/unittest/result.py in 204ms
+2023-05-15T07:17:57.5097511Z [2023-05-15 07:17:57] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/_threading_local.py in 74ms
+2023-05-15T07:17:57.5774591Z [2023-05-15 07:17:57] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/_bootsubprocess.py in 67ms
+2023-05-15T07:17:57.5848747Z [2023-05-15 07:17:57] [build-stdout] [INFO] [2] Extracted module _signal in 7ms
+2023-05-15T07:17:57.6104367Z [2023-05-15 07:17:57] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages/setuptools/config/_validate_pyproject/__init__.py in 24ms
+2023-05-15T07:17:57.6962721Z [2023-05-15 07:17:57] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/distutils/config.py in 85ms
+2023-05-15T07:17:57.9281277Z [2023-05-15 07:17:57] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/random.py in 487ms
+2023-05-15T07:17:57.9465735Z [2023-05-15 07:17:57] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/distutils/command/__init__.py in 16ms
+2023-05-15T07:17:58.1128558Z [2023-05-15 07:17:58] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/email/charset.py in 166ms
+2023-05-15T07:17:58.1143641Z [2023-05-15 07:17:58] [build-stdout] [INFO] [1] Extracted folder /usr/lib/python3.10/xml in 1ms
+2023-05-15T07:17:58.1322008Z [2023-05-15 07:17:58] [build-stdout] [INFO] [1] Extracted file /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages/setuptools/errors.py in 17ms
+2023-05-15T07:17:58.2974059Z [2023-05-15 07:17:58] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/calendar.py in 600ms
+2023-05-15T07:17:58.2988572Z [2023-05-15 07:17:58] [build-stdout] [INFO] [2] Extracted folder /usr/lib/python3.10/xml/parsers in 1ms
+2023-05-15T07:17:58.3590698Z [2023-05-15 07:17:58] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/__future__.py in 59ms
+2023-05-15T07:17:58.3996531Z [2023-05-15 07:17:58] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/email/encoders.py in 39ms
+2023-05-15T07:17:58.5217546Z [2023-05-15 07:17:58] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/unittest/util.py in 121ms
+2023-05-15T07:17:58.5748908Z [2023-05-15 07:17:58] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/email/errors.py in 52ms
+2023-05-15T07:17:58.5765615Z [2023-05-15 07:17:58] [build-stdout] [INFO] [2] Extracted folder /usr/lib/python3.10/ctypes in 1ms
+2023-05-15T07:17:58.7332133Z [2023-05-15 07:17:58] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/opcode.py in 156ms
+2023-05-15T07:17:58.7529358Z [2023-05-15 07:17:58] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages/setuptools/_importlib.py in 18ms
+2023-05-15T07:17:58.7932817Z [2023-05-15 07:17:58] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/email/base64mime.py in 39ms
+2023-05-15T07:17:59.3129963Z [2023-05-15 07:17:59] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/lib2to3/refactor.py in 518ms
+2023-05-15T07:17:59.4360628Z [2023-05-15 07:17:59] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/distutils/text_file.py in 122ms
+2023-05-15T07:17:59.8636393Z [2023-05-15 07:17:59] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/zipimport.py in 426ms
+2023-05-15T07:17:59.8695283Z [2023-05-15 07:17:59] [build-stdout] [INFO] [2] Extracted module zlib in 5ms
+2023-05-15T07:17:59.9175329Z [2023-05-15 07:17:59] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/tarfile.py in 1784ms
+2023-05-15T07:17:59.9238126Z [2023-05-15 07:17:59] [build-stdout] [INFO] [1] Extracted module math in 6ms
+2023-05-15T07:17:59.9280352Z [2023-05-15 07:17:59] [build-stdout] [INFO] [1] Extracted folder /usr/lib/python3.10/importlib/metadata in 4ms
+2023-05-15T07:17:59.9563146Z [2023-05-15 07:17:59] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/html/__init__.py in 86ms
+2023-05-15T07:17:59.9733151Z [2023-05-15 07:17:59] [build-stdout] [INFO] [2] Extracted module _ssl in 17ms
+2023-05-15T07:18:00.2168158Z [2023-05-15 07:18:00] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/distutils/sysconfig.py in 242ms
+2023-05-15T07:18:00.3813979Z [2023-05-15 07:18:00] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/unittest/loader.py in 453ms
+2023-05-15T07:18:00.3919691Z [2023-05-15 07:18:00] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/lib2to3/pgen2/__init__.py in 9ms
+2023-05-15T07:18:00.4009094Z [2023-05-15 07:18:00] [build-stdout] [INFO] [1] Extracted module _opcode in 5ms
+2023-05-15T07:18:00.4026109Z [2023-05-15 07:18:00] [build-stdout] [INFO] [1] Extracted module _stat in 6ms
+2023-05-15T07:18:00.5606957Z [2023-05-15 07:18:00] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/bz2.py in 157ms
+2023-05-15T07:18:00.6866262Z [2023-05-15 07:18:00] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/lib2to3/pytree.py in 470ms
+2023-05-15T07:18:00.7164174Z [2023-05-15 07:18:00] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/importlib/util.py in 155ms
+2023-05-15T07:18:00.7433641Z [2023-05-15 07:18:00] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/codeop.py in 55ms
+2023-05-15T07:18:00.7445997Z [2023-05-15 07:18:00] [build-stdout] [INFO] [2] Extracted folder /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages/setuptools/config/_validate_pyproject in 1ms
+2023-05-15T07:18:00.7495446Z [2023-05-15 07:18:00] [build-stdout] [INFO] [2] Extracted module _string in 4ms
+2023-05-15T07:18:00.8801042Z [2023-05-15 07:18:00] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/lib2to3/pgen2/driver.py in 129ms
+2023-05-15T07:18:01.2238592Z [2023-05-15 07:18:01] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/lib2to3/fixer_util.py in 343ms
+2023-05-15T07:18:01.2706738Z [2023-05-15 07:18:01] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/lib2to3/pgen2/tokenize.py in 554ms
+2023-05-15T07:18:01.2768741Z [2023-05-15 07:18:01] [build-stdout] [INFO] [1] Extracted module _heapq in 6ms
+2023-05-15T07:18:01.4163994Z [2023-05-15 07:18:01] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/hashlib.py in 139ms
+2023-05-15T07:18:01.5140872Z [2023-05-15 07:18:01] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/unittest/suite.py in 290ms
+2023-05-15T07:18:01.8421455Z [2023-05-15 07:18:01] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/email/feedparser.py in 327ms
+2023-05-15T07:18:01.8654361Z [2023-05-15 07:18:01] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/lib2to3/pygram.py in 22ms
+2023-05-15T07:18:01.9657983Z [2023-05-15 07:18:01] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/ntpath.py in 549ms
+2023-05-15T07:18:02.0215980Z [2023-05-15 07:18:02] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/bisect.py in 55ms
+2023-05-15T07:18:02.0339598Z [2023-05-15 07:18:02] [build-stdout] [INFO] [1] Extracted module _sha3 in 11ms
+2023-05-15T07:18:02.2262495Z [2023-05-15 07:18:02] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/runpy.py in 191ms
+2023-05-15T07:18:02.7931112Z [2023-05-15 07:18:02] [build-stdout] [INFO] [1] Extracted file /home/runner/.local/lib/python3.10/site-packages/importlib_metadata/__init__.py in 565ms
+2023-05-15T07:18:03.0542720Z [2023-05-15 07:18:03] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/html/entities.py in 1188ms
+2023-05-15T07:18:03.1428799Z [2023-05-15 07:18:03] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/ctypes/__init__.py in 348ms
+2023-05-15T07:18:03.1495652Z [2023-05-15 07:18:03] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/xml/parsers/__init__.py in 5ms
+2023-05-15T07:18:03.1560082Z [2023-05-15 07:18:03] [build-stdout] [INFO] [1] Extracted module binascii in 5ms
+2023-05-15T07:18:03.1617473Z [2023-05-15 07:18:03] [build-stdout] [INFO] [1] Extracted module marshal in 4ms
+2023-05-15T07:18:03.1693213Z [2023-05-15 07:18:03] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/xml/parsers/expat.py in 6ms
+2023-05-15T07:18:03.2676104Z [2023-05-15 07:18:03] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/importlib/resources.py in 97ms
+2023-05-15T07:18:03.3234410Z [2023-05-15 07:18:03] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/lib2to3/pgen2/grammar.py in 53ms
+2023-05-15T07:18:03.3787528Z [2023-05-15 07:18:03] [build-stdout] [INFO] [1] Extracted file /home/runner/.local/lib/python3.10/site-packages/importlib_metadata/_compat.py in 52ms
+2023-05-15T07:18:03.6108205Z [2023-05-15 07:18:03] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/quopri.py in 230ms
+2023-05-15T07:18:03.6172150Z [2023-05-15 07:18:03] [build-stdout] [INFO] [1] Extracted module _bz2 in 5ms
+2023-05-15T07:18:03.6295602Z [2023-05-15 07:18:03] [build-stdout] [INFO] [1] Extracted module _ctypes in 11ms
+2023-05-15T07:18:03.6355486Z [2023-05-15 07:18:03] [build-stdout] [INFO] [1] Extracted module _bisect in 4ms
+2023-05-15T07:18:03.6560726Z [2023-05-15 07:18:03] [build-stdout] [INFO] [1] Extracted file /home/runner/.local/lib/python3.10/site-packages/importlib_metadata/_collections.py in 18ms
+2023-05-15T07:18:03.7119417Z [2023-05-15 07:18:03] [build-stdout] [INFO] [1] Extracted file /home/runner/.local/lib/python3.10/site-packages/importlib_metadata/_adapters.py in 54ms
+2023-05-15T07:18:03.7255033Z [2023-05-15 07:18:03] [build-stdout] [INFO] [1] Extracted module pyexpat in 12ms
+2023-05-15T07:18:03.7351003Z [2023-05-15 07:18:03] [build-stdout] [INFO] [1] Extracted module _hashlib in 8ms
+2023-05-15T07:18:03.8426188Z [2023-05-15 07:18:03] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/lib2to3/pgen2/parse.py in 106ms
+2023-05-15T07:18:04.2490555Z [2023-05-15 07:18:04] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/email/_parseaddr.py in 405ms
+2023-05-15T07:18:04.4234447Z [2023-05-15 07:18:04] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/lib2to3/patcomp.py in 173ms
+2023-05-15T07:18:04.4260801Z [2023-05-15 07:18:04] [build-stdout] [INFO] [1] Extracted folder /usr/lib/python3.10/encodings in 1ms
+2023-05-15T07:18:04.4459164Z [2023-05-15 07:18:04] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/importlib/_abc.py in 18ms
+2023-05-15T07:18:04.4879139Z [2023-05-15 07:18:04] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/lib2to3/pgen2/token.py in 41ms
+2023-05-15T07:18:05.4047148Z [2023-05-15 07:18:05] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/importlib/_bootstrap_external.py in 915ms
+2023-05-15T07:18:05.4125832Z [2023-05-15 07:18:05] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/xml/__init__.py in 7ms
+2023-05-15T07:18:05.4237941Z [2023-05-15 07:18:05] [build-stdout] [INFO] [1] Extracted module _socket in 10ms
+2023-05-15T07:18:05.5527160Z [2023-05-15 07:18:05] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/email/quoprimime.py in 128ms
+2023-05-15T07:18:07.3228898Z [2023-05-15 07:18:07] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/zipfile.py in 1769ms
+2023-05-15T07:18:07.4662537Z [2023-05-15 07:18:07] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/email/_policybase.py in 142ms
+2023-05-15T07:18:07.4724348Z [2023-05-15 07:18:07] [build-stdout] [INFO] [1] Extracted module _sha256 in 5ms
+2023-05-15T07:18:07.5515627Z [2023-05-15 07:18:07] [build-stdout] [INFO] [1] Extracted file /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages/setuptools/_normalization.py in 78ms
+2023-05-15T07:18:07.5548659Z [2023-05-15 07:18:07] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/urllib/__init__.py in 2ms
+2023-05-15T07:18:07.5599722Z [2023-05-15 07:18:07] [build-stdout] [INFO] [1] Extracted module _random in 4ms
+2023-05-15T07:18:07.5792760Z [2023-05-15 07:18:07] [build-stdout] [INFO] [1] Extracted file /home/runner/.local/lib/python3.10/site-packages/importlib_metadata/_py39compat.py in 18ms
+2023-05-15T07:18:07.6422814Z [2023-05-15 07:18:07] [build-stdout] [INFO] [1] Extracted file /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages/setuptools/_imp.py in 62ms
+2023-05-15T07:18:07.6804508Z [2023-05-15 07:18:07] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/ctypes/_endian.py in 37ms
+2023-05-15T07:18:07.8345876Z [2023-05-15 07:18:07] [build-stdout] [INFO] [1] Extracted file /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages/setuptools/config/_validate_pyproject/formats.py in 152ms
+2023-05-15T07:18:08.1458976Z [2023-05-15 07:18:08] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/lib2to3/pgen2/pgen.py in 309ms
+2023-05-15T07:18:08.6032955Z [2023-05-15 07:18:08] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/webbrowser.py in 456ms
+2023-05-15T07:18:09.6182478Z [2023-05-15 07:18:09] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/unittest/case.py in 1012ms
+2023-05-15T07:18:09.6633643Z [2023-05-15 07:18:09] [build-stdout] [INFO] [1] Extracted file /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages/setuptools/config/_validate_pyproject/fastjsonschema_exceptions.py in 43ms
+2023-05-15T07:18:09.9389051Z [2023-05-15 07:18:09] [build-stdout] [INFO] [1] Extracted file /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages/setuptools/config/_apply_pyprojecttoml.py in 274ms
+2023-05-15T07:18:09.9911976Z [2023-05-15 07:18:09] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/importlib/_common.py in 51ms
+2023-05-15T07:18:09.9971207Z [2023-05-15 07:18:09] [build-stdout] [INFO] [1] Extracted module _md5 in 5ms
+2023-05-15T07:18:10.6877134Z [2023-05-15 07:18:10] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/email/message.py in 685ms
+2023-05-15T07:18:10.6969059Z [2023-05-15 07:18:10] [build-stdout] [INFO] [1] Extracted module _sha1 in 6ms
+2023-05-15T07:18:10.7862937Z [2023-05-15 07:18:10] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/lib2to3/btm_matcher.py in 88ms
+2023-05-15T07:18:10.9323215Z [2023-05-15 07:18:10] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/encodings/aliases.py in 145ms
+2023-05-15T07:18:10.9503853Z [2023-05-15 07:18:10] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/asyncio/__init__.py in 17ms
+2023-05-15T07:18:10.9732394Z [2023-05-15 07:18:10] [build-stdout] [INFO] [1] Extracted file /home/runner/.local/lib/python3.10/site-packages/importlib_metadata/_functools.py in 22ms
+2023-05-15T07:18:11.0969046Z [2023-05-15 07:18:11] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/ctypes/_aix.py in 123ms
+2023-05-15T07:18:11.1203032Z [2023-05-15 07:18:11] [build-stdout] [INFO] [1] Extracted file /home/runner/.local/lib/python3.10/site-packages/importlib_metadata/_itertools.py in 22ms
+2023-05-15T07:18:11.4468115Z [2023-05-15 07:18:11] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/email/header.py in 325ms
+2023-05-15T07:18:12.8418922Z [2023-05-15 07:18:12] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/asyncio/base_events.py in 1394ms
+2023-05-15T07:18:12.8450111Z [2023-05-15 07:18:12] [build-stdout] [INFO] [1] Extracted folder /home/runner/.local/lib/python3.10/site-packages/trove_classifiers in 1ms
+2023-05-15T07:18:13.0961827Z [2023-05-15 07:18:13] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages/setuptools/config/_validate_pyproject/fastjsonschema_validations.py in 10040ms
+2023-05-15T07:18:13.2019026Z [2023-05-15 07:18:13] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/asyncio/streams.py in 355ms
+2023-05-15T07:18:13.2976502Z [2023-05-15 07:18:13] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/asyncio/locks.py in 200ms
+2023-05-15T07:18:13.3069217Z [2023-05-15 07:18:13] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/email/_encoded_words.py in 104ms
+2023-05-15T07:18:13.3658043Z [2023-05-15 07:18:13] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages/setuptools/_vendor/packaging/requirements.py in 68ms
+2023-05-15T07:18:13.3668855Z [2023-05-15 07:18:13] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/asyncio/staggered.py in 58ms
+2023-05-15T07:18:13.5845028Z [2023-05-15 07:18:13] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/uu.py in 218ms
+2023-05-15T07:18:13.6302989Z [2023-05-15 07:18:13] [build-stdout] [INFO] [1] Extracted file /home/runner/.local/lib/python3.10/site-packages/importlib_metadata/_meta.py in 45ms
+2023-05-15T07:18:13.7983276Z [2023-05-15 07:18:13] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/asyncio/events.py in 432ms
+2023-05-15T07:18:13.8000398Z [2023-05-15 07:18:13] [build-stdout] [INFO] [2] Extracted folder /home/runner/.local/lib/python3.10/site-packages/importlib_metadata in 1ms
+2023-05-15T07:18:13.8014216Z [2023-05-15 07:18:13] [build-stdout] [INFO] [2] Extracted folder /usr/lib/python3.10/lib2to3/pgen2 in 1ms
+2023-05-15T07:18:13.9152747Z [2023-05-15 07:18:13] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/shlex.py in 284ms
+2023-05-15T07:18:13.9202146Z [2023-05-15 07:18:13] [build-stdout] [INFO] [1] Extracted file /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages/setuptools/_vendor/__init__.py in 3ms
+2023-05-15T07:18:14.1133823Z [2023-05-15 07:18:14] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/distutils/filelist.py in 191ms
+2023-05-15T07:18:14.1401568Z [2023-05-15 07:18:14] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/asyncio/mixins.py in 25ms
+2023-05-15T07:18:14.2990246Z [2023-05-15 07:18:14] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/asyncio/coroutines.py in 157ms
+2023-05-15T07:18:14.3215495Z [2023-05-15 07:18:14] [build-stdout] [INFO] [1] Extracted file /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages/setuptools/config/_validate_pyproject/extra_validations.py in 21ms
+2023-05-15T07:18:14.3233693Z [2023-05-15 07:18:14] [build-stdout] [INFO] [1] Extracted folder /usr/lib/python3.10/ctypes/__pycache__ in 1ms
+2023-05-15T07:18:14.3478000Z [2023-05-15 07:18:14] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/concurrent/futures/__init__.py in 23ms
+2023-05-15T07:18:14.3941717Z [2023-05-15 07:18:14] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/lib2to3/pgen2/literals.py in 45ms
+2023-05-15T07:18:14.4007052Z [2023-05-15 07:18:14] [build-stdout] [INFO] [1] Extracted module _blake2 in 6ms
+2023-05-15T07:18:14.7329615Z [2023-05-15 07:18:14] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/optparse.py in 931ms
+2023-05-15T07:18:16.0795309Z [2023-05-15 07:18:16] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/datetime.py in 1678ms
+2023-05-15T07:18:16.0818667Z [2023-05-15 07:18:16] [build-stdout] [INFO] [1] Extracted folder /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages/setuptools/_vendor/packaging in 1ms
+2023-05-15T07:18:16.3330765Z [2023-05-15 07:18:16] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/ctypes/util.py in 249ms
+2023-05-15T07:18:16.3883329Z [2023-05-15 07:18:16] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/asyncio/protocols.py in 53ms
+2023-05-15T07:18:16.4420268Z [2023-05-15 07:18:16] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/importlib/_adapters.py in 53ms
+2023-05-15T07:18:16.8603170Z [2023-05-15 07:18:16] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/email/headerregistry.py in 418ms
+2023-05-15T07:18:16.8663996Z [2023-05-15 07:18:16] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/urllib/request.py in 2133ms
+2023-05-15T07:18:17.2411586Z [2023-05-15 07:18:17] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/concurrent/futures/process.py in 373ms
+2023-05-15T07:18:17.2766561Z [2023-05-15 07:18:17] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/asyncio/runners.py in 35ms
+2023-05-15T07:18:17.3793441Z [2023-05-15 07:18:17] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages/setuptools/_vendor/packaging/_tokenizer.py in 102ms
+2023-05-15T07:18:17.3848582Z [2023-05-15 07:18:17] [build-stdout] [INFO] [2] Extracted module _sha512 in 5ms
+2023-05-15T07:18:17.4289446Z [2023-05-15 07:18:17] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/statistics.py in 568ms
+2023-05-15T07:18:17.4302779Z [2023-05-15 07:18:17] [build-stdout] [INFO] [1] Extracted folder /usr/lib/python3.10/multiprocessing in 1ms
+2023-05-15T07:18:17.5775731Z [2023-05-15 07:18:17] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/asyncio/queues.py in 145ms
+2023-05-15T07:18:17.6639730Z [2023-05-15 07:18:17] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/asyncio/trsock.py in 277ms
+2023-05-15T07:18:17.7128713Z [2023-05-15 07:18:17] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/urllib/error.py in 49ms
+2023-05-15T07:18:17.7313995Z [2023-05-15 07:18:17] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/ctypes/wintypes.py in 153ms
+2023-05-15T07:18:17.7984877Z [2023-05-15 07:18:17] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/urllib/response.py in 66ms
+2023-05-15T07:18:18.2394943Z [2023-05-15 07:18:18] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/asyncio/tasks.py in 440ms
+2023-05-15T07:18:18.2687696Z [2023-05-15 07:18:18] [build-stdout] [INFO] [1] Extracted module _asyncio in 28ms
+2023-05-15T07:18:18.3508790Z [2023-05-15 07:18:18] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/multiprocessing/connection.py in 637ms
+2023-05-15T07:18:18.3952443Z [2023-05-15 07:18:18] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/concurrent/futures/thread.py in 125ms
+2023-05-15T07:18:18.4718665Z [2023-05-15 07:18:18] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/asyncio/transports.py in 120ms
+2023-05-15T07:18:18.8868882Z [2023-05-15 07:18:18] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/concurrent/futures/_base.py in 414ms
+2023-05-15T07:18:19.1564199Z [2023-05-15 07:18:19] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/multiprocessing/synchronize.py in 269ms
+2023-05-15T07:18:19.2772008Z [2023-05-15 07:18:19] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/multiprocessing/resource_sharer.py in 121ms
+2023-05-15T07:18:19.3086873Z [2023-05-15 07:18:19] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/asyncio/exceptions.py in 31ms
+2023-05-15T07:18:19.3551709Z [2023-05-15 07:18:19] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/asyncio/unix_events.py in 958ms
+2023-05-15T07:18:19.3564651Z [2023-05-15 07:18:19] [build-stdout] [INFO] [1] Extracted folder /usr/lib/python3.10/concurrent in 1ms
+2023-05-15T07:18:19.3671000Z [2023-05-15 07:18:19] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/decimal.py in 10ms
+2023-05-15T07:18:19.3733558Z [2023-05-15 07:18:19] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/asyncio/log.py in 5ms
+2023-05-15T07:18:19.3801341Z [2023-05-15 07:18:19] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/contextvars.py in 7ms
+2023-05-15T07:18:19.6678776Z [2023-05-15 07:18:19] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/multiprocessing/queues.py in 288ms
+2023-05-15T07:18:19.7216263Z [2023-05-15 07:18:19] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/nturl2path.py in 53ms
+2023-05-15T07:18:19.8948253Z [2023-05-15 07:18:19] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/importlib/metadata/__init__.py in 584ms
+2023-05-15T07:18:20.0074884Z [2023-05-15 07:18:20] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/multiprocessing/util.py in 285ms
+2023-05-15T07:18:20.0627285Z [2023-05-15 07:18:20] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages/setuptools/_vendor/packaging/_parser.py in 167ms
+2023-05-15T07:18:20.2800044Z [2023-05-15 07:18:20] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/asyncio/base_subprocess.py in 217ms
+2023-05-15T07:18:20.6777254Z [2023-05-15 07:18:20] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/asyncio/sslproto.py in 397ms
+2023-05-15T07:18:20.7094755Z [2023-05-15 07:18:20] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/importlib/metadata/_meta.py in 31ms
+2023-05-15T07:18:20.7980959Z [2023-05-15 07:18:20] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/xmlrpc/client.py in 789ms
+2023-05-15T07:18:20.8357563Z [2023-05-15 07:18:20] [build-stdout] [INFO] [1] Extracted file /home/runner/.local/lib/python3.10/site-packages/importlib_metadata/_text.py in 37ms
+2023-05-15T07:18:20.8453915Z [2023-05-15 07:18:20] [build-stdout] [INFO] [1] Extracted file /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages/setuptools/py34compat.py in 9ms
+2023-05-15T07:18:20.8581370Z [2023-05-15 07:18:20] [build-stdout] [INFO] [1] Extracted module _datetime in 12ms
+2023-05-15T07:18:20.8590705Z [2023-05-15 07:18:20] [build-stdout] [INFO] [1] Extracted folder /usr/lib/python3.10/test in 1ms
+2023-05-15T07:18:20.8726834Z [2023-05-15 07:18:20] [build-stdout] [INFO] [1] Extracted module _decimal in 13ms
+2023-05-15T07:18:20.8899209Z [2023-05-15 07:18:20] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/importlib/metadata/_itertools.py in 15ms
+2023-05-15T07:18:21.0619406Z [2023-05-15 07:18:21] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/glob.py in 171ms
+2023-05-15T07:18:21.1124872Z [2023-05-15 07:18:21] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/asyncio/base_futures.py in 50ms
+2023-05-15T07:18:21.1587893Z [2023-05-15 07:18:21] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/fractions.py in 449ms
+2023-05-15T07:18:21.2223027Z [2023-05-15 07:18:21] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/asyncio/base_tasks.py in 63ms
+2023-05-15T07:18:21.2361692Z [2023-05-15 07:18:21] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/asyncio/threads.py in 13ms
+2023-05-15T07:18:21.3409282Z [2023-05-15 07:18:21] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/multiprocessing/context.py in 228ms
+2023-05-15T07:18:21.3422485Z [2023-05-15 07:18:21] [build-stdout] [INFO] [1] Extracted folder /usr/lib/python3.10/concurrent/futures in 1ms
+2023-05-15T07:18:21.3950676Z [2023-05-15 07:18:21] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages/setuptools/_vendor/packaging/markers.py in 158ms
+2023-05-15T07:18:21.5710888Z [2023-05-15 07:18:21] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/multiprocessing/process.py in 228ms
+2023-05-15T07:18:21.5799650Z [2023-05-15 07:18:21] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/test/__init__.py in 8ms
+2023-05-15T07:18:21.7176489Z [2023-05-15 07:18:21] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/multiprocessing/resource_tracker.py in 135ms
+2023-05-15T07:18:21.7273850Z [2023-05-15 07:18:21] [build-stdout] [INFO] [1] Extracted module _multiprocessing in 7ms
+2023-05-15T07:18:21.9071116Z [2023-05-15 07:18:21] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/importlib/abc.py in 178ms
+2023-05-15T07:18:22.0519542Z [2023-05-15 07:18:22] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/ftplib.py in 656ms
+2023-05-15T07:18:22.1021577Z [2023-05-15 07:18:22] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/importlib/metadata/_adapters.py in 49ms
+2023-05-15T07:18:22.2061837Z [2023-05-15 07:18:22] [build-stdout] [INFO] [1] Extracted file /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages/setuptools/config/_validate_pyproject/error_reporting.py in 298ms
+2023-05-15T07:18:22.2244353Z [2023-05-15 07:18:22] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/multiprocessing/__init__.py in 17ms
+2023-05-15T07:18:22.4539111Z [2023-05-15 07:18:22] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages/setuptools/_vendor/packaging/specifiers.py in 350ms
+2023-05-15T07:18:22.4649009Z [2023-05-15 07:18:22] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/asyncio/constants.py in 10ms
+2023-05-15T07:18:22.4841513Z [2023-05-15 07:18:22] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/importlib/metadata/_collections.py in 18ms
+2023-05-15T07:18:22.5017913Z [2023-05-15 07:18:22] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/importlib/metadata/_functools.py in 16ms
+2023-05-15T07:18:22.5039084Z [2023-05-15 07:18:22] [build-stdout] [INFO] [2] Extracted folder /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages/setuptools/_vendor in 1ms
+2023-05-15T07:18:22.6689488Z [2023-05-15 07:18:22] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/multiprocessing/spawn.py in 163ms
+2023-05-15T07:18:22.7972310Z [2023-05-15 07:18:22] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/asyncio/windows_events.py in 571ms
+2023-05-15T07:18:22.8039527Z [2023-05-15 07:18:22] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/hmac.py in 134ms
+2023-05-15T07:18:22.8041804Z [2023-05-15 07:18:22] [build-stdout] [INFO] [1] Extracted module _contextvars in 6ms
+2023-05-15T07:18:22.8441754Z [2023-05-15 07:18:22] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/importlib/metadata/_text.py in 39ms
+2023-05-15T07:18:22.9033274Z [2023-05-15 07:18:22] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/asyncio/format_helpers.py in 57ms
+2023-05-15T07:18:22.9053467Z [2023-05-15 07:18:22] [build-stdout] [INFO] [1] Extracted folder /usr/lib/python3.10/json in 1ms
+2023-05-15T07:18:22.9117946Z [2023-05-15 07:18:22] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/xmlrpc/__init__.py in 5ms
+2023-05-15T07:18:23.0434616Z [2023-05-15 07:18:23] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/asyncio/windows_utils.py in 130ms
+2023-05-15T07:18:23.0692965Z [2023-05-15 07:18:23] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages/setuptools/_vendor/packaging/version.py in 264ms
+2023-05-15T07:18:23.0771531Z [2023-05-15 07:18:23] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages/setuptools/_vendor/packaging/__init__.py in 8ms
+2023-05-15T07:18:23.2188260Z [2023-05-15 07:18:23] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/json/__init__.py in 141ms
+2023-05-15T07:18:23.2749444Z [2023-05-15 07:18:23] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/asyncio/futures.py in 230ms
+2023-05-15T07:18:23.9330884Z [2023-05-15 07:18:23] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/asyncio/selector_events.py in 713ms
+2023-05-15T07:18:24.1234428Z [2023-05-15 07:18:24] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/asyncio/subprocess.py in 189ms
+2023-05-15T07:18:25.3442969Z [2023-05-15 07:18:25] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/test/support/__init__.py in 1217ms
+2023-05-15T07:18:25.3464897Z [2023-05-15 07:18:25] [build-stdout] [INFO] [2] Extracted folder /usr/lib/python3.10/xmlrpc in 1ms
+2023-05-15T07:18:25.8022058Z [2023-05-15 07:18:25] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/gzip.py in 455ms
+2023-05-15T07:18:25.8093437Z [2023-05-15 07:18:25] [build-stdout] [INFO] [2] Extracted module _posixshmem in 7ms
+2023-05-15T07:18:26.1844671Z [2023-05-15 07:18:26] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/json/encoder.py in 375ms
+2023-05-15T07:18:26.3067543Z [2023-05-15 07:18:26] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/netrc.py in 122ms
+2023-05-15T07:18:26.4804992Z [2023-05-15 07:18:26] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/lib2to3/btm_utils.py in 173ms
+2023-05-15T07:18:26.6547560Z [2023-05-15 07:18:26] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/test/support/testresult.py in 171ms
+2023-05-15T07:18:26.7319180Z [2023-05-15 07:18:26] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/_pydecimal.py in 3457ms
+2023-05-15T07:18:26.7373365Z [2023-05-15 07:18:26] [build-stdout] [INFO] [1] Extracted module _statistics in 5ms
+2023-05-15T07:18:26.8836195Z [2023-05-15 07:18:26] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/json/decoder.py in 227ms
+2023-05-15T07:18:27.0681309Z [2023-05-15 07:18:27] [build-stdout] [INFO] [2] Extracted file /home/runner/.local/lib/python3.10/site-packages/trove_classifiers/__init__.py in 184ms
+2023-05-15T07:18:27.0745792Z [2023-05-15 07:18:27] [build-stdout] [INFO] [2] Extracted module _json in 6ms
+2023-05-15T07:18:27.0766463Z [2023-05-15 07:18:27] [build-stdout] [INFO] [2] Extracted folder /usr/lib/python3.10/xml/etree in 1ms
+2023-05-15T07:18:27.2493064Z [2023-05-15 07:18:27] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/queue.py in 172ms
+2023-05-15T07:18:27.2518315Z [2023-05-15 07:18:27] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/distutils/ccompiler.py in 514ms
+2023-05-15T07:18:27.3416610Z [2023-05-15 07:18:27] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages/setuptools/_vendor/packaging/utils.py in 92ms
+2023-05-15T07:18:27.3724029Z [2023-05-15 07:18:27] [build-stdout] [INFO] [2] Extracted module _testcapi in 30ms
+2023-05-15T07:18:27.4768306Z [2023-05-15 07:18:27] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/test/support/import_helper.py in 103ms
+2023-05-15T07:18:27.4829632Z [2023-05-15 07:18:27] [build-stdout] [INFO] [2] Extracted module gc in 5ms
+2023-05-15T07:18:27.4896618Z [2023-05-15 07:18:27] [build-stdout] [INFO] [2] Extracted module _queue in 6ms
+2023-05-15T07:18:27.4936113Z [2023-05-15 07:18:27] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/concurrent/__init__.py in 3ms
+2023-05-15T07:18:27.7158840Z [2023-05-15 07:18:27] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/multiprocessing/forkserver.py in 221ms
+2023-05-15T07:18:27.8583449Z [2023-05-15 07:18:27] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/asyncio/proactor_events.py in 604ms
+2023-05-15T07:18:28.0402278Z [2023-05-15 07:18:28] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/test/support/os_helper.py in 320ms
+2023-05-15T07:18:28.1132531Z [2023-05-15 07:18:28] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/multiprocessing/reduction.py in 252ms
+2023-05-15T07:18:28.1178964Z [2023-05-15 07:18:28] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/xml/etree/__init__.py in 4ms
+2023-05-15T07:18:28.1244009Z [2023-05-15 07:18:28] [build-stdout] [INFO] [1] Extracted module _testinternalcapi in 6ms
+2023-05-15T07:18:28.1658333Z [2023-05-15 07:18:28] [build-stdout] [INFO] [1] Extracted file /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages/setuptools/_vendor/packaging/_structures.py in 40ms
+2023-05-15T07:18:28.1718801Z [2023-05-15 07:18:28] [build-stdout] [INFO] [1] Extracted module faulthandler in 5ms
+2023-05-15T07:18:28.2567092Z [2023-05-15 07:18:28] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/json/scanner.py in 84ms
+2023-05-15T07:18:28.5750657Z [2023-05-15 07:18:28] [build-stdout] [INFO] [1] Extracted file /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages/setuptools/_vendor/packaging/tags.py in 317ms
+2023-05-15T07:18:28.5763821Z [2023-05-15 07:18:28] [build-stdout] [INFO] [1] Extracted folder /usr/lib/python3.10/test/support in 1ms
+2023-05-15T07:18:29.3071991Z [2023-05-15 07:18:29] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/xml/etree/ElementTree.py in 1265ms
+2023-05-15T07:18:29.3650076Z [2023-05-15 07:18:29] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages/setuptools/_vendor/packaging/_musllinux.py in 57ms
+2023-05-15T07:18:29.5117423Z [2023-05-15 07:18:29] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages/setuptools/_vendor/packaging/_manylinux.py in 146ms
+2023-05-15T07:18:29.5284310Z [2023-05-15 07:18:29] [build-stdout] [INFO] [2] Extracted module _elementtree in 9ms
+2023-05-15T07:18:29.8594697Z [2023-05-15 07:18:29] [build-stdout] [INFO] [2] Extracted file /usr/lib/python3.10/xml/etree/ElementPath.py in 338ms
+2023-05-15T07:18:29.9286410Z [2023-05-15 07:18:29] [build-stdout] [INFO] [2] Extracted file /home/runner/work/simplemma/codeql-action-python-autoinstall/lib/python3.10/site-packages/setuptools/_vendor/packaging/_elffile.py in 69ms
+2023-05-15T07:18:30.6997244Z [2023-05-15 07:18:30] [build-stdout] [INFO] [1] Extracted file /usr/lib/python3.10/email/_header_value_parser.py in 2121ms
+2023-05-15T07:18:30.7926361Z [2023-05-15 07:18:30] [build-stdout] [INFO] Processed 502 modules in 61.22s
+2023-05-15T07:18:30.8738831Z ##[endgroup]
+2023-05-15T07:18:30.8750221Z ##[group]Finalizing python
+2023-05-15T07:18:30.8757095Z [command]/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/codeql database finalize --finalize-dataset --threads=2 --ram=5919 /home/runner/work/_temp/codeql_databases/python
+2023-05-15T07:18:31.7937335Z Running pre-finalize script /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/python/tools/pre-finalize.sh in /home/runner/work/simplemma/simplemma.
+2023-05-15T07:18:32.8873152Z [2023-05-15 07:18:32] [build-stderr] Scanning for files in /home/runner/work/simplemma/simplemma...
+2023-05-15T07:18:32.9845716Z [2023-05-15 07:18:32] [build-stderr] /home/runner/work/_temp/codeql_databases/python: Indexing files in in /home/runner/work/simplemma/simplemma...
+2023-05-15T07:18:33.0319982Z [2023-05-15 07:18:33] [build-stderr] Running command in /home/runner/work/simplemma/simplemma: [/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/yaml/tools/index-files.sh, /home/runner/work/_temp/codeql_databases/python/working/files-to-index6113393951967358742.list]
+2023-05-15T07:18:33.8066803Z Running TRAP import for CodeQL database at /home/runner/work/_temp/codeql_databases/python...
+2023-05-15T07:18:43.1351592Z TRAP import complete (9.3s).
+2023-05-15T07:18:43.8641061Z ##[endgroup]
+2023-05-15T07:18:43.8655589Z Code Scanning configuration file being processed in the codeql CLI.
+2023-05-15T07:18:43.8673341Z ##[group]Running queries for python
+2023-05-15T07:18:43.8685079Z [command]/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/codeql database run-queries --ram=5919 --threads=2 /home/runner/work/_temp/codeql_databases/python --min-disk-free=1024 -v --expect-discarded-cache
+2023-05-15T07:18:44.6932222Z Writing logs to /home/runner/work/_temp/codeql_databases/python/log/database-run-queries-20230515.071844.689.log.
+2023-05-15T07:18:45.4569707Z Writing logs to /home/runner/work/_temp/codeql_databases/python/log/execute-queries-20230515.071845.452.log.
+2023-05-15T07:18:45.7988905Z Recording pack reference codeql/python-queries at /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1.
+2023-05-15T07:18:46.1720498Z Loading data extensions in /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/.codeql/libraries/codeql/python-all/0.9.1/semmle/python/frameworks/data/internal/model.yml.
+2023-05-15T07:18:46.2162783Z Did not find any ML models.
+2023-05-15T07:18:46.2430366Z Compiling in one thread due to RAM limits.
+2023-05-15T07:18:47.4531437Z [1/38] Loaded /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-094/CodeInjection.qlx.
+2023-05-15T07:18:47.8777684Z [2/38] Loaded /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-078/CommandInjection.qlx.
+2023-05-15T07:18:48.0309009Z [3/38] Loaded /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-377/InsecureTemporaryFile.qlx.
+2023-05-15T07:18:48.3638773Z [4/38] Loaded /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-601/UrlRedirect.qlx.
+2023-05-15T07:18:48.4453684Z [5/38] Loaded /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-215/FlaskDebug.qlx.
+2023-05-15T07:18:48.6705346Z [6/38] Loaded /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-918/FullServerSideRequestForgery.qlx.
+2023-05-15T07:18:48.8672181Z [7/38] Loaded /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-285/PamAuthorization.qlx.
+2023-05-15T07:18:49.1192241Z [8/38] Loaded /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-611/Xxe.qlx.
+2023-05-15T07:18:49.1708536Z [9/38] Loaded /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-020/IncompleteUrlSubstringSanitization.qlx.
+2023-05-15T07:18:49.2943636Z [10/38] Loaded /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-020/OverlyLargeRange.qlx.
+2023-05-15T07:18:49.4097848Z [11/38] Loaded /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-020/IncompleteHostnameRegExp.qlx.
+2023-05-15T07:18:49.5388727Z [12/38] Loaded /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-116/BadTagFilter.qlx.
+2023-05-15T07:18:49.7153369Z [13/38] Loaded /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-643/XpathInjection.qlx.
+2023-05-15T07:18:49.8245845Z [14/38] Loaded /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-326/WeakCryptoKey.qlx.
+2023-05-15T07:18:49.9546651Z [15/38] Loaded /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-352/CSRFProtectionDisabled.qlx.
+2023-05-15T07:18:50.1436840Z [16/38] Loaded /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-502/UnsafeDeserialization.qlx.
+2023-05-15T07:18:50.3128840Z [17/38] Loaded /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-730/RegexInjection.qlx.
+2023-05-15T07:18:50.4200376Z [18/38] Loaded /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-730/ReDoS.qlx.
+2023-05-15T07:18:50.5798538Z [19/38] Loaded /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-730/PolynomialReDoS.qlx.
+2023-05-15T07:18:50.6392779Z [20/38] Loaded /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-295/MissingHostKeyValidation.qlx.
+2023-05-15T07:18:50.8856751Z [21/38] Loaded /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-022/PathInjection.qlx.
+2023-05-15T07:18:51.0867667Z [22/38] Loaded /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-090/LdapInjection.qlx.
+2023-05-15T07:18:51.2232234Z [23/38] Loaded /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-209/StackTraceExposure.qlx.
+2023-05-15T07:18:51.2941795Z [24/38] Loaded /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-327/InsecureDefaultProtocol.qlx.
+2023-05-15T07:18:51.4226662Z [25/38] Loaded /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-327/WeakSensitiveDataHashing.qlx.
+2023-05-15T07:18:51.4856568Z [26/38] Loaded /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-327/BrokenCryptoAlgorithm.qlx.
+2023-05-15T07:18:51.6849672Z [27/38] Loaded /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-327/InsecureProtocol.qlx.
+2023-05-15T07:18:51.8141842Z [28/38] Loaded /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-312/CleartextStorage.qlx.
+2023-05-15T07:18:51.9367907Z [29/38] Loaded /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-312/CleartextLogging.qlx.
+2023-05-15T07:18:52.0927504Z [30/38] Loaded /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-079/ReflectedXss.qlx.
+2023-05-15T07:18:52.2685834Z [31/38] Loaded /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-776/XmlBomb.qlx.
+2023-05-15T07:18:52.4894851Z [32/38] Loaded /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-089/SqlInjection.qlx.
+2023-05-15T07:18:52.5517588Z [33/38] Loaded /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CVE-2018-1281/BindToAllInterfaces.qlx.
+2023-05-15T07:18:52.6163728Z [34/38] Loaded /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Expressions/UseofInput.qlx.
+2023-05-15T07:18:52.6374004Z [35/38] Loaded /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Diagnostics/ExtractionWarnings.qlx.
+2023-05-15T07:18:52.6529912Z [36/38] Loaded /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Diagnostics/SuccessfullyExtractedFiles.qlx.
+2023-05-15T07:18:52.6851536Z [37/38] Loaded /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Summary/LinesOfUserCode.qlx.
+2023-05-15T07:18:52.7006736Z [38/38] Loaded /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Summary/LinesOfCode.qlx.
+2023-05-15T07:18:52.7739716Z Starting evaluation of codeql/python-queries/Diagnostics/ExtractionWarnings.ql.
+2023-05-15T07:18:52.7958004Z Starting evaluation of codeql/python-queries/Diagnostics/SuccessfullyExtractedFiles.ql.
+2023-05-15T07:18:52.7975691Z Starting evaluation of codeql/python-queries/Expressions/UseofInput.ql.
+2023-05-15T07:18:53.0050911Z [1/38 eval 221ms] Evaluation done; writing results to codeql/python-queries/Diagnostics/ExtractionWarnings.bqrs.
+2023-05-15T07:18:53.1034440Z Starting evaluation of codeql/python-queries/Security/CVE-2018-1281/BindToAllInterfaces.ql.
+2023-05-15T07:18:53.1069388Z [2/38 eval 307ms] Evaluation done; writing results to codeql/python-queries/Diagnostics/SuccessfullyExtractedFiles.bqrs.
+2023-05-15T07:18:53.1123064Z Starting evaluation of codeql/python-queries/Security/CWE-020/IncompleteHostnameRegExp.ql.
+2023-05-15T07:18:53.1266704Z Starting evaluation of codeql/python-queries/Security/CWE-020/IncompleteUrlSubstringSanitization.ql.
+2023-05-15T07:18:53.7220687Z Starting evaluation of codeql/python-queries/Security/CWE-020/OverlyLargeRange.ql.
+2023-05-15T07:18:53.7368203Z Starting evaluation of codeql/python-queries/Security/CWE-022/PathInjection.ql.
+2023-05-15T07:19:11.4839045Z [3/38 eval 18.4s] Evaluation done; writing results to codeql/python-queries/Security/CWE-020/IncompleteUrlSubstringSanitization.bqrs.
+2023-05-15T07:19:14.1321892Z Starting evaluation of codeql/python-queries/Security/CWE-078/CommandInjection.ql.
+2023-05-15T07:19:14.1915249Z Starting evaluation of codeql/python-queries/Security/CWE-079/ReflectedXss.ql.
+2023-05-15T07:19:14.3556261Z Starting evaluation of codeql/python-queries/Security/CWE-089/SqlInjection.ql.
+2023-05-15T07:19:14.3759468Z Starting evaluation of codeql/python-queries/Security/CWE-090/LdapInjection.ql.
+2023-05-15T07:19:16.7105758Z Starting evaluation of codeql/python-queries/Security/CWE-094/CodeInjection.ql.
+2023-05-15T07:19:16.7340169Z Starting evaluation of codeql/python-queries/Security/CWE-116/BadTagFilter.ql.
+2023-05-15T07:19:16.7516544Z Starting evaluation of codeql/python-queries/Security/CWE-209/StackTraceExposure.ql.
+2023-05-15T07:19:17.1647514Z Starting evaluation of codeql/python-queries/Security/CWE-215/FlaskDebug.ql.
+2023-05-15T07:19:17.1673933Z Starting evaluation of codeql/python-queries/Security/CWE-285/PamAuthorization.ql.
+2023-05-15T07:19:17.2614258Z Starting evaluation of codeql/python-queries/Security/CWE-295/MissingHostKeyValidation.ql.
+2023-05-15T07:19:17.2639762Z Starting evaluation of codeql/python-queries/Security/CWE-312/CleartextLogging.ql.
+2023-05-15T07:19:19.1271627Z Starting evaluation of codeql/python-queries/Security/CWE-312/CleartextStorage.ql.
+2023-05-15T07:19:19.2266292Z Starting evaluation of codeql/python-queries/Security/CWE-326/WeakCryptoKey.ql.
+2023-05-15T07:19:19.2288499Z Starting evaluation of codeql/python-queries/Security/CWE-327/BrokenCryptoAlgorithm.ql.
+2023-05-15T07:19:19.2872324Z Starting evaluation of codeql/python-queries/Security/CWE-327/InsecureDefaultProtocol.ql.
+2023-05-15T07:19:19.2898003Z Starting evaluation of codeql/python-queries/Security/CWE-327/InsecureProtocol.ql.
+2023-05-15T07:19:19.7705244Z Starting evaluation of codeql/python-queries/Security/CWE-327/WeakSensitiveDataHashing.ql.
+2023-05-15T07:19:20.5126294Z Starting evaluation of codeql/python-queries/Security/CWE-352/CSRFProtectionDisabled.ql.
+2023-05-15T07:19:20.5375728Z [4/38 eval 24ms] Evaluation done; writing results to codeql/python-queries/Security/CWE-352/CSRFProtectionDisabled.bqrs.
+2023-05-15T07:19:20.5382684Z Starting evaluation of codeql/python-queries/Security/CWE-377/InsecureTemporaryFile.ql.
+2023-05-15T07:19:20.5473307Z Starting evaluation of codeql/python-queries/Security/CWE-502/UnsafeDeserialization.ql.
+2023-05-15T07:19:20.5580539Z Starting evaluation of codeql/python-queries/Security/CWE-601/UrlRedirect.ql.
+2023-05-15T07:19:20.5739271Z Starting evaluation of codeql/python-queries/Security/CWE-611/Xxe.ql.
+2023-05-15T07:19:26.6976983Z [5/38 eval 7.5s] Evaluation done; writing results to codeql/python-queries/Security/CWE-326/WeakCryptoKey.bqrs.
+2023-05-15T07:19:26.8413360Z Starting evaluation of codeql/python-queries/Security/CWE-643/XpathInjection.ql.
+2023-05-15T07:19:26.8676219Z Starting evaluation of codeql/python-queries/Security/CWE-730/PolynomialReDoS.ql.
+2023-05-15T07:19:27.2842114Z Starting evaluation of codeql/python-queries/Security/CWE-730/ReDoS.ql.
+2023-05-15T07:19:27.2865432Z Starting evaluation of codeql/python-queries/Security/CWE-730/RegexInjection.ql.
+2023-05-15T07:19:27.2987091Z Starting evaluation of codeql/python-queries/Security/CWE-776/XmlBomb.ql.
+2023-05-15T07:19:27.3109578Z Starting evaluation of codeql/python-queries/Security/CWE-918/FullServerSideRequestForgery.ql.
+2023-05-15T07:19:27.3638127Z Starting evaluation of codeql/python-queries/Summary/LinesOfCode.ql.
+2023-05-15T07:19:27.3683094Z Starting evaluation of codeql/python-queries/Summary/LinesOfUserCode.ql.
+2023-05-15T07:19:27.3697714Z [6/38 eval 5ms] Evaluation done; writing results to codeql/python-queries/Summary/LinesOfCode.bqrs.
+2023-05-15T07:19:28.5498126Z [7/38 eval 1.2s] Evaluation done; writing results to codeql/python-queries/Summary/LinesOfUserCode.bqrs.
+2023-05-15T07:19:31.5646981Z [8/38 eval 12.3s] Evaluation done; writing results to codeql/python-queries/Security/CWE-327/InsecureDefaultProtocol.bqrs.
+2023-05-15T07:19:31.5808879Z [9/38 eval 38.8s] Evaluation done; writing results to codeql/python-queries/Expressions/UseofInput.bqrs.
+2023-05-15T07:19:31.6484826Z [10/38 eval 14.4s] Evaluation done; writing results to codeql/python-queries/Security/CWE-295/MissingHostKeyValidation.bqrs.
+2023-05-15T07:19:33.2561756Z [11/38 eval 18.9s] Evaluation done; writing results to codeql/python-queries/Security/CWE-090/LdapInjection.bqrs.
+2023-05-15T07:19:33.7658884Z [12/38 eval 6.9s] Evaluation done; writing results to codeql/python-queries/Security/CWE-643/XpathInjection.bqrs.
+2023-05-15T07:19:33.9931481Z [13/38 eval 13.4s] Evaluation done; writing results to codeql/python-queries/Security/CWE-611/Xxe.bqrs.
+2023-05-15T07:19:34.2901404Z [14/38 eval 41.2s] Evaluation done; writing results to codeql/python-queries/Security/CVE-2018-1281/BindToAllInterfaces.bqrs.
+2023-05-15T07:19:34.8138863Z [15/38 eval 20.5s] Evaluation done; writing results to codeql/python-queries/Security/CWE-089/SqlInjection.bqrs.
+2023-05-15T07:19:35.4324276Z [16/38 eval 14.9s] Evaluation done; writing results to codeql/python-queries/Security/CWE-601/UrlRedirect.bqrs.
+2023-05-15T07:19:39.0517180Z [17/38 eval 45.9s] Evaluation done; writing results to codeql/python-queries/Security/CWE-020/IncompleteHostnameRegExp.bqrs.
+2023-05-15T07:19:39.2470990Z [18/38 eval 45.5s] Evaluation done; writing results to codeql/python-queries/Security/CWE-022/PathInjection.bqrs.
+2023-05-15T07:19:39.3338160Z [19/38 eval 25.2s] Evaluation done; writing results to codeql/python-queries/Security/CWE-078/CommandInjection.bqrs.
+2023-05-15T07:19:39.3529151Z [20/38 eval 25.2s] Evaluation done; writing results to codeql/python-queries/Security/CWE-079/ReflectedXss.bqrs.
+2023-05-15T07:19:39.4221133Z [21/38 eval 22.7s] Evaluation done; writing results to codeql/python-queries/Security/CWE-094/CodeInjection.bqrs.
+2023-05-15T07:19:39.5334507Z [22/38 eval 45.8s] Evaluation done; writing results to codeql/python-queries/Security/CWE-020/OverlyLargeRange.bqrs.
+2023-05-15T07:19:39.7923649Z [23/38 eval 23s] Evaluation done; writing results to codeql/python-queries/Security/CWE-209/StackTraceExposure.bqrs.
+2023-05-15T07:19:39.8241805Z [24/38 eval 23.1s] Evaluation done; writing results to codeql/python-queries/Security/CWE-116/BadTagFilter.bqrs.
+2023-05-15T07:19:39.9016942Z [25/38 eval 22.7s] Evaluation done; writing results to codeql/python-queries/Security/CWE-285/PamAuthorization.bqrs.
+2023-05-15T07:19:39.9227971Z [26/38 eval 22.8s] Evaluation done; writing results to codeql/python-queries/Security/CWE-215/FlaskDebug.bqrs.
+2023-05-15T07:19:40.3048871Z [27/38 eval 23s] Evaluation done; writing results to codeql/python-queries/Security/CWE-312/CleartextLogging.bqrs.
+2023-05-15T07:19:41.4057616Z [28/38 eval 22.2s] Evaluation done; writing results to codeql/python-queries/Security/CWE-327/BrokenCryptoAlgorithm.bqrs.
+2023-05-15T07:19:43.0089293Z [29/38 eval 23.7s] Evaluation done; writing results to codeql/python-queries/Security/CWE-327/InsecureProtocol.bqrs.
+2023-05-15T07:19:43.1203743Z [30/38 eval 24s] Evaluation done; writing results to codeql/python-queries/Security/CWE-312/CleartextStorage.bqrs.
+2023-05-15T07:19:43.2667263Z [31/38 eval 22.7s] Evaluation done; writing results to codeql/python-queries/Security/CWE-377/InsecureTemporaryFile.bqrs.
+2023-05-15T07:19:43.3215766Z [32/38 eval 22.8s] Evaluation done; writing results to codeql/python-queries/Security/CWE-502/UnsafeDeserialization.bqrs.
+2023-05-15T07:19:43.3421360Z [33/38 eval 16s] Evaluation done; writing results to codeql/python-queries/Security/CWE-776/XmlBomb.bqrs.
+2023-05-15T07:19:43.7160851Z [34/38 eval 23.9s] Evaluation done; writing results to codeql/python-queries/Security/CWE-327/WeakSensitiveDataHashing.bqrs.
+2023-05-15T07:19:43.9606987Z [35/38 eval 17.1s] Evaluation done; writing results to codeql/python-queries/Security/CWE-730/PolynomialReDoS.bqrs.
+2023-05-15T07:19:44.0680143Z [36/38 eval 16.8s] Evaluation done; writing results to codeql/python-queries/Security/CWE-730/RegexInjection.bqrs.
+2023-05-15T07:19:44.1554590Z [37/38 eval 16.9s] Evaluation done; writing results to codeql/python-queries/Security/CWE-730/ReDoS.bqrs.
+2023-05-15T07:19:44.2825365Z [38/38 eval 17s] Evaluation done; writing results to codeql/python-queries/Security/CWE-918/FullServerSideRequestForgery.bqrs.
+2023-05-15T07:19:44.2826229Z Shutting down query evaluator.
+2023-05-15T07:19:44.4729198Z ##[group]Interpreting results for python
+2023-05-15T07:19:44.4743888Z [command]/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/codeql database interpret-results --threads=2 --format=sarif-latest -v --output=/home/runner/work/_temp/codeql-intermediate-results.sarif --no-sarif-add-snippets --print-diagnostics-summary --print-metrics-summary --sarif-group-rules-by-pack --sarif-codescanning-config /home/runner/work/_temp/user-config.yaml --sarif-add-query-help --sarif-category /language:python --sarif-add-baseline-file-info --sarif-include-diagnostics /home/runner/work/_temp/codeql_databases/python
+2023-05-15T07:19:45.2937757Z Writing logs to /home/runner/work/_temp/codeql_databases/python/log/database-interpret-results-20230515.071945.290.log.
+2023-05-15T07:19:45.4789306Z Recording pack reference codeql/python-queries at /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1.
+2023-05-15T07:19:45.5239244Z Scanning for [codeql-pack.yml, qlpack.yml] from /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/.codeqlmanifest.json
+2023-05-15T07:19:45.6617860Z Scanning for [codeql-pack.yml, qlpack.yml] from /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/
+2023-05-15T07:19:45.6661639Z Not scanning from /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql which is already done.
+2023-05-15T07:19:45.6697093Z Interpreting /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-094/CodeInjection.ql...
+2023-05-15T07:19:45.7402777Z  ... found results file at /home/runner/work/_temp/codeql_databases/python/results/codeql/python-queries/Security/CWE-094/CodeInjection.bqrs.
+2023-05-15T07:19:45.7941976Z Interpreted pathproblem query "Code injection" (py/code-injection) at path /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-094/CodeInjection.ql.
+2023-05-15T07:19:45.7958769Z Interpreting /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-078/CommandInjection.ql...
+2023-05-15T07:19:45.8303014Z  ... found results file at /home/runner/work/_temp/codeql_databases/python/results/codeql/python-queries/Security/CWE-078/CommandInjection.bqrs.
+2023-05-15T07:19:45.8388866Z Interpreted pathproblem query "Uncontrolled command line" (py/command-line-injection) at path /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-078/CommandInjection.ql.
+2023-05-15T07:19:45.8391191Z Interpreting /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-377/InsecureTemporaryFile.ql...
+2023-05-15T07:19:45.8665466Z  ... found results file at /home/runner/work/_temp/codeql_databases/python/results/codeql/python-queries/Security/CWE-377/InsecureTemporaryFile.bqrs.
+2023-05-15T07:19:45.8763003Z Interpreted problem query "Insecure temporary file" (py/insecure-temporary-file) at path /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-377/InsecureTemporaryFile.ql.
+2023-05-15T07:19:45.8765368Z Interpreting /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-601/UrlRedirect.ql...
+2023-05-15T07:19:45.8948614Z  ... found results file at /home/runner/work/_temp/codeql_databases/python/results/codeql/python-queries/Security/CWE-601/UrlRedirect.bqrs.
+2023-05-15T07:19:45.9041887Z Interpreted pathproblem query "URL redirection from remote source" (py/url-redirection) at path /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-601/UrlRedirect.ql.
+2023-05-15T07:19:45.9044803Z Interpreting /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-215/FlaskDebug.ql...
+2023-05-15T07:19:45.9311647Z  ... found results file at /home/runner/work/_temp/codeql_databases/python/results/codeql/python-queries/Security/CWE-215/FlaskDebug.bqrs.
+2023-05-15T07:19:45.9380898Z Interpreted problem query "Flask app is run in debug mode" (py/flask-debug) at path /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-215/FlaskDebug.ql.
+2023-05-15T07:19:45.9381989Z Interpreting /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-918/FullServerSideRequestForgery.ql...
+2023-05-15T07:19:45.9626099Z  ... found results file at /home/runner/work/_temp/codeql_databases/python/results/codeql/python-queries/Security/CWE-918/FullServerSideRequestForgery.bqrs.
+2023-05-15T07:19:45.9705527Z Interpreted pathproblem query "Full server-side request forgery" (py/full-ssrf) at path /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-918/FullServerSideRequestForgery.ql.
+2023-05-15T07:19:45.9708200Z Interpreting /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-285/PamAuthorization.ql...
+2023-05-15T07:19:45.9895520Z  ... found results file at /home/runner/work/_temp/codeql_databases/python/results/codeql/python-queries/Security/CWE-285/PamAuthorization.bqrs.
+2023-05-15T07:19:45.9965857Z Interpreted pathproblem query "PAM authorization bypass due to incorrect usage" (py/pam-auth-bypass) at path /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-285/PamAuthorization.ql.
+2023-05-15T07:19:45.9967447Z Interpreting /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-611/Xxe.ql...
+2023-05-15T07:19:46.0189758Z  ... found results file at /home/runner/work/_temp/codeql_databases/python/results/codeql/python-queries/Security/CWE-611/Xxe.bqrs.
+2023-05-15T07:19:46.0298535Z Interpreted pathproblem query "XML external entity expansion" (py/xxe) at path /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-611/Xxe.ql.
+2023-05-15T07:19:46.0299628Z Interpreting /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-020/IncompleteUrlSubstringSanitization.ql...
+2023-05-15T07:19:46.0424589Z  ... found results file at /home/runner/work/_temp/codeql_databases/python/results/codeql/python-queries/Security/CWE-020/IncompleteUrlSubstringSanitization.bqrs.
+2023-05-15T07:19:46.0503057Z Interpreted problem query "Incomplete URL substring sanitization" (py/incomplete-url-substring-sanitization) at path /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-020/IncompleteUrlSubstringSanitization.ql.
+2023-05-15T07:19:46.0505629Z Interpreting /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-020/OverlyLargeRange.ql...
+2023-05-15T07:19:46.0980650Z  ... found results file at /home/runner/work/_temp/codeql_databases/python/results/codeql/python-queries/Security/CWE-020/OverlyLargeRange.bqrs.
+2023-05-15T07:19:46.1077207Z Interpreted problem query "Overly permissive regular expression range" (py/overly-large-range) at path /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-020/OverlyLargeRange.ql.
+2023-05-15T07:19:46.1086780Z Interpreting /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-020/IncompleteHostnameRegExp.ql...
+2023-05-15T07:19:46.1373994Z  ... found results file at /home/runner/work/_temp/codeql_databases/python/results/codeql/python-queries/Security/CWE-020/IncompleteHostnameRegExp.bqrs.
+2023-05-15T07:19:46.1467619Z Interpreted problem query "Incomplete regular expression for hostnames" (py/incomplete-hostname-regexp) at path /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-020/IncompleteHostnameRegExp.ql.
+2023-05-15T07:19:46.1469264Z Interpreting /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-116/BadTagFilter.ql...
+2023-05-15T07:19:46.1682893Z  ... found results file at /home/runner/work/_temp/codeql_databases/python/results/codeql/python-queries/Security/CWE-116/BadTagFilter.bqrs.
+2023-05-15T07:19:46.1755191Z Interpreted problem query "Bad HTML filtering regexp" (py/bad-tag-filter) at path /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-116/BadTagFilter.ql.
+2023-05-15T07:19:46.1756084Z Interpreting /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-643/XpathInjection.ql...
+2023-05-15T07:19:46.1935440Z  ... found results file at /home/runner/work/_temp/codeql_databases/python/results/codeql/python-queries/Security/CWE-643/XpathInjection.bqrs.
+2023-05-15T07:19:46.2009234Z Interpreted pathproblem query "XPath query built from user-controlled sources" (py/xpath-injection) at path /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-643/XpathInjection.ql.
+2023-05-15T07:19:46.2010185Z Interpreting /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-326/WeakCryptoKey.ql...
+2023-05-15T07:19:46.2159616Z  ... found results file at /home/runner/work/_temp/codeql_databases/python/results/codeql/python-queries/Security/CWE-326/WeakCryptoKey.bqrs.
+2023-05-15T07:19:46.2239932Z Interpreted problem query "Use of weak cryptographic key" (py/weak-crypto-key) at path /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-326/WeakCryptoKey.ql.
+2023-05-15T07:19:46.2261424Z Interpreting /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-352/CSRFProtectionDisabled.ql...
+2023-05-15T07:19:46.2399363Z  ... found results file at /home/runner/work/_temp/codeql_databases/python/results/codeql/python-queries/Security/CWE-352/CSRFProtectionDisabled.bqrs.
+2023-05-15T07:19:46.2510854Z Interpreted problem query "CSRF protection weakened or disabled" (py/csrf-protection-disabled) at path /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-352/CSRFProtectionDisabled.ql.
+2023-05-15T07:19:46.2511841Z Interpreting /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-502/UnsafeDeserialization.ql...
+2023-05-15T07:19:46.2666174Z  ... found results file at /home/runner/work/_temp/codeql_databases/python/results/codeql/python-queries/Security/CWE-502/UnsafeDeserialization.bqrs.
+2023-05-15T07:19:46.2746555Z Interpreted pathproblem query "Deserializing untrusted input" (py/unsafe-deserialization) at path /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-502/UnsafeDeserialization.ql.
+2023-05-15T07:19:46.2747866Z Interpreting /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-730/RegexInjection.ql...
+2023-05-15T07:19:46.2876189Z  ... found results file at /home/runner/work/_temp/codeql_databases/python/results/codeql/python-queries/Security/CWE-730/RegexInjection.bqrs.
+2023-05-15T07:19:46.2955984Z Interpreted pathproblem query "Regular expression injection" (py/regex-injection) at path /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-730/RegexInjection.ql.
+2023-05-15T07:19:46.2991099Z Interpreting /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-730/ReDoS.ql...
+2023-05-15T07:19:46.3114639Z  ... found results file at /home/runner/work/_temp/codeql_databases/python/results/codeql/python-queries/Security/CWE-730/ReDoS.bqrs.
+2023-05-15T07:19:46.3187354Z Interpreted problem query "Inefficient regular expression" (py/redos) at path /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-730/ReDoS.ql.
+2023-05-15T07:19:46.3195629Z Interpreting /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-730/PolynomialReDoS.ql...
+2023-05-15T07:19:46.3311255Z  ... found results file at /home/runner/work/_temp/codeql_databases/python/results/codeql/python-queries/Security/CWE-730/PolynomialReDoS.bqrs.
+2023-05-15T07:19:46.3377654Z Interpreted pathproblem query "Polynomial regular expression used on uncontrolled data" (py/polynomial-redos) at path /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-730/PolynomialReDoS.ql.
+2023-05-15T07:19:46.3390372Z Interpreting /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-295/MissingHostKeyValidation.ql...
+2023-05-15T07:19:46.3479060Z  ... found results file at /home/runner/work/_temp/codeql_databases/python/results/codeql/python-queries/Security/CWE-295/MissingHostKeyValidation.bqrs.
+2023-05-15T07:19:46.3546832Z Interpreted problem query "Accepting unknown SSH host keys when using Paramiko" (py/paramiko-missing-host-key-validation) at path /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-295/MissingHostKeyValidation.ql.
+2023-05-15T07:19:46.3555563Z Interpreting /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-022/PathInjection.ql...
+2023-05-15T07:19:46.3663138Z  ... found results file at /home/runner/work/_temp/codeql_databases/python/results/codeql/python-queries/Security/CWE-022/PathInjection.bqrs.
+2023-05-15T07:19:46.3750215Z Interpreted pathproblem query "Uncontrolled data used in path expression" (py/path-injection) at path /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-022/PathInjection.ql.
+2023-05-15T07:19:46.3758898Z Interpreting /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-090/LdapInjection.ql...
+2023-05-15T07:19:46.3926561Z  ... found results file at /home/runner/work/_temp/codeql_databases/python/results/codeql/python-queries/Security/CWE-090/LdapInjection.bqrs.
+2023-05-15T07:19:46.4025407Z Interpreted pathproblem query "LDAP query built from user-controlled sources" (py/ldap-injection) at path /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-090/LdapInjection.ql.
+2023-05-15T07:19:46.4040207Z Interpreting /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-209/StackTraceExposure.ql...
+2023-05-15T07:19:46.4173736Z  ... found results file at /home/runner/work/_temp/codeql_databases/python/results/codeql/python-queries/Security/CWE-209/StackTraceExposure.bqrs.
+2023-05-15T07:19:46.4245642Z Interpreted pathproblem query "Information exposure through an exception" (py/stack-trace-exposure) at path /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-209/StackTraceExposure.ql.
+2023-05-15T07:19:46.4253570Z Interpreting /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-327/InsecureDefaultProtocol.ql...
+2023-05-15T07:19:46.4392114Z  ... found results file at /home/runner/work/_temp/codeql_databases/python/results/codeql/python-queries/Security/CWE-327/InsecureDefaultProtocol.bqrs.
+2023-05-15T07:19:46.4469433Z Interpreted problem query "Default version of SSL/TLS may be insecure" (py/insecure-default-protocol) at path /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-327/InsecureDefaultProtocol.ql.
+2023-05-15T07:19:46.4487925Z Interpreting /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-327/WeakSensitiveDataHashing.ql...
+2023-05-15T07:19:46.4602716Z  ... found results file at /home/runner/work/_temp/codeql_databases/python/results/codeql/python-queries/Security/CWE-327/WeakSensitiveDataHashing.bqrs.
+2023-05-15T07:19:46.4674672Z Interpreted pathproblem query "Use of a broken or weak cryptographic hashing algorithm on sensitive data" (py/weak-sensitive-data-hashing) at path /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-327/WeakSensitiveDataHashing.ql.
+2023-05-15T07:19:46.4682802Z Interpreting /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-327/BrokenCryptoAlgorithm.ql...
+2023-05-15T07:19:46.4784997Z  ... found results file at /home/runner/work/_temp/codeql_databases/python/results/codeql/python-queries/Security/CWE-327/BrokenCryptoAlgorithm.bqrs.
+2023-05-15T07:19:46.4851126Z Interpreted problem query "Use of a broken or weak cryptographic algorithm" (py/weak-cryptographic-algorithm) at path /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-327/BrokenCryptoAlgorithm.ql.
+2023-05-15T07:19:46.4867154Z Interpreting /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-327/InsecureProtocol.ql...
+2023-05-15T07:19:46.4995117Z  ... found results file at /home/runner/work/_temp/codeql_databases/python/results/codeql/python-queries/Security/CWE-327/InsecureProtocol.bqrs.
+2023-05-15T07:19:46.5076592Z Interpreted problem query "Use of insecure SSL/TLS version" (py/insecure-protocol) at path /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-327/InsecureProtocol.ql.
+2023-05-15T07:19:46.5085579Z Interpreting /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-312/CleartextStorage.ql...
+2023-05-15T07:19:46.5195500Z  ... found results file at /home/runner/work/_temp/codeql_databases/python/results/codeql/python-queries/Security/CWE-312/CleartextStorage.bqrs.
+2023-05-15T07:19:46.5263911Z Interpreted pathproblem query "Clear-text storage of sensitive information" (py/clear-text-storage-sensitive-data) at path /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-312/CleartextStorage.ql.
+2023-05-15T07:19:46.5272779Z Interpreting /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-312/CleartextLogging.ql...
+2023-05-15T07:19:46.5368981Z  ... found results file at /home/runner/work/_temp/codeql_databases/python/results/codeql/python-queries/Security/CWE-312/CleartextLogging.bqrs.
+2023-05-15T07:19:46.5460190Z Interpreted pathproblem query "Clear-text logging of sensitive information" (py/clear-text-logging-sensitive-data) at path /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-312/CleartextLogging.ql.
+2023-05-15T07:19:46.5473037Z Interpreting /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-079/ReflectedXss.ql...
+2023-05-15T07:19:46.5632509Z  ... found results file at /home/runner/work/_temp/codeql_databases/python/results/codeql/python-queries/Security/CWE-079/ReflectedXss.bqrs.
+2023-05-15T07:19:46.5696691Z Interpreted pathproblem query "Reflected server-side cross-site scripting" (py/reflective-xss) at path /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-079/ReflectedXss.ql.
+2023-05-15T07:19:46.5697997Z Interpreting /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-776/XmlBomb.ql...
+2023-05-15T07:19:46.5745859Z  ... found results file at /home/runner/work/_temp/codeql_databases/python/results/codeql/python-queries/Security/CWE-776/XmlBomb.bqrs.
+2023-05-15T07:19:46.5812714Z Interpreted pathproblem query "XML internal entity expansion" (py/xml-bomb) at path /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-776/XmlBomb.ql.
+2023-05-15T07:19:46.5819161Z Interpreting /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-089/SqlInjection.ql...
+2023-05-15T07:19:46.5907528Z  ... found results file at /home/runner/work/_temp/codeql_databases/python/results/codeql/python-queries/Security/CWE-089/SqlInjection.bqrs.
+2023-05-15T07:19:46.5982461Z Interpreted pathproblem query "SQL query built from user-controlled sources" (py/sql-injection) at path /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-089/SqlInjection.ql.
+2023-05-15T07:19:46.6008197Z Interpreting /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CVE-2018-1281/BindToAllInterfaces.ql...
+2023-05-15T07:19:46.6105053Z  ... found results file at /home/runner/work/_temp/codeql_databases/python/results/codeql/python-queries/Security/CVE-2018-1281/BindToAllInterfaces.bqrs.
+2023-05-15T07:19:46.6183562Z Interpreted problem query "Binding a socket to all network interfaces" (py/bind-socket-all-network-interfaces) at path /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CVE-2018-1281/BindToAllInterfaces.ql.
+2023-05-15T07:19:46.6189104Z Interpreting /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Expressions/UseofInput.ql...
+2023-05-15T07:19:46.6245732Z  ... found results file at /home/runner/work/_temp/codeql_databases/python/results/codeql/python-queries/Expressions/UseofInput.bqrs.
+2023-05-15T07:19:46.6337934Z Interpreted problem query "'input' function used in Python 2" (py/use-of-input) at path /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Expressions/UseofInput.ql.
+2023-05-15T07:19:46.6351828Z Interpreting /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Diagnostics/ExtractionWarnings.ql...
+2023-05-15T07:19:46.6412336Z  ... found results file at /home/runner/work/_temp/codeql_databases/python/results/codeql/python-queries/Diagnostics/ExtractionWarnings.bqrs.
+2023-05-15T07:19:46.6443314Z Interpreted diagnostic query "Python extraction warnings" (py/diagnostics/extraction-warnings) at path /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Diagnostics/ExtractionWarnings.ql.
+2023-05-15T07:19:46.6459685Z Interpreting /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Diagnostics/SuccessfullyExtractedFiles.ql...
+2023-05-15T07:19:46.6540457Z  ... found results file at /home/runner/work/_temp/codeql_databases/python/results/codeql/python-queries/Diagnostics/SuccessfullyExtractedFiles.bqrs.
+2023-05-15T07:19:46.6548602Z Interpreted diagnostic query "Successfully extracted Python files" (py/diagnostics/successfully-extracted-files) at path /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Diagnostics/SuccessfullyExtractedFiles.ql.
+2023-05-15T07:19:46.6551258Z Interpreting /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Summary/LinesOfUserCode.ql...
+2023-05-15T07:19:46.6607545Z  ... found results file at /home/runner/work/_temp/codeql_databases/python/results/codeql/python-queries/Summary/LinesOfUserCode.bqrs.
+2023-05-15T07:19:46.6638044Z Interpreted metric query "Total lines of user written Python code in the database" (py/summary/lines-of-user-code) at path /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Summary/LinesOfUserCode.ql.
+2023-05-15T07:19:46.6639312Z Interpreting /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Summary/LinesOfCode.ql...
+2023-05-15T07:19:46.6706207Z  ... found results file at /home/runner/work/_temp/codeql_databases/python/results/codeql/python-queries/Summary/LinesOfCode.bqrs.
+2023-05-15T07:19:46.6722548Z Interpreted metric query "Total lines of Python code in the database" (py/summary/lines-of-code) at path /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Summary/LinesOfCode.ql.
+2023-05-15T07:19:46.7707909Z Interpreting file baseline information.
+2023-05-15T07:19:46.7750664Z Interpreting diagnostic messages
+2023-05-15T07:19:46.8051469Z Found 0 raw diagnostic messages.
+2023-05-15T07:19:46.8086311Z Processed diagnostic messages (removed 0 due to limits, created 0 summary diagnostics for status page).
+2023-05-15T07:19:46.8111979Z Interpreted diagnostic messages. (33ms)
+2023-05-15T07:19:46.8291959Z Analysis produced the following diagnostic data:
+2023-05-15T07:19:46.8295528Z 
+2023-05-15T07:19:46.8368406Z |             Diagnostic              |  Summary   |
+2023-05-15T07:19:46.8372235Z +-------------------------------------+------------+
+2023-05-15T07:19:46.8389089Z | Successfully extracted Python files | 49 results |
+2023-05-15T07:19:46.8393816Z 
+2023-05-15T07:19:46.8405778Z Analysis produced the following metric data:
+2023-05-15T07:19:46.8408381Z 
+2023-05-15T07:19:46.8453230Z |                         Metric                          | Value  |
+2023-05-15T07:19:46.8456889Z +---------------------------------------------------------+--------+
+2023-05-15T07:19:46.8461657Z | Total lines of user written Python code in the database |   1963 |
+2023-05-15T07:19:46.8465854Z | Total lines of Python code in the database              | 137126 |
+2023-05-15T07:19:46.8468343Z 
+2023-05-15T07:19:47.2040285Z ##[endgroup]
+2023-05-15T07:19:47.2040697Z Analysis produced the following diagnostic data:
+2023-05-15T07:19:47.2040882Z 
+2023-05-15T07:19:47.2041322Z |             Diagnostic              |  Summary   |
+2023-05-15T07:19:47.2041882Z +-------------------------------------+------------+
+2023-05-15T07:19:47.2042196Z | Successfully extracted Python files | 49 results |
+2023-05-15T07:19:47.2042376Z 
+2023-05-15T07:19:47.2042512Z Analysis produced the following metric data:
+2023-05-15T07:19:47.2042686Z 
+2023-05-15T07:19:47.2042803Z |                         Metric                          | Value  |
+2023-05-15T07:19:47.2043189Z +---------------------------------------------------------+--------+
+2023-05-15T07:19:47.2043541Z | Total lines of user written Python code in the database |   1963 |
+2023-05-15T07:19:47.2043854Z | Total lines of Python code in the database              | 137126 |
+2023-05-15T07:19:47.2044034Z 
+2023-05-15T07:19:47.2044040Z 
+2023-05-15T07:19:47.2052600Z [command]/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/codeql database print-baseline /home/runner/work/_temp/codeql_databases/python
+2023-05-15T07:19:48.0179234Z Counted a baseline of 2021 lines of code for python.
+2023-05-15T07:19:48.0409121Z Counted a baseline of 2021 lines of code for python.
+2023-05-15T07:19:48.0409730Z 
+2023-05-15T07:19:48.0412546Z ##[group]Cleaning up databases
+2023-05-15T07:19:48.0425683Z [command]/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/codeql database cleanup /home/runner/work/_temp/codeql_databases/python --mode=brutal
+2023-05-15T07:19:48.8515835Z Cleaning up existing TRAP files after import...
+2023-05-15T07:19:48.8632943Z TRAP files cleaned up (4ms).
+2023-05-15T07:19:48.8658520Z Cleaning up scratch directory...
+2023-05-15T07:19:48.8667892Z Scratch directory cleaned up (0ms).
+2023-05-15T07:19:48.9420666Z ##[endgroup]
+2023-05-15T07:19:48.9559944Z ##[group]Uploading results
+2023-05-15T07:19:48.9560796Z Processing sarif files: ["/home/runner/work/simplemma/results/python.sarif"]
+2023-05-15T07:19:49.1183633Z Uploading results
+2023-05-15T07:19:49.5402301Z Successfully uploaded results
+2023-05-15T07:19:49.5403384Z ##[endgroup]
+2023-05-15T07:19:49.5589948Z ##[group]Waiting for processing to finish
+2023-05-15T07:19:49.9234671Z Analysis upload status is pending.
+2023-05-15T07:19:55.0796619Z Analysis upload status is complete.
+2023-05-15T07:19:55.0797384Z ##[endgroup]

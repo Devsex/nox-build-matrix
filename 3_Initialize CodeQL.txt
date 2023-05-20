@@ -1,0 +1,408 @@
+2023-05-15T07:16:45.8765144Z ##[group]Run github/codeql-action/init@v2
+2023-05-15T07:16:45.8765509Z with:
+2023-05-15T07:16:45.8765715Z   languages: python
+2023-05-15T07:16:45.8766357Z   token: ***
+2023-05-15T07:16:45.8766610Z   matrix: {
+  "language": "python"
+}
+2023-05-15T07:16:45.8766909Z   setup-python-dependencies: true
+2023-05-15T07:16:45.8767177Z   debug: false
+2023-05-15T07:16:45.8767401Z ##[endgroup]
+2023-05-15T07:16:47.2165237Z ##[group]Setup CodeQL tools
+2023-05-15T07:16:47.2213813Z Found CodeQL tools version 2.13.1 in the toolcache.
+2023-05-15T07:16:47.2218298Z [command]/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/codeql version --format=terse
+2023-05-15T07:16:47.9368147Z 2.13.1
+2023-05-15T07:16:47.9593017Z [command]/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/codeql version --format=json
+2023-05-15T07:16:48.6415131Z {
+2023-05-15T07:16:48.6416282Z   "productName" : "CodeQL",
+2023-05-15T07:16:48.6419082Z   "vendor" : "GitHub",
+2023-05-15T07:16:48.6419526Z   "version" : "2.13.1",
+2023-05-15T07:16:48.6420515Z   "sha" : "81228518779e8ccc515168dcf6124695ee55e5d6",
+2023-05-15T07:16:48.6421151Z   "branches" : [
+2023-05-15T07:16:48.6421926Z     "codeql-cli-2.13.1"
+2023-05-15T07:16:48.6422368Z   ],
+2023-05-15T07:16:48.6422984Z   "copyright" : "Copyright (C) 2019-2023 GitHub, Inc.",
+2023-05-15T07:16:48.6423727Z   "unpackedLocation" : "/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql",
+2023-05-15T07:16:48.6426352Z   "configFileLocation" : "/home/runner/.config/codeql/config",
+2023-05-15T07:16:48.6426665Z   "configFileFound" : false
+2023-05-15T07:16:48.6427884Z }
+2023-05-15T07:16:48.6617805Z ##[endgroup]
+2023-05-15T07:16:48.6620413Z ##[group]Load language configuration
+2023-05-15T07:16:48.6629127Z Languages from configuration: python
+2023-05-15T07:16:48.6647275Z [command]/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/codeql resolve queries python-code-scanning.qls --format=bylanguage
+2023-05-15T07:16:49.8490564Z Recording pack reference codeql/python-queries at /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1.
+2023-05-15T07:16:49.9547627Z Recording pack reference codeql/suite-helpers at /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/.codeql/libraries/codeql/suite-helpers/0.5.1.
+2023-05-15T07:16:52.1916542Z {
+2023-05-15T07:16:52.1917274Z   "byLanguage" : {
+2023-05-15T07:16:52.1918496Z     "python" : {
+2023-05-15T07:16:52.1919445Z       "/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-094/CodeInjection.ql" : { },
+2023-05-15T07:16:52.1920303Z       "/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-078/CommandInjection.ql" : { },
+2023-05-15T07:16:52.1921293Z       "/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-377/InsecureTemporaryFile.ql" : { },
+2023-05-15T07:16:52.1922404Z       "/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-601/UrlRedirect.ql" : { },
+2023-05-15T07:16:52.1923215Z       "/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-215/FlaskDebug.ql" : { },
+2023-05-15T07:16:52.1924081Z       "/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-918/FullServerSideRequestForgery.ql" : { },
+2023-05-15T07:16:52.1924992Z       "/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-285/PamAuthorization.ql" : { },
+2023-05-15T07:16:52.1925942Z       "/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-611/Xxe.ql" : { },
+2023-05-15T07:16:52.1927695Z       "/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-020/IncompleteUrlSubstringSanitization.ql" : { },
+2023-05-15T07:16:52.1928575Z       "/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-020/OverlyLargeRange.ql" : { },
+2023-05-15T07:16:52.1930111Z       "/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-020/IncompleteHostnameRegExp.ql" : { },
+2023-05-15T07:16:52.1931493Z       "/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-116/BadTagFilter.ql" : { },
+2023-05-15T07:16:52.1932240Z       "/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-643/XpathInjection.ql" : { },
+2023-05-15T07:16:52.1932918Z       "/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-326/WeakCryptoKey.ql" : { },
+2023-05-15T07:16:52.1934118Z       "/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-352/CSRFProtectionDisabled.ql" : { },
+2023-05-15T07:16:52.1934872Z       "/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-502/UnsafeDeserialization.ql" : { },
+2023-05-15T07:16:52.1935582Z       "/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-730/RegexInjection.ql" : { },
+2023-05-15T07:16:52.1936266Z       "/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-730/ReDoS.ql" : { },
+2023-05-15T07:16:52.1936986Z       "/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-730/PolynomialReDoS.ql" : { },
+2023-05-15T07:16:52.1937728Z       "/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-295/MissingHostKeyValidation.ql" : { },
+2023-05-15T07:16:52.1938442Z       "/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-022/PathInjection.ql" : { },
+2023-05-15T07:16:52.1939135Z       "/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-090/LdapInjection.ql" : { },
+2023-05-15T07:16:52.1939830Z       "/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-209/StackTraceExposure.ql" : { },
+2023-05-15T07:16:52.1940554Z       "/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-327/InsecureDefaultProtocol.ql" : { },
+2023-05-15T07:16:52.1941284Z       "/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-327/WeakSensitiveDataHashing.ql" : { },
+2023-05-15T07:16:52.1941983Z       "/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-327/BrokenCryptoAlgorithm.ql" : { },
+2023-05-15T07:16:52.1942663Z       "/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-327/InsecureProtocol.ql" : { },
+2023-05-15T07:16:52.1943338Z       "/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-312/CleartextStorage.ql" : { },
+2023-05-15T07:16:52.1944051Z       "/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-312/CleartextLogging.ql" : { },
+2023-05-15T07:16:52.1944943Z       "/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-079/ReflectedXss.ql" : { },
+2023-05-15T07:16:52.1945562Z       "/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-776/XmlBomb.ql" : { },
+2023-05-15T07:16:52.1946184Z       "/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CWE-089/SqlInjection.ql" : { },
+2023-05-15T07:16:52.1946859Z       "/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Security/CVE-2018-1281/BindToAllInterfaces.ql" : { },
+2023-05-15T07:16:52.1947479Z       "/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Expressions/UseofInput.ql" : { },
+2023-05-15T07:16:52.1948464Z       "/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Diagnostics/ExtractionWarnings.ql" : { },
+2023-05-15T07:16:52.1949135Z       "/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Diagnostics/SuccessfullyExtractedFiles.ql" : { },
+2023-05-15T07:16:52.1949783Z       "/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Summary/LinesOfUserCode.ql" : { },
+2023-05-15T07:16:52.1950374Z       "/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/qlpacks/codeql/python-queries/0.7.1/Summary/LinesOfCode.ql" : { }
+2023-05-15T07:16:52.1950851Z     }
+2023-05-15T07:16:52.1951027Z   },
+2023-05-15T07:16:52.1951220Z   "noDeclaredLanguage" : { },
+2023-05-15T07:16:52.1951485Z   "multipleDeclaredLanguages" : { }
+2023-05-15T07:16:52.1951721Z }
+2023-05-15T07:16:52.2174004Z [command]/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/codeql resolve languages --format=betterjson --extractor-options-verbosity=4
+2023-05-15T07:16:53.1485494Z {
+2023-05-15T07:16:53.1486070Z   "extractors" : {
+2023-05-15T07:16:53.1486369Z     "csv" : [
+2023-05-15T07:16:53.1486638Z       {
+2023-05-15T07:16:53.1487331Z         "extractor_root" : "/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/csv"
+2023-05-15T07:16:53.1487696Z       }
+2023-05-15T07:16:53.1487951Z     ],
+2023-05-15T07:16:53.1488198Z     "csharp" : [
+2023-05-15T07:16:53.1488471Z       {
+2023-05-15T07:16:53.1488937Z         "extractor_root" : "/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/csharp",
+2023-05-15T07:16:53.1489350Z         "extractor_options" : {
+2023-05-15T07:16:53.1489633Z           "trap" : {
+2023-05-15T07:16:53.1489963Z             "title" : "Options pertaining to TRAP.",
+2023-05-15T07:16:53.1490341Z             "description" : "Options pertaining to TRAP.",
+2023-05-15T07:16:53.1490662Z             "type" : "object",
+2023-05-15T07:16:53.1490976Z             "properties" : {
+2023-05-15T07:16:53.1491280Z               "compression" : {
+2023-05-15T07:16:53.1491674Z                 "title" : "Controls compression for the TRAP files written by the extractor.",
+2023-05-15T07:16:53.1492524Z                 "description" : "This option is only intended for use in debugging the extractor. Accepted values are 'brotli' (the default, to write brotli-compressed TRAP), 'gzip', and 'none' (to write uncompressed TRAP).\n",
+2023-05-15T07:16:53.1493091Z                 "type" : "string",
+2023-05-15T07:16:53.1493416Z                 "pattern" : "^(none|gzip|brotli)$"
+2023-05-15T07:16:53.1493722Z               }
+2023-05-15T07:16:53.1493980Z             }
+2023-05-15T07:16:53.1494242Z           },
+2023-05-15T07:16:53.1494517Z           "buildless" : {
+2023-05-15T07:16:53.1494883Z             "title" : "Whether to use buildless (standalone) extraction.",
+2023-05-15T07:16:53.1496111Z             "description" : "A value indicating, which type of extraction the autobuilder should perform. If 'true', then the standalone extractor will be used, otherwise tracing extraction will be performed. The default is 'false'. Note that buildless extraction will generally yield less accurate analysis results, and should only be used in cases where it is not possible to build the code (for example if it uses inaccessible dependencies).\n",
+2023-05-15T07:16:53.1496901Z             "type" : "string",
+2023-05-15T07:16:53.1497215Z             "pattern" : "^(false|true)$"
+2023-05-15T07:16:53.1497515Z           },
+2023-05-15T07:16:53.1497769Z           "cil" : {
+2023-05-15T07:16:53.1498098Z             "title" : "Whether to enable CIL extraction.",
+2023-05-15T07:16:53.1498684Z             "description" : "A value indicating, whether CIL extraction should be enabled. The default is 'true'.\n",
+2023-05-15T07:16:53.1499096Z             "type" : "string",
+2023-05-15T07:16:53.1499397Z             "pattern" : "^(false|true)$"
+2023-05-15T07:16:53.1499705Z           }
+2023-05-15T07:16:53.1500519Z         }
+2023-05-15T07:16:53.1500763Z       }
+2023-05-15T07:16:53.1501015Z     ],
+2023-05-15T07:16:53.1501284Z     "python" : [
+2023-05-15T07:16:53.1501555Z       {
+2023-05-15T07:16:53.1502020Z         "extractor_root" : "/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/python"
+2023-05-15T07:16:53.1502378Z       }
+2023-05-15T07:16:53.1502628Z     ],
+2023-05-15T07:16:53.1502872Z     "html" : [
+2023-05-15T07:16:53.1503138Z       {
+2023-05-15T07:16:53.1503589Z         "extractor_root" : "/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/html"
+2023-05-15T07:16:53.1503943Z       }
+2023-05-15T07:16:53.1504540Z     ],
+2023-05-15T07:16:53.1504842Z     "javascript" : [
+2023-05-15T07:16:53.1505321Z       {
+2023-05-15T07:16:53.1505796Z         "extractor_root" : "/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/javascript",
+2023-05-15T07:16:53.1506188Z         "extractor_options" : {
+2023-05-15T07:16:53.1506485Z           "trap" : {
+2023-05-15T07:16:53.1506781Z             "title" : "TRAP options",
+2023-05-15T07:16:53.1507160Z             "description" : "Options about how the extractor handles TRAP files",
+2023-05-15T07:16:53.1507520Z             "type" : "object",
+2023-05-15T07:16:53.1507819Z             "visibility" : 3,
+2023-05-15T07:16:53.1508109Z             "properties" : {
+2023-05-15T07:16:53.1508403Z               "cache" : {
+2023-05-15T07:16:53.1508721Z                 "title" : "TRAP cache options",
+2023-05-15T07:16:53.1509121Z                 "description" : "Options about how the extractor handles its TRAP cache",
+2023-05-15T07:16:53.1509482Z                 "type" : "object",
+2023-05-15T07:16:53.1509805Z                 "properties" : {
+2023-05-15T07:16:53.1510103Z                   "dir" : {
+2023-05-15T07:16:53.1510425Z                     "title" : "TRAP cache directory",
+2023-05-15T07:16:53.1510801Z                     "description" : "The directory of the TRAP cache to use",
+2023-05-15T07:16:53.1511162Z                     "type" : "string"
+2023-05-15T07:16:53.1511457Z                   },
+2023-05-15T07:16:53.1511723Z                   "bound" : {
+2023-05-15T07:16:53.1512038Z                     "title" : "TRAP cache bound",
+2023-05-15T07:16:53.1512431Z                     "description" : "A soft limit (in MB) on the size of the TRAP cache",
+2023-05-15T07:16:53.1513451Z                     "type" : "string",
+2023-05-15T07:16:53.1514825Z                     "pattern" : "[0-9]+"
+2023-05-15T07:16:53.1515035Z                   },
+2023-05-15T07:16:53.1515243Z                   "write" : {
+2023-05-15T07:16:53.1515495Z                     "title" : "TRAP cache writeable",
+2023-05-15T07:16:53.1515811Z                     "description" : "Whether to write to the TRAP cache as well as reading it",
+2023-05-15T07:16:53.1516121Z                     "type" : "string",
+2023-05-15T07:16:53.1516384Z                     "pattern" : "(true|TRUE|false|FALSE)"
+2023-05-15T07:16:53.1516605Z                   }
+2023-05-15T07:16:53.1516798Z                 }
+2023-05-15T07:16:53.1516989Z               }
+2023-05-15T07:16:53.1517177Z             }
+2023-05-15T07:16:53.1517365Z           }
+2023-05-15T07:16:53.1517552Z         }
+2023-05-15T07:16:53.1517719Z       }
+2023-05-15T07:16:53.1517896Z     ],
+2023-05-15T07:16:53.1518090Z     "properties" : [
+2023-05-15T07:16:53.1518276Z       {
+2023-05-15T07:16:53.1518670Z         "extractor_root" : "/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/properties"
+2023-05-15T07:16:53.1518955Z       }
+2023-05-15T07:16:53.1519116Z     ],
+2023-05-15T07:16:53.1519297Z     "xml" : [
+2023-05-15T07:16:53.1519483Z       {
+2023-05-15T07:16:53.1519832Z         "extractor_root" : "/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/xml"
+2023-05-15T07:16:53.1520120Z       }
+2023-05-15T07:16:53.1520297Z     ],
+2023-05-15T07:16:53.1520481Z     "yaml" : [
+2023-05-15T07:16:53.1520654Z       {
+2023-05-15T07:16:53.1521018Z         "extractor_root" : "/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/yaml"
+2023-05-15T07:16:53.1521286Z       }
+2023-05-15T07:16:53.1521446Z     ],
+2023-05-15T07:16:53.1521889Z     "cpp" : [
+2023-05-15T07:16:53.1522077Z       {
+2023-05-15T07:16:53.1522428Z         "extractor_root" : "/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/cpp"
+2023-05-15T07:16:53.1522703Z       }
+2023-05-15T07:16:53.1522880Z     ],
+2023-05-15T07:16:53.1523050Z     "ruby" : [
+2023-05-15T07:16:53.1523240Z       {
+2023-05-15T07:16:53.1523606Z         "extractor_root" : "/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/ruby",
+2023-05-15T07:16:53.1523889Z         "extractor_options" : {
+2023-05-15T07:16:53.1524108Z           "trap" : {
+2023-05-15T07:16:53.1524359Z             "title" : "Options pertaining to TRAP.",
+2023-05-15T07:16:53.1524775Z             "description" : "Options pertaining to TRAP.",
+2023-05-15T07:16:53.1525036Z             "type" : "object",
+2023-05-15T07:16:53.1525260Z             "properties" : {
+2023-05-15T07:16:53.1545028Z               "compression" : {
+2023-05-15T07:16:53.1545791Z                 "title" : "Controls compression for the TRAP files written by the extractor.",
+2023-05-15T07:16:53.1546797Z                 "description" : "This option is only intended for use in debugging the extractor. Accepted values are 'gzip' (the default, to write gzip-compressed TRAP) and 'none' (to write uncompressed TRAP).\n",
+2023-05-15T07:16:53.1547253Z                 "type" : "string",
+2023-05-15T07:16:53.1547489Z                 "pattern" : "^(none|gzip)$"
+2023-05-15T07:16:53.1547715Z               }
+2023-05-15T07:16:53.1547912Z             }
+2023-05-15T07:16:53.1548085Z           }
+2023-05-15T07:16:53.1548279Z         }
+2023-05-15T07:16:53.1548462Z       }
+2023-05-15T07:16:53.1548628Z     ],
+2023-05-15T07:16:53.1548813Z     "java" : [
+2023-05-15T07:16:53.1549198Z       {
+2023-05-15T07:16:53.1549604Z         "extractor_root" : "/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/java",
+2023-05-15T07:16:53.1549910Z         "extractor_options" : {
+2023-05-15T07:16:53.1550120Z           "exclude" : {
+2023-05-15T07:16:53.1550388Z             "title" : "A glob excluding files from analysis.",
+2023-05-15T07:16:53.1550748Z             "description" : "A glob indicating what files to exclude from the analysis.\n",
+2023-05-15T07:16:53.1551036Z             "type" : "string"
+2023-05-15T07:16:53.1551238Z           }
+2023-05-15T07:16:53.1551424Z         }
+2023-05-15T07:16:53.1551587Z       }
+2023-05-15T07:16:53.1551766Z     ],
+2023-05-15T07:16:53.1551951Z     "go" : [
+2023-05-15T07:16:53.1552126Z       {
+2023-05-15T07:16:53.1552496Z         "extractor_root" : "/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/go"
+2023-05-15T07:16:53.1552766Z       }
+2023-05-15T07:16:53.1552927Z     ]
+2023-05-15T07:16:53.1553105Z   }
+2023-05-15T07:16:53.1553283Z }
+2023-05-15T07:16:53.1660359Z python does not support TRAP caching (missing option group)
+2023-05-15T07:16:53.1660797Z Found 0 languages that support TRAP caching
+2023-05-15T07:16:53.1661635Z Code Scanning configuration file being processed in the codeql CLI.
+2023-05-15T07:16:53.1665664Z ##[endgroup]
+2023-05-15T07:16:53.1666091Z ##[group]Setup Python dependencies
+2023-05-15T07:16:53.1666548Z [command]/home/runner/work/_actions/github/codeql-action/v2/python-setup/install_tools.sh
+2023-05-15T07:16:53.1702429Z + set -e
+2023-05-15T07:16:53.1703265Z + export PATH=/home/runner/.local/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/snap/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+2023-05-15T07:16:53.1704088Z + python3 -m pip install --user --upgrade pip setuptools wheel
+2023-05-15T07:16:55.7302349Z Requirement already satisfied: pip in /usr/lib/python3/dist-packages (22.0.2)
+2023-05-15T07:16:55.8975789Z Collecting pip
+2023-05-15T07:16:55.9756242Z   Downloading pip-23.1.2-py3-none-any.whl (2.1 MB)
+2023-05-15T07:16:56.0401010Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 33.7 MB/s eta 0:00:00
+2023-05-15T07:16:56.0525585Z Requirement already satisfied: setuptools in /usr/lib/python3/dist-packages (59.6.0)
+2023-05-15T07:16:56.3554953Z Collecting setuptools
+2023-05-15T07:16:56.3607127Z   Downloading setuptools-67.7.2-py3-none-any.whl (1.1 MB)
+2023-05-15T07:16:56.3762396Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 88.3 MB/s eta 0:00:00
+2023-05-15T07:16:56.3834719Z Requirement already satisfied: wheel in /usr/lib/python3/dist-packages (0.37.1)
+2023-05-15T07:16:56.4257334Z Collecting wheel
+2023-05-15T07:16:56.4304800Z   Downloading wheel-0.40.0-py3-none-any.whl (64 kB)
+2023-05-15T07:16:56.4365847Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.5/64.5 KB 19.8 MB/s eta 0:00:00
+2023-05-15T07:16:56.8536872Z Installing collected packages: wheel, setuptools, pip
+2023-05-15T07:16:58.5257230Z Successfully installed pip-23.1.2 setuptools-67.7.2 wheel-0.40.0
+2023-05-15T07:16:58.7139411Z + python3 -m pip install --user --upgrade virtualenv>20.16.5
+2023-05-15T07:16:59.9136222Z Collecting virtualenv>20.16.5
+2023-05-15T07:16:59.9923521Z   Downloading virtualenv-20.23.0-py3-none-any.whl (3.3 MB)
+2023-05-15T07:17:00.0725629Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 42.2 MB/s eta 0:00:00
+2023-05-15T07:17:00.1238089Z Collecting distlib<1,>=0.3.6 (from virtualenv>20.16.5)
+2023-05-15T07:17:00.1282410Z   Downloading distlib-0.3.6-py2.py3-none-any.whl (468 kB)
+2023-05-15T07:17:00.1385026Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 468.5/468.5 kB 67.2 MB/s eta 0:00:00
+2023-05-15T07:17:00.1737482Z Collecting filelock<4,>=3.11 (from virtualenv>20.16.5)
+2023-05-15T07:17:00.1798707Z   Downloading filelock-3.12.0-py3-none-any.whl (10 kB)
+2023-05-15T07:17:00.2240486Z Collecting platformdirs<4,>=3.2 (from virtualenv>20.16.5)
+2023-05-15T07:17:00.2281521Z   Downloading platformdirs-3.5.1-py3-none-any.whl (15 kB)
+2023-05-15T07:17:00.5049323Z Installing collected packages: distlib, platformdirs, filelock, virtualenv
+2023-05-15T07:17:00.7203393Z Successfully installed distlib-0.3.6 filelock-3.12.0 platformdirs-3.5.1 virtualenv-20.23.0
+2023-05-15T07:17:01.5332352Z + python3 -m pip install --user poetry>=1.1
+2023-05-15T07:17:02.7458057Z Collecting poetry>=1.1
+2023-05-15T07:17:02.8317491Z   Downloading poetry-1.4.2-py3-none-any.whl (222 kB)
+2023-05-15T07:17:02.8890079Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 222.7/222.7 kB 4.0 MB/s eta 0:00:00
+2023-05-15T07:17:02.9500703Z Collecting build<0.11.0,>=0.10.0 (from poetry>=1.1)
+2023-05-15T07:17:02.9561292Z   Downloading build-0.10.0-py3-none-any.whl (17 kB)
+2023-05-15T07:17:02.9830732Z Collecting cachecontrol[filecache]<0.13.0,>=0.12.9 (from poetry>=1.1)
+2023-05-15T07:17:02.9882210Z   Downloading CacheControl-0.12.11-py2.py3-none-any.whl (21 kB)
+2023-05-15T07:17:03.0225905Z Collecting cleo<3.0.0,>=2.0.0 (from poetry>=1.1)
+2023-05-15T07:17:03.0269503Z   Downloading cleo-2.0.1-py3-none-any.whl (77 kB)
+2023-05-15T07:17:03.0332943Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 77.3/77.3 kB 17.2 MB/s eta 0:00:00
+2023-05-15T07:17:03.0524686Z Collecting crashtest<0.5.0,>=0.4.1 (from poetry>=1.1)
+2023-05-15T07:17:03.0563883Z   Downloading crashtest-0.4.1-py3-none-any.whl (7.6 kB)
+2023-05-15T07:17:03.2717636Z Collecting dulwich<0.22.0,>=0.21.2 (from poetry>=1.1)
+2023-05-15T07:17:03.2765964Z   Downloading dulwich-0.21.5-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (510 kB)
+2023-05-15T07:17:03.2943318Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 510.1/510.1 kB 35.3 MB/s eta 0:00:00
+2023-05-15T07:17:03.2998776Z Requirement already satisfied: filelock<4.0.0,>=3.8.0 in /home/runner/.local/lib/python3.10/site-packages (from poetry>=1.1) (3.12.0)
+2023-05-15T07:17:03.3168198Z Collecting html5lib<2.0,>=1.0 (from poetry>=1.1)
+2023-05-15T07:17:03.3208424Z   Downloading html5lib-1.1-py2.py3-none-any.whl (112 kB)
+2023-05-15T07:17:03.3269761Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 112.2/112.2 kB 34.9 MB/s eta 0:00:00
+2023-05-15T07:17:03.3508921Z Collecting installer<0.8.0,>=0.7.0 (from poetry>=1.1)
+2023-05-15T07:17:03.3552547Z   Downloading installer-0.7.0-py3-none-any.whl (453 kB)
+2023-05-15T07:17:03.3645213Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 453.8/453.8 kB 72.6 MB/s eta 0:00:00
+2023-05-15T07:17:03.4103021Z Collecting jsonschema<5.0.0,>=4.10.0 (from poetry>=1.1)
+2023-05-15T07:17:03.4146161Z   Downloading jsonschema-4.17.3-py3-none-any.whl (90 kB)
+2023-05-15T07:17:03.4209295Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 90.4/90.4 kB 26.8 MB/s eta 0:00:00
+2023-05-15T07:17:03.4912448Z Collecting keyring<24.0.0,>=23.9.0 (from poetry>=1.1)
+2023-05-15T07:17:03.4956900Z   Downloading keyring-23.13.1-py3-none-any.whl (37 kB)
+2023-05-15T07:17:03.5150039Z Collecting lockfile<0.13.0,>=0.12.2 (from poetry>=1.1)
+2023-05-15T07:17:03.5197353Z   Downloading lockfile-0.12.2-py2.py3-none-any.whl (13 kB)
+2023-05-15T07:17:03.5253250Z Requirement already satisfied: packaging>=20.4 in /usr/local/lib/python3.10/dist-packages (from poetry>=1.1) (23.1)
+2023-05-15T07:17:03.5264821Z Requirement already satisfied: pexpect<5.0.0,>=4.7.0 in /usr/lib/python3/dist-packages (from poetry>=1.1) (4.8.0)
+2023-05-15T07:17:03.5536527Z Collecting pkginfo<2.0.0,>=1.9.4 (from poetry>=1.1)
+2023-05-15T07:17:03.5587205Z   Downloading pkginfo-1.9.6-py3-none-any.whl (30 kB)
+2023-05-15T07:17:03.5939639Z Collecting platformdirs<3.0.0,>=2.5.2 (from poetry>=1.1)
+2023-05-15T07:17:03.5994419Z   Downloading platformdirs-2.6.2-py3-none-any.whl (14 kB)
+2023-05-15T07:17:03.6446792Z Collecting poetry-core==1.5.2 (from poetry>=1.1)
+2023-05-15T07:17:03.6494891Z   Downloading poetry_core-1.5.2-py3-none-any.whl (465 kB)
+2023-05-15T07:17:03.6591011Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 465.2/465.2 kB 74.4 MB/s eta 0:00:00
+2023-05-15T07:17:03.6877521Z Collecting poetry-plugin-export<2.0.0,>=1.3.0 (from poetry>=1.1)
+2023-05-15T07:17:03.6926598Z   Downloading poetry_plugin_export-1.3.1-py3-none-any.whl (10 kB)
+2023-05-15T07:17:03.7119021Z Collecting pyproject-hooks<2.0.0,>=1.0.0 (from poetry>=1.1)
+2023-05-15T07:17:03.7165587Z   Downloading pyproject_hooks-1.0.0-py3-none-any.whl (9.3 kB)
+2023-05-15T07:17:03.7218100Z Requirement already satisfied: requests<3.0,>=2.18 in /usr/lib/python3/dist-packages (from poetry>=1.1) (2.25.1)
+2023-05-15T07:17:03.7438613Z Collecting requests-toolbelt<0.11.0,>=0.9.1 (from poetry>=1.1)
+2023-05-15T07:17:03.7485404Z   Downloading requests_toolbelt-0.10.1-py2.py3-none-any.whl (54 kB)
+2023-05-15T07:17:03.7541304Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 54.5/54.5 kB 16.7 MB/s eta 0:00:00
+2023-05-15T07:17:03.7828131Z Collecting shellingham<2.0,>=1.5 (from poetry>=1.1)
+2023-05-15T07:17:03.7872775Z   Downloading shellingham-1.5.0.post1-py2.py3-none-any.whl (9.4 kB)
+2023-05-15T07:17:03.8152812Z Collecting tomli<3.0.0,>=2.0.1 (from poetry>=1.1)
+2023-05-15T07:17:03.8201865Z   Downloading tomli-2.0.1-py3-none-any.whl (12 kB)
+2023-05-15T07:17:03.8669782Z Collecting tomlkit!=0.11.2,!=0.11.3,<1.0.0,>=0.11.1 (from poetry>=1.1)
+2023-05-15T07:17:03.8712357Z   Downloading tomlkit-0.11.8-py3-none-any.whl (35 kB)
+2023-05-15T07:17:03.9068273Z Collecting trove-classifiers>=2022.5.19 (from poetry>=1.1)
+2023-05-15T07:17:03.9284987Z   Downloading trove_classifiers-2023.5.2-py3-none-any.whl (13 kB)
+2023-05-15T07:17:03.9337230Z Requirement already satisfied: urllib3<2.0.0,>=1.26.0 in /usr/lib/python3/dist-packages (from poetry>=1.1) (1.26.5)
+2023-05-15T07:17:03.9344009Z Requirement already satisfied: virtualenv!=20.4.5,!=20.4.6,<21.0.0,>=20.4.3 in /home/runner/.local/lib/python3.10/site-packages (from poetry>=1.1) (20.23.0)
+2023-05-15T07:17:04.0491323Z Collecting msgpack>=0.5.2 (from cachecontrol[filecache]<0.13.0,>=0.12.9->poetry>=1.1)
+2023-05-15T07:17:04.0535418Z   Downloading msgpack-1.0.5-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (316 kB)
+2023-05-15T07:17:04.0615032Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 316.8/316.8 kB 63.0 MB/s eta 0:00:00
+2023-05-15T07:17:05.0242153Z Collecting rapidfuzz<3.0.0,>=2.2.0 (from cleo<3.0.0,>=2.0.0->poetry>=1.1)
+2023-05-15T07:17:05.0292211Z   Downloading rapidfuzz-2.15.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.0 MB)
+2023-05-15T07:17:05.0602289Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.0/3.0 MB 108.8 MB/s eta 0:00:00
+2023-05-15T07:17:05.1014844Z Requirement already satisfied: six>=1.9 in /usr/lib/python3/dist-packages (from html5lib<2.0,>=1.0->poetry>=1.1) (1.16.0)
+2023-05-15T07:17:05.1155183Z Collecting webencodings (from html5lib<2.0,>=1.0->poetry>=1.1)
+2023-05-15T07:17:05.1196002Z   Downloading webencodings-0.5.1-py2.py3-none-any.whl (11 kB)
+2023-05-15T07:17:05.1474802Z Requirement already satisfied: attrs>=17.4.0 in /usr/lib/python3/dist-packages (from jsonschema<5.0.0,>=4.10.0->poetry>=1.1) (21.2.0)
+2023-05-15T07:17:05.1481323Z Requirement already satisfied: pyrsistent!=0.17.0,!=0.17.1,!=0.17.2,>=0.14.0 in /usr/lib/python3/dist-packages (from jsonschema<5.0.0,>=4.10.0->poetry>=1.1) (0.18.1)
+2023-05-15T07:17:05.1907917Z Collecting jaraco.classes (from keyring<24.0.0,>=23.9.0->poetry>=1.1)
+2023-05-15T07:17:05.1952571Z   Downloading jaraco.classes-3.2.3-py3-none-any.whl (6.0 kB)
+2023-05-15T07:17:05.2658407Z Collecting importlib-metadata>=4.11.4 (from keyring<24.0.0,>=23.9.0->poetry>=1.1)
+2023-05-15T07:17:05.2700628Z   Downloading importlib_metadata-6.6.0-py3-none-any.whl (22 kB)
+2023-05-15T07:17:05.2755058Z Requirement already satisfied: SecretStorage>=3.2 in /usr/lib/python3/dist-packages (from keyring<24.0.0,>=23.9.0->poetry>=1.1) (3.3.1)
+2023-05-15T07:17:05.2769787Z Requirement already satisfied: jeepney>=0.4.2 in /usr/lib/python3/dist-packages (from keyring<24.0.0,>=23.9.0->poetry>=1.1) (0.7.1)
+2023-05-15T07:17:05.4006166Z Requirement already satisfied: distlib<1,>=0.3.6 in /home/runner/.local/lib/python3.10/site-packages (from virtualenv!=20.4.5,!=20.4.6,<21.0.0,>=20.4.3->poetry>=1.1) (0.3.6)
+2023-05-15T07:17:05.4037877Z INFO: pip is looking at multiple versions of virtualenv to determine which version is compatible with other requirements. This could take a while.
+2023-05-15T07:17:05.5157131Z Collecting virtualenv!=20.4.5,!=20.4.6,<21.0.0,>=20.4.3 (from poetry>=1.1)
+2023-05-15T07:17:05.5206910Z   Downloading virtualenv-20.22.0-py3-none-any.whl (3.2 MB)
+2023-05-15T07:17:05.5539441Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.2/3.2 MB 109.6 MB/s eta 0:00:00
+2023-05-15T07:17:05.6551462Z   Downloading virtualenv-20.21.1-py3-none-any.whl (8.7 MB)
+2023-05-15T07:17:05.7461790Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.7/8.7 MB 100.1 MB/s eta 0:00:00
+2023-05-15T07:17:05.8401091Z Requirement already satisfied: zipp>=0.5 in /usr/lib/python3/dist-packages (from importlib-metadata>=4.11.4->keyring<24.0.0,>=23.9.0->poetry>=1.1) (1.0.0)
+2023-05-15T07:17:05.9066342Z Requirement already satisfied: more-itertools in /usr/lib/python3/dist-packages (from jaraco.classes->keyring<24.0.0,>=23.9.0->poetry>=1.1) (8.10.0)
+2023-05-15T07:17:06.2707285Z Installing collected packages: webencodings, trove-classifiers, msgpack, lockfile, tomlkit, tomli, shellingham, requests-toolbelt, rapidfuzz, poetry-core, platformdirs, pkginfo, jsonschema, jaraco.classes, installer, importlib-metadata, html5lib, dulwich, crashtest, cachecontrol, virtualenv, pyproject-hooks, keyring, cleo, build, poetry-plugin-export, poetry
+2023-05-15T07:17:06.8979735Z   Attempting uninstall: platformdirs
+2023-05-15T07:17:06.8989222Z     Found existing installation: platformdirs 3.5.1
+2023-05-15T07:17:06.9016504Z     Uninstalling platformdirs-3.5.1:
+2023-05-15T07:17:06.9023171Z       Successfully uninstalled platformdirs-3.5.1
+2023-05-15T07:17:07.5714309Z   Attempting uninstall: virtualenv
+2023-05-15T07:17:07.5722575Z     Found existing installation: virtualenv 20.23.0
+2023-05-15T07:17:07.5846939Z     Uninstalling virtualenv-20.23.0:
+2023-05-15T07:17:07.5878628Z       Successfully uninstalled virtualenv-20.23.0
+2023-05-15T07:17:08.1172433Z Successfully installed build-0.10.0 cachecontrol-0.12.11 cleo-2.0.1 crashtest-0.4.1 dulwich-0.21.5 html5lib-1.1 importlib-metadata-6.6.0 installer-0.7.0 jaraco.classes-3.2.3 jsonschema-4.17.3 keyring-23.13.1 lockfile-0.12.2 msgpack-1.0.5 pkginfo-1.9.6 platformdirs-2.6.2 poetry-1.4.2 poetry-core-1.5.2 poetry-plugin-export-1.3.1 pyproject-hooks-1.0.0 rapidfuzz-2.15.1 requests-toolbelt-0.10.1 shellingham-1.5.0.post1 tomli-2.0.1 tomlkit-0.11.8 trove-classifiers-2023.5.2 virtualenv-20.21.1 webencodings-0.5.1
+2023-05-15T07:17:08.6843354Z + python3 -m pip install --user pipenv
+2023-05-15T07:17:09.3990549Z Collecting pipenv
+2023-05-15T07:17:09.4825321Z   Downloading pipenv-2023.4.29-py3-none-any.whl (2.8 MB)
+2023-05-15T07:17:09.5839556Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.8/2.8 MB 28.2 MB/s eta 0:00:00
+2023-05-15T07:17:09.6141334Z Requirement already satisfied: certifi in /usr/lib/python3/dist-packages (from pipenv) (2020.6.20)
+2023-05-15T07:17:09.6152744Z Requirement already satisfied: setuptools>=67.0.0 in /home/runner/.local/lib/python3.10/site-packages (from pipenv) (67.7.2)
+2023-05-15T07:17:09.6364051Z Collecting virtualenv-clone>=0.2.5 (from pipenv)
+2023-05-15T07:17:09.6409318Z   Downloading virtualenv_clone-0.5.7-py3-none-any.whl (6.6 kB)
+2023-05-15T07:17:09.6455016Z Requirement already satisfied: virtualenv>=20.17.1 in /home/runner/.local/lib/python3.10/site-packages (from pipenv) (20.21.1)
+2023-05-15T07:17:09.7025372Z Requirement already satisfied: distlib<1,>=0.3.6 in /home/runner/.local/lib/python3.10/site-packages (from virtualenv>=20.17.1->pipenv) (0.3.6)
+2023-05-15T07:17:09.7032941Z Requirement already satisfied: filelock<4,>=3.4.1 in /home/runner/.local/lib/python3.10/site-packages (from virtualenv>=20.17.1->pipenv) (3.12.0)
+2023-05-15T07:17:09.7041933Z Requirement already satisfied: platformdirs<4,>=2.4 in /home/runner/.local/lib/python3.10/site-packages (from virtualenv>=20.17.1->pipenv) (2.6.2)
+2023-05-15T07:17:10.0296357Z Installing collected packages: virtualenv-clone, pipenv
+2023-05-15T07:17:11.7847203Z Successfully installed pipenv-2023.4.29 virtualenv-clone-0.5.7
+2023-05-15T07:17:12.0039730Z + command -v python2
+2023-05-15T07:17:12.0057977Z [command]/usr/bin/python3 -B /home/runner/work/_actions/github/codeql-action/v2/python-setup/auto_install_packages.py /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql
+2023-05-15T07:17:12.0840115Z Source root appears to be the real root.
+2023-05-15T07:17:12.0841126Z Will try to guess Python version, as it was not specified in `lgtm.yml`
+2023-05-15T07:17:12.0842212Z Trying to guess Python version based on Trove classifiers in setup.py
+2023-05-15T07:17:12.0842992Z Found Trove classifier for Python 3 in setup.py -- will use that version
+2023-05-15T07:17:12.0843373Z Found setup.py, will install package with pip in editable mode
+2023-05-15T07:17:12.0843855Z Creating venv in /home/runner/work/simplemma/codeql-action-python-autoinstall
+2023-05-15T07:17:12.0844389Z + python3 -m virtualenv /home/runner/work/simplemma/codeql-action-python-autoinstall
+2023-05-15T07:17:12.7594225Z created virtual environment CPython3.10.6.final.0-64 in 565ms
+2023-05-15T07:17:12.7595618Z   creator CPython3Posix(dest=/home/runner/work/simplemma/codeql-action-python-autoinstall, clear=False, no_vcs_ignore=False, global=False)
+2023-05-15T07:17:12.7596359Z   seeder FromAppData(download=False, pip=bundle, setuptools=bundle, wheel=bundle, via=copy, app_data_dir=/home/runner/.local/share/virtualenv)
+2023-05-15T07:17:12.7597947Z     added seed packages: pip==23.1, setuptools==67.6.1, wheel==0.40.0
+2023-05-15T07:17:12.7598649Z   activators BashActivator,CShellActivator,FishActivator,NushellActivator,PowerShellActivator,PythonActivator
+2023-05-15T07:17:12.8636953Z + /home/runner/work/simplemma/codeql-action-python-autoinstall/bin/pip install -e .
+2023-05-15T07:17:15.3819762Z Obtaining file:///home/runner/work/simplemma/simplemma
+2023-05-15T07:17:15.3881248Z   Preparing metadata (setup.py): started
+2023-05-15T07:17:16.0801292Z   Preparing metadata (setup.py): finished with status 'done'
+2023-05-15T07:17:16.1764122Z Installing collected packages: simplemma
+2023-05-15T07:17:16.1796436Z   Running setup.py develop for simplemma
+2023-05-15T07:17:17.0474989Z Successfully installed simplemma-0.9.1
+2023-05-15T07:17:17.3853472Z 
+2023-05-15T07:17:17.3854471Z [notice] A new release of pip is available: 23.1 -> 23.1.2
+2023-05-15T07:17:17.3855019Z [notice] To update, run: python -m pip install --upgrade pip
+2023-05-15T07:17:17.5708761Z Setting CODEQL_PYTHON=/home/runner/work/simplemma/codeql-action-python-autoinstall/bin/python
+2023-05-15T07:17:17.5875204Z ##[endgroup]
+2023-05-15T07:17:17.5878024Z Writing augmented user configuration file to /home/runner/work/_temp/user-config.yaml
+2023-05-15T07:17:17.5878677Z ##[group]Augmented user configuration file contents
+2023-05-15T07:17:17.5878940Z {}
+2023-05-15T07:17:17.5879058Z 
+2023-05-15T07:17:17.5879304Z ##[endgroup]
+2023-05-15T07:17:17.5886486Z [command]/opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/codeql database init --db-cluster /home/runner/work/_temp/codeql_databases --source-root=/home/runner/work/simplemma/simplemma --language=python --codescanning-config=/home/runner/work/_temp/user-config.yaml
+2023-05-15T07:17:22.0035965Z Calculating baseline information in /home/runner/work/simplemma/simplemma
+2023-05-15T07:17:22.1677290Z Calculated baseline information for languages: python (160ms).
+2023-05-15T07:17:22.3167762Z Resolving extractor python.
+2023-05-15T07:17:22.3206914Z Successfully loaded extractor Python (python) from /opt/hostedtoolcache/CodeQL/2.13.1-20230428/x64/codeql/python.
+2023-05-15T07:17:22.3880841Z Created skeleton CodeQL database at /home/runner/work/_temp/codeql_databases/python. This in-progress database is ready to be populated by an extractor.
