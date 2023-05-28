@@ -1,12 +1,12 @@
-2023-05-01T12:14:27.6902898Z Post job cleanup.
-2023-05-01T12:14:27.8860028Z [command]/usr/bin/git version
-2023-05-01T12:14:27.8942922Z git version 2.40.1
-2023-05-01T12:14:27.9009468Z Temporarily overriding HOME='/home/runner/work/_temp/1951ff44-6f2a-4e9d-8c66-bd532cb669d6' before making global git config changes
-2023-05-01T12:14:27.9013700Z Adding repository directory to the temporary git global config as a safe directory
-2023-05-01T12:14:27.9022338Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/nox-build-matrix/nox-build-matrix
-2023-05-01T12:14:27.9090180Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
-2023-05-01T12:14:27.9152673Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
-2023-05-01T12:14:28.0243012Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
-2023-05-01T12:14:28.0290525Z http.https://github.com/.extraheader
-2023-05-01T12:14:28.0309707Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
-2023-05-01T12:14:28.0390996Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2023-05-01T12:14:26.2938480Z Post job cleanup.
+2023-05-01T12:14:26.5981658Z [command]/usr/bin/git version
+2023-05-01T12:14:26.6208273Z git version 2.40.1
+2023-05-01T12:14:26.6326975Z Temporarily overriding HOME='/home/runner/work/_temp/61cf00ef-c85f-405e-b73c-706442514637' before making global git config changes
+2023-05-01T12:14:26.6327765Z Adding repository directory to the temporary git global config as a safe directory
+2023-05-01T12:14:26.6328648Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/nox-build-matrix/nox-build-matrix
+2023-05-01T12:14:26.6549983Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2023-05-01T12:14:26.6738687Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2023-05-01T12:14:26.9032872Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2023-05-01T12:14:26.9173642Z http.https://github.com/.extraheader
+2023-05-01T12:14:26.9210936Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2023-05-01T12:14:26.9537500Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
