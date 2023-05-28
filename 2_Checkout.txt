@@ -1,96 +1,96 @@
-2023-05-01T12:14:21.5712321Z ##[group]Run actions/checkout@v2
-2023-05-01T12:14:21.5712607Z with:
-2023-05-01T12:14:21.5712814Z   repository: Devlynnx/nox-build-matrix
-2023-05-01T12:14:21.5713225Z   token: ***
-2023-05-01T12:14:21.5713407Z   ssh-strict: true
-2023-05-01T12:14:21.5713609Z   persist-credentials: true
-2023-05-01T12:14:21.5713793Z   clean: true
-2023-05-01T12:14:21.5713971Z   fetch-depth: 1
-2023-05-01T12:14:21.5714156Z   lfs: false
-2023-05-01T12:14:21.5714314Z   submodules: false
-2023-05-01T12:14:21.5714507Z   set-safe-directory: true
-2023-05-01T12:14:21.5714707Z ##[endgroup]
-2023-05-01T12:14:21.9011943Z Syncing repository: Devlynnx/nox-build-matrix
-2023-05-01T12:14:21.9014101Z ##[group]Getting Git version info
-2023-05-01T12:14:21.9014732Z Working directory is '/home/runner/work/nox-build-matrix/nox-build-matrix'
-2023-05-01T12:14:21.9015377Z [command]/usr/bin/git version
-2023-05-01T12:14:21.9134870Z git version 2.40.1
-2023-05-01T12:14:21.9158461Z ##[endgroup]
-2023-05-01T12:14:21.9176208Z Temporarily overriding HOME='/home/runner/work/_temp/06ed74e8-181c-4030-9c67-117c2e212a35' before making global git config changes
-2023-05-01T12:14:21.9176695Z Adding repository directory to the temporary git global config as a safe directory
-2023-05-01T12:14:21.9177176Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/nox-build-matrix/nox-build-matrix
-2023-05-01T12:14:21.9226957Z Deleting the contents of '/home/runner/work/nox-build-matrix/nox-build-matrix'
-2023-05-01T12:14:21.9232603Z ##[group]Initializing the repository
-2023-05-01T12:14:21.9236780Z [command]/usr/bin/git init /home/runner/work/nox-build-matrix/nox-build-matrix
-2023-05-01T12:14:21.9316720Z hint: Using 'master' as the name for the initial branch. This default branch name
-2023-05-01T12:14:21.9318076Z hint: is subject to change. To configure the initial branch name to use in all
-2023-05-01T12:14:21.9318875Z hint: of your new repositories, which will suppress this warning, call:
-2023-05-01T12:14:21.9319217Z hint: 
-2023-05-01T12:14:21.9319919Z hint: 	git config --global init.defaultBranch <name>
-2023-05-01T12:14:21.9320297Z hint: 
-2023-05-01T12:14:21.9320721Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
-2023-05-01T12:14:21.9321266Z hint: 'development'. The just-created branch can be renamed via this command:
-2023-05-01T12:14:21.9321588Z hint: 
-2023-05-01T12:14:21.9321879Z hint: 	git branch -m <name>
-2023-05-01T12:14:21.9331620Z Initialized empty Git repository in /home/runner/work/nox-build-matrix/nox-build-matrix/.git/
-2023-05-01T12:14:21.9343382Z [command]/usr/bin/git remote add origin https://github.com/Devlynnx/nox-build-matrix
-2023-05-01T12:14:21.9394590Z ##[endgroup]
-2023-05-01T12:14:21.9395191Z ##[group]Disabling automatic garbage collection
-2023-05-01T12:14:21.9402116Z [command]/usr/bin/git config --local gc.auto 0
-2023-05-01T12:14:21.9443486Z ##[endgroup]
-2023-05-01T12:14:21.9444396Z ##[group]Setting up auth
-2023-05-01T12:14:21.9454357Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
-2023-05-01T12:14:21.9502839Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
-2023-05-01T12:14:21.9913260Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
-2023-05-01T12:14:21.9940229Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
-2023-05-01T12:14:22.0184916Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
-2023-05-01T12:14:22.0222254Z ##[endgroup]
-2023-05-01T12:14:22.0222814Z ##[group]Fetching the repository
-2023-05-01T12:14:22.0232230Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin +fcdde2dfa4187bc90d115d22551f70c5f1983de9:refs/remotes/origin/main
-2023-05-01T12:14:22.4229138Z remote: Enumerating objects: 17, done.        
-2023-05-01T12:14:22.4234915Z remote: Counting objects:   5% (1/17)        
-2023-05-01T12:14:22.4236907Z remote: Counting objects:  11% (2/17)        
-2023-05-01T12:14:22.4237735Z remote: Counting objects:  17% (3/17)        
-2023-05-01T12:14:22.4239041Z remote: Counting objects:  23% (4/17)        
-2023-05-01T12:14:22.4239847Z remote: Counting objects:  29% (5/17)        
-2023-05-01T12:14:22.4240914Z remote: Counting objects:  35% (6/17)        
-2023-05-01T12:14:22.4241626Z remote: Counting objects:  41% (7/17)        
-2023-05-01T12:14:22.4242913Z remote: Counting objects:  47% (8/17)        
-2023-05-01T12:14:22.4243662Z remote: Counting objects:  52% (9/17)        
-2023-05-01T12:14:22.4244728Z remote: Counting objects:  58% (10/17)        
-2023-05-01T12:14:22.4245592Z remote: Counting objects:  64% (11/17)        
-2023-05-01T12:14:22.4246676Z remote: Counting objects:  70% (12/17)        
-2023-05-01T12:14:22.4247430Z remote: Counting objects:  76% (13/17)        
-2023-05-01T12:14:22.4248487Z remote: Counting objects:  82% (14/17)        
-2023-05-01T12:14:22.4249228Z remote: Counting objects:  88% (15/17)        
-2023-05-01T12:14:22.4250244Z remote: Counting objects:  94% (16/17)        
-2023-05-01T12:14:22.4250958Z remote: Counting objects: 100% (17/17)        
-2023-05-01T12:14:22.4251984Z remote: Counting objects: 100% (17/17), done.        
-2023-05-01T12:14:22.4252788Z remote: Compressing objects:   7% (1/14)        
-2023-05-01T12:14:22.4253862Z remote: Compressing objects:  14% (2/14)        
-2023-05-01T12:14:22.4254605Z remote: Compressing objects:  21% (3/14)        
-2023-05-01T12:14:22.4255630Z remote: Compressing objects:  28% (4/14)        
-2023-05-01T12:14:22.4256390Z remote: Compressing objects:  35% (5/14)        
-2023-05-01T12:14:22.4257535Z remote: Compressing objects:  42% (6/14)        
-2023-05-01T12:14:22.4258283Z remote: Compressing objects:  50% (7/14)        
-2023-05-01T12:14:22.4259304Z remote: Compressing objects:  57% (8/14)        
-2023-05-01T12:14:22.4260096Z remote: Compressing objects:  64% (9/14)        
-2023-05-01T12:14:22.4262137Z remote: Compressing objects:  71% (10/14)        
-2023-05-01T12:14:22.4262730Z remote: Compressing objects:  78% (11/14)        
-2023-05-01T12:14:22.4263355Z remote: Compressing objects:  85% (12/14)        
-2023-05-01T12:14:22.4264099Z remote: Compressing objects:  92% (13/14)        
-2023-05-01T12:14:22.4264758Z remote: Compressing objects: 100% (14/14)        
-2023-05-01T12:14:22.4265194Z remote: Compressing objects: 100% (14/14), done.        
-2023-05-01T12:14:22.4424731Z remote: Total 17 (delta 1), reused 4 (delta 0), pack-reused 0        
-2023-05-01T12:14:22.4470590Z From https://github.com/Devlynnx/nox-build-matrix
-2023-05-01T12:14:22.4471370Z  * [new ref]         fcdde2dfa4187bc90d115d22551f70c5f1983de9 -> origin/main
-2023-05-01T12:14:22.4521447Z ##[endgroup]
-2023-05-01T12:14:22.4522291Z ##[group]Determining the checkout info
-2023-05-01T12:14:22.4523470Z ##[endgroup]
-2023-05-01T12:14:22.4524139Z ##[group]Checking out the ref
-2023-05-01T12:14:22.4525410Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
-2023-05-01T12:14:22.4588697Z Switched to a new branch 'main'
-2023-05-01T12:14:22.4589456Z branch 'main' set up to track 'origin/main'.
-2023-05-01T12:14:22.4590586Z ##[endgroup]
-2023-05-01T12:14:22.4619238Z [command]/usr/bin/git log -1 --format='%H'
-2023-05-01T12:14:22.4645969Z 'fcdde2dfa4187bc90d115d22551f70c5f1983de9'
+2023-05-01T12:14:24.0173324Z ##[group]Run actions/checkout@v2
+2023-05-01T12:14:24.0173854Z with:
+2023-05-01T12:14:24.0174208Z   repository: Devlynnx/nox-build-matrix
+2023-05-01T12:14:24.0174957Z   token: ***
+2023-05-01T12:14:24.0175321Z   ssh-strict: true
+2023-05-01T12:14:24.0175694Z   persist-credentials: true
+2023-05-01T12:14:24.0176376Z   clean: true
+2023-05-01T12:14:24.0176714Z   fetch-depth: 1
+2023-05-01T12:14:24.0177316Z   lfs: false
+2023-05-01T12:14:24.0177598Z   submodules: false
+2023-05-01T12:14:24.0178125Z   set-safe-directory: true
+2023-05-01T12:14:24.0178518Z ##[endgroup]
+2023-05-01T12:14:24.4162120Z Syncing repository: Devlynnx/nox-build-matrix
+2023-05-01T12:14:24.4165094Z ##[group]Getting Git version info
+2023-05-01T12:14:24.4165897Z Working directory is '/home/runner/work/nox-build-matrix/nox-build-matrix'
+2023-05-01T12:14:24.4166914Z [command]/usr/bin/git version
+2023-05-01T12:14:24.4338396Z git version 2.40.1
+2023-05-01T12:14:24.4354606Z ##[endgroup]
+2023-05-01T12:14:24.4377254Z Temporarily overriding HOME='/home/runner/work/_temp/565dba04-15ef-4a2d-9e55-f5be7e173c4a' before making global git config changes
+2023-05-01T12:14:24.4378231Z Adding repository directory to the temporary git global config as a safe directory
+2023-05-01T12:14:24.4382915Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/nox-build-matrix/nox-build-matrix
+2023-05-01T12:14:24.4443130Z Deleting the contents of '/home/runner/work/nox-build-matrix/nox-build-matrix'
+2023-05-01T12:14:24.4448619Z ##[group]Initializing the repository
+2023-05-01T12:14:24.4453069Z [command]/usr/bin/git init /home/runner/work/nox-build-matrix/nox-build-matrix
+2023-05-01T12:14:24.4584583Z hint: Using 'master' as the name for the initial branch. This default branch name
+2023-05-01T12:14:24.4585752Z hint: is subject to change. To configure the initial branch name to use in all
+2023-05-01T12:14:24.4587152Z hint: of your new repositories, which will suppress this warning, call:
+2023-05-01T12:14:24.4588172Z hint: 
+2023-05-01T12:14:24.4589527Z hint: 	git config --global init.defaultBranch <name>
+2023-05-01T12:14:24.4590371Z hint: 
+2023-05-01T12:14:24.4591583Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2023-05-01T12:14:24.4592741Z hint: 'development'. The just-created branch can be renamed via this command:
+2023-05-01T12:14:24.4593829Z hint: 
+2023-05-01T12:14:24.4594594Z hint: 	git branch -m <name>
+2023-05-01T12:14:24.4601954Z Initialized empty Git repository in /home/runner/work/nox-build-matrix/nox-build-matrix/.git/
+2023-05-01T12:14:24.4613608Z [command]/usr/bin/git remote add origin https://github.com/Devlynnx/nox-build-matrix
+2023-05-01T12:14:24.4665843Z ##[endgroup]
+2023-05-01T12:14:24.4667382Z ##[group]Disabling automatic garbage collection
+2023-05-01T12:14:24.4671496Z [command]/usr/bin/git config --local gc.auto 0
+2023-05-01T12:14:24.4705071Z ##[endgroup]
+2023-05-01T12:14:24.4706275Z ##[group]Setting up auth
+2023-05-01T12:14:24.4714262Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2023-05-01T12:14:24.4750658Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2023-05-01T12:14:24.5284917Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2023-05-01T12:14:24.5321247Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2023-05-01T12:14:24.5637626Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2023-05-01T12:14:24.5684406Z ##[endgroup]
+2023-05-01T12:14:24.5686585Z ##[group]Fetching the repository
+2023-05-01T12:14:24.5696648Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin +fcdde2dfa4187bc90d115d22551f70c5f1983de9:refs/remotes/origin/main
+2023-05-01T12:14:24.9664680Z remote: Enumerating objects: 17, done.        
+2023-05-01T12:14:24.9691986Z remote: Counting objects:   5% (1/17)        
+2023-05-01T12:14:24.9692474Z remote: Counting objects:  11% (2/17)        
+2023-05-01T12:14:24.9692857Z remote: Counting objects:  17% (3/17)        
+2023-05-01T12:14:24.9693494Z remote: Counting objects:  23% (4/17)        
+2023-05-01T12:14:24.9694125Z remote: Counting objects:  29% (5/17)        
+2023-05-01T12:14:24.9694476Z remote: Counting objects:  35% (6/17)        
+2023-05-01T12:14:24.9694882Z remote: Counting objects:  41% (7/17)        
+2023-05-01T12:14:24.9695174Z remote: Counting objects:  47% (8/17)        
+2023-05-01T12:14:24.9695587Z remote: Counting objects:  52% (9/17)        
+2023-05-01T12:14:24.9696138Z remote: Counting objects:  58% (10/17)        
+2023-05-01T12:14:24.9696651Z remote: Counting objects:  64% (11/17)        
+2023-05-01T12:14:24.9697259Z remote: Counting objects:  70% (12/17)        
+2023-05-01T12:14:24.9697819Z remote: Counting objects:  76% (13/17)        
+2023-05-01T12:14:24.9698406Z remote: Counting objects:  82% (14/17)        
+2023-05-01T12:14:24.9698705Z remote: Counting objects:  88% (15/17)        
+2023-05-01T12:14:24.9699048Z remote: Counting objects:  94% (16/17)        
+2023-05-01T12:14:24.9699394Z remote: Counting objects: 100% (17/17)        
+2023-05-01T12:14:24.9699756Z remote: Counting objects: 100% (17/17), done.        
+2023-05-01T12:14:24.9700326Z remote: Compressing objects:   7% (1/14)        
+2023-05-01T12:14:24.9700682Z remote: Compressing objects:  14% (2/14)        
+2023-05-01T12:14:24.9702626Z remote: Compressing objects:  21% (3/14)        
+2023-05-01T12:14:24.9703079Z remote: Compressing objects:  28% (4/14)        
+2023-05-01T12:14:24.9703633Z remote: Compressing objects:  35% (5/14)        
+2023-05-01T12:14:24.9703996Z remote: Compressing objects:  42% (6/14)        
+2023-05-01T12:14:24.9704406Z remote: Compressing objects:  50% (7/14)        
+2023-05-01T12:14:24.9705024Z remote: Compressing objects:  57% (8/14)        
+2023-05-01T12:14:24.9705943Z remote: Compressing objects:  64% (9/14)        
+2023-05-01T12:14:24.9706442Z remote: Compressing objects:  71% (10/14)        
+2023-05-01T12:14:24.9706845Z remote: Compressing objects:  78% (11/14)        
+2023-05-01T12:14:24.9707235Z remote: Compressing objects:  85% (12/14)        
+2023-05-01T12:14:24.9707551Z remote: Compressing objects:  92% (13/14)        
+2023-05-01T12:14:24.9708309Z remote: Compressing objects: 100% (14/14)        
+2023-05-01T12:14:24.9708693Z remote: Compressing objects: 100% (14/14), done.        
+2023-05-01T12:14:24.9861099Z remote: Total 17 (delta 1), reused 4 (delta 0), pack-reused 0        
+2023-05-01T12:14:24.9923343Z From https://github.com/Devlynnx/nox-build-matrix
+2023-05-01T12:14:24.9924095Z  * [new ref]         fcdde2dfa4187bc90d115d22551f70c5f1983de9 -> origin/main
+2023-05-01T12:14:24.9968152Z ##[endgroup]
+2023-05-01T12:14:24.9970357Z ##[group]Determining the checkout info
+2023-05-01T12:14:24.9972451Z ##[endgroup]
+2023-05-01T12:14:24.9973632Z ##[group]Checking out the ref
+2023-05-01T12:14:24.9979358Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2023-05-01T12:14:25.0066368Z Switched to a new branch 'main'
+2023-05-01T12:14:25.0069323Z branch 'main' set up to track 'origin/main'.
+2023-05-01T12:14:25.0075110Z ##[endgroup]
+2023-05-01T12:14:25.0121125Z [command]/usr/bin/git log -1 --format='%H'
+2023-05-01T12:14:25.0149918Z 'fcdde2dfa4187bc90d115d22551f70c5f1983de9'
