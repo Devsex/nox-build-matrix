@@ -1,0 +1,7 @@
+2023-05-01T12:14:24.6244968Z ##[group]Run nox -s "multi_version-3.7" -f test/noxfile.py
+2023-05-01T12:14:24.6245390Z [36;1mnox -s "multi_version-3.7" -f test/noxfile.py[0m
+2023-05-01T12:14:24.6307453Z shell: /usr/bin/bash -e {0}
+2023-05-01T12:14:24.6307726Z ##[endgroup]
+2023-05-01T12:14:24.7380054Z nox > Running session multi_version-3.7
+2023-05-01T12:14:24.7392269Z nox > Creating virtual environment (virtualenv) using python3.7 in .nox/multi_version-3-7
+2023-05-01T12:14:26.2626019Z nox > Session multi_version-3.7 was successful.

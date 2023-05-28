@@ -1,0 +1,81 @@
+2023-05-01T12:14:13.4839109Z ##[section]Starting: Prepare job run_nox
+2023-05-01T12:14:13.4878638Z Evaluating strategy
+2023-05-01T12:14:13.4883641Z Evaluating: fromJson(needs.get_matrix.outputs.matrix)
+2023-05-01T12:14:13.4883772Z ##[debug]Evaluating fromJson:
+2023-05-01T12:14:13.4883836Z ##[debug]..Evaluating Index:
+2023-05-01T12:14:13.4883859Z ##[debug]....Evaluating Index:
+2023-05-01T12:14:13.4883895Z ##[debug]......Evaluating Index:
+2023-05-01T12:14:13.4883915Z ##[debug]........Evaluating needs:
+2023-05-01T12:14:13.4883952Z ##[debug]........=> Object
+2023-05-01T12:14:13.4883985Z ##[debug]........Evaluating String:
+2023-05-01T12:14:13.4884014Z ##[debug]........=> 'get_matrix'
+2023-05-01T12:14:13.4884052Z ##[debug]......=> Object
+2023-05-01T12:14:13.4884066Z ##[debug]......Evaluating String:
+2023-05-01T12:14:13.4884087Z ##[debug]......=> 'outputs'
+2023-05-01T12:14:13.4884105Z ##[debug]....=> Object
+2023-05-01T12:14:13.4884132Z ##[debug]....Evaluating String:
+2023-05-01T12:14:13.4884152Z ##[debug]....=> 'matrix'
+2023-05-01T12:14:13.4884185Z ##[debug]..=> '["multi_version-3.6", "multi_version-3.7", "multi_version-3.8", "multi_version-3.9", "single_version", "parametrized(param=''a'')", "parametrized(param=''b'')", "parametrized(param=''c'')", "parametrized_display_name(one)", "parametrized_display_name(two)", "parametrized_display_name(three)", "custom_name"]'
+2023-05-01T12:14:13.4884508Z ##[debug]=> Array
+2023-05-01T12:14:13.4884532Z Result: Array
+2023-05-01T12:14:13.4891347Z Creating job 'multi_version-3_6'
+2023-05-01T12:14:13.4895706Z Evaluating timeout
+2023-05-01T12:14:13.4895820Z Evaluating cancel timeout
+2023-05-01T12:14:13.4895858Z Evaluating continue on error
+2023-05-01T12:14:13.4895927Z Evaluating target
+2023-05-01T12:14:13.4896829Z Creating job 'multi_version-3_7'
+2023-05-01T12:14:13.4901997Z Evaluating timeout
+2023-05-01T12:14:13.4902116Z Evaluating cancel timeout
+2023-05-01T12:14:13.4902164Z Evaluating continue on error
+2023-05-01T12:14:13.4902214Z Evaluating target
+2023-05-01T12:14:13.4903109Z Creating job 'multi_version-3_8'
+2023-05-01T12:14:13.4907827Z Evaluating timeout
+2023-05-01T12:14:13.4907997Z Evaluating cancel timeout
+2023-05-01T12:14:13.4908050Z Evaluating continue on error
+2023-05-01T12:14:13.4908112Z Evaluating target
+2023-05-01T12:14:13.4909096Z Creating job 'multi_version-3_9'
+2023-05-01T12:14:13.4912395Z Evaluating timeout
+2023-05-01T12:14:13.4912438Z Evaluating cancel timeout
+2023-05-01T12:14:13.4912460Z Evaluating continue on error
+2023-05-01T12:14:13.4912485Z Evaluating target
+2023-05-01T12:14:13.4912913Z Creating job 'single_version'
+2023-05-01T12:14:13.4915611Z Evaluating timeout
+2023-05-01T12:14:13.4915641Z Evaluating cancel timeout
+2023-05-01T12:14:13.4915663Z Evaluating continue on error
+2023-05-01T12:14:13.4915687Z Evaluating target
+2023-05-01T12:14:13.4916050Z Creating job 'parametrized_param__a__'
+2023-05-01T12:14:13.4918754Z Evaluating timeout
+2023-05-01T12:14:13.4918781Z Evaluating cancel timeout
+2023-05-01T12:14:13.4918989Z Evaluating continue on error
+2023-05-01T12:14:13.4919034Z Evaluating target
+2023-05-01T12:14:13.4919663Z Creating job 'parametrized_param__b__'
+2023-05-01T12:14:13.4922494Z Evaluating timeout
+2023-05-01T12:14:13.4922539Z Evaluating cancel timeout
+2023-05-01T12:14:13.4922562Z Evaluating continue on error
+2023-05-01T12:14:13.4922586Z Evaluating target
+2023-05-01T12:14:13.4922941Z Creating job 'parametrized_param__c__'
+2023-05-01T12:14:13.4925955Z Evaluating timeout
+2023-05-01T12:14:13.4925992Z Evaluating cancel timeout
+2023-05-01T12:14:13.4926014Z Evaluating continue on error
+2023-05-01T12:14:13.4926038Z Evaluating target
+2023-05-01T12:14:13.4926459Z Creating job 'parametrized_display_name_one_'
+2023-05-01T12:14:13.4929184Z Evaluating timeout
+2023-05-01T12:14:13.4929228Z Evaluating cancel timeout
+2023-05-01T12:14:13.4929252Z Evaluating continue on error
+2023-05-01T12:14:13.4929275Z Evaluating target
+2023-05-01T12:14:13.4929625Z Creating job 'parametrized_display_name_two_'
+2023-05-01T12:14:13.4932341Z Evaluating timeout
+2023-05-01T12:14:13.4932368Z Evaluating cancel timeout
+2023-05-01T12:14:13.4932390Z Evaluating continue on error
+2023-05-01T12:14:13.4932438Z Evaluating target
+2023-05-01T12:14:13.4932782Z Creating job 'parametrized_display_name_three_'
+2023-05-01T12:14:13.4935480Z Evaluating timeout
+2023-05-01T12:14:13.4935506Z Evaluating cancel timeout
+2023-05-01T12:14:13.4935528Z Evaluating continue on error
+2023-05-01T12:14:13.4935553Z Evaluating target
+2023-05-01T12:14:13.4935908Z Creating job 'custom_name'
+2023-05-01T12:14:13.4938596Z Evaluating timeout
+2023-05-01T12:14:13.4938622Z Evaluating cancel timeout
+2023-05-01T12:14:13.4938643Z Evaluating continue on error
+2023-05-01T12:14:13.4938666Z Evaluating target
+2023-05-01T12:14:13.4941956Z ##[section]Finishing: Prepare job run_nox

@@ -1,0 +1,4 @@
+2023-05-01T12:14:14.1475353Z Requested labels: ubuntu-latest
+2023-05-01T12:14:14.1475621Z Job defined at: Devlynnx/nox-build-matrix/.github/workflows/test.yml@refs/heads/main
+2023-05-01T12:14:14.1475726Z Waiting for a runner to pick up this job...
+2023-05-01T12:14:26.1502181Z Job is cancelled before starting.

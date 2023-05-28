@@ -1,0 +1,75 @@
+2023-05-01T12:14:01.6386121Z ##[group]Run ./
+2023-05-01T12:14:01.6386399Z with:
+2023-05-01T12:14:01.6386613Z   noxfile: test/noxfile.py
+2023-05-01T12:14:01.6386845Z   keywords: not ignored
+2023-05-01T12:14:01.6387042Z ##[endgroup]
+2023-05-01T12:14:01.6563932Z ##[group]Building docker image
+2023-05-01T12:14:01.6564338Z Dockerfile for action: '/home/runner/work/nox-build-matrix/nox-build-matrix/./Dockerfile'.
+2023-05-01T12:14:01.6580036Z ##[command]/usr/bin/docker build -t 6c0442:33becab96daa523ff69398091d787775 -f "/home/runner/work/nox-build-matrix/nox-build-matrix/./Dockerfile" "/home/runner/work/nox-build-matrix/nox-build-matrix"
+2023-05-01T12:14:01.8988100Z Sending build context to Docker daemon  121.9kB
+2023-05-01T12:14:01.8988469Z 
+2023-05-01T12:14:01.9392158Z Step 1/5 : FROM python:3.9-alpine
+2023-05-01T12:14:02.2163650Z 3.9-alpine: Pulling from library/python
+2023-05-01T12:14:02.3705904Z f56be85fc22e: Already exists
+2023-05-01T12:14:02.4058361Z ea5757f4b3f8: Pulling fs layer
+2023-05-01T12:14:02.4103974Z f7a8af4d5a06: Pulling fs layer
+2023-05-01T12:14:02.4104971Z 44c9399aefe6: Pulling fs layer
+2023-05-01T12:14:02.4105212Z 80449c5f7a91: Pulling fs layer
+2023-05-01T12:14:02.4105579Z 80449c5f7a91: Waiting
+2023-05-01T12:14:02.4843204Z 44c9399aefe6: Verifying Checksum
+2023-05-01T12:14:02.4844026Z 44c9399aefe6: Download complete
+2023-05-01T12:14:02.5039942Z ea5757f4b3f8: Verifying Checksum
+2023-05-01T12:14:02.5041041Z ea5757f4b3f8: Download complete
+2023-05-01T12:14:02.5880446Z f7a8af4d5a06: Verifying Checksum
+2023-05-01T12:14:02.5880978Z f7a8af4d5a06: Download complete
+2023-05-01T12:14:02.6143474Z 80449c5f7a91: Verifying Checksum
+2023-05-01T12:14:02.6144042Z 80449c5f7a91: Download complete
+2023-05-01T12:14:02.9753022Z ea5757f4b3f8: Pull complete
+2023-05-01T12:14:03.5479172Z f7a8af4d5a06: Pull complete
+2023-05-01T12:14:03.6008316Z 44c9399aefe6: Pull complete
+2023-05-01T12:14:03.8591073Z 80449c5f7a91: Pull complete
+2023-05-01T12:14:03.8635939Z Digest: sha256:a8d325f07e571fbadcffdf9fc6c06eda9cf3a501584d432b73b8e3db179b4e3c
+2023-05-01T12:14:03.8654935Z Status: Downloaded newer image for python:3.9-alpine
+2023-05-01T12:14:03.8670551Z  ---> d38cf7bdf261
+2023-05-01T12:14:03.8670865Z Step 2/5 : COPY entrypoint.py /entrypoint.py
+2023-05-01T12:14:04.0984333Z  ---> fc4205cf340f
+2023-05-01T12:14:04.0984719Z Step 3/5 : COPY requirements.txt /requirements.txt
+2023-05-01T12:14:05.0147366Z  ---> aa1131f3486a
+2023-05-01T12:14:05.0147780Z Step 4/5 : RUN pip install -r /requirements.txt
+2023-05-01T12:14:05.0379187Z  ---> Running in 80cddc84b48b
+2023-05-01T12:14:08.3430731Z Collecting nox==2020.12.31
+2023-05-01T12:14:08.4180566Z   Downloading nox-2020.12.31-py3-none-any.whl (45 kB)
+2023-05-01T12:14:08.4327395Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 45.1/45.1 KB 3.2 MB/s eta 0:00:00
+2023-05-01T12:14:08.4833326Z Collecting colorlog<5.0.0,>=2.6.1
+2023-05-01T12:14:08.4923791Z   Downloading colorlog-4.8.0-py2.py3-none-any.whl (10 kB)
+2023-05-01T12:14:08.5324719Z Collecting py<2.0.0,>=1.4.0
+2023-05-01T12:14:08.5402738Z   Downloading py-1.11.0-py2.py3-none-any.whl (98 kB)
+2023-05-01T12:14:08.5524335Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 98.7/98.7 KB 11.6 MB/s eta 0:00:00
+2023-05-01T12:14:08.6039915Z Collecting argcomplete<2.0,>=1.9.4
+2023-05-01T12:14:08.6136020Z   Downloading argcomplete-1.12.3-py2.py3-none-any.whl (38 kB)
+2023-05-01T12:14:08.7574094Z Collecting virtualenv>=14.0.0
+2023-05-01T12:14:08.7654397Z   Downloading virtualenv-20.23.0-py3-none-any.whl (3.3 MB)
+2023-05-01T12:14:08.8119894Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 75.9 MB/s eta 0:00:00
+2023-05-01T12:14:08.8923868Z Collecting filelock<4,>=3.11
+2023-05-01T12:14:08.9002228Z   Downloading filelock-3.12.0-py3-none-any.whl (10 kB)
+2023-05-01T12:14:08.9359818Z Collecting platformdirs<4,>=3.2
+2023-05-01T12:14:08.9435000Z   Downloading platformdirs-3.5.0-py3-none-any.whl (15 kB)
+2023-05-01T12:14:08.9643118Z Collecting distlib<1,>=0.3.6
+2023-05-01T12:14:08.9721488Z   Downloading distlib-0.3.6-py2.py3-none-any.whl (468 kB)
+2023-05-01T12:14:08.9819297Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 468.5/468.5 KB 68.3 MB/s eta 0:00:00
+2023-05-01T12:14:09.1185147Z Installing collected packages: distlib, colorlog, argcomplete, py, platformdirs, filelock, virtualenv, nox
+2023-05-01T12:14:09.5719177Z Successfully installed argcomplete-1.12.3 colorlog-4.8.0 distlib-0.3.6 filelock-3.12.0 nox-2020.12.31 platformdirs-3.5.0 py-1.11.0 virtualenv-20.23.0
+2023-05-01T12:14:09.5720046Z [91mWARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+2023-05-01T12:14:09.7006457Z [0m[91mWARNING: You are using pip version 22.0.4; however, version 23.1.2 is available.
+2023-05-01T12:14:09.7007096Z You should consider upgrading via the '/usr/local/bin/python -m pip install --upgrade pip' command.
+2023-05-01T12:14:10.4380273Z [0mRemoving intermediate container 80cddc84b48b
+2023-05-01T12:14:10.4380654Z  ---> 409c49088bc7
+2023-05-01T12:14:10.4380912Z Step 5/5 : ENTRYPOINT [ "python", "/entrypoint.py" ]
+2023-05-01T12:14:10.4529612Z  ---> Running in a60779c50838
+2023-05-01T12:14:11.0191809Z Removing intermediate container a60779c50838
+2023-05-01T12:14:11.0192290Z  ---> b17d35051b41
+2023-05-01T12:14:11.0209852Z Successfully built b17d35051b41
+2023-05-01T12:14:11.0276312Z Successfully tagged 6c0442:33becab96daa523ff69398091d787775
+2023-05-01T12:14:11.0299008Z ##[endgroup]
+2023-05-01T12:14:11.0442078Z ##[command]/usr/bin/docker run --name c044233becab96daa523ff69398091d787775_ddcb7f --label 6c0442 --workdir /github/workspace --rm -e "INPUT_NOXFILE" -e "INPUT_KEYWORDS" -e "HOME" -e "GITHUB_JOB" -e "GITHUB_REF" -e "GITHUB_SHA" -e "GITHUB_REPOSITORY" -e "GITHUB_REPOSITORY_OWNER" -e "GITHUB_REPOSITORY_OWNER_ID" -e "GITHUB_RUN_ID" -e "GITHUB_RUN_NUMBER" -e "GITHUB_RETENTION_DAYS" -e "GITHUB_RUN_ATTEMPT" -e "GITHUB_REPOSITORY_ID" -e "GITHUB_ACTOR_ID" -e "GITHUB_ACTOR" -e "GITHUB_TRIGGERING_ACTOR" -e "GITHUB_WORKFLOW" -e "GITHUB_HEAD_REF" -e "GITHUB_BASE_REF" -e "GITHUB_EVENT_NAME" -e "GITHUB_SERVER_URL" -e "GITHUB_API_URL" -e "GITHUB_GRAPHQL_URL" -e "GITHUB_REF_NAME" -e "GITHUB_REF_PROTECTED" -e "GITHUB_REF_TYPE" -e "GITHUB_WORKFLOW_REF" -e "GITHUB_WORKFLOW_SHA" -e "GITHUB_WORKSPACE" -e "GITHUB_ACTION" -e "GITHUB_EVENT_PATH" -e "GITHUB_ACTION_REPOSITORY" -e "GITHUB_ACTION_REF" -e "GITHUB_PATH" -e "GITHUB_ENV" -e "GITHUB_STEP_SUMMARY" -e "GITHUB_STATE" -e "GITHUB_OUTPUT" -e "RUNNER_OS" -e "RUNNER_ARCH" -e "RUNNER_NAME" -e "RUNNER_TOOL_CACHE" -e "RUNNER_TEMP" -e "RUNNER_WORKSPACE" -e "ACTIONS_RUNTIME_URL" -e "ACTIONS_RUNTIME_TOKEN" -e "ACTIONS_CACHE_URL" -e GITHUB_ACTIONS=true -e CI=true -v "/var/run/docker.sock":"/var/run/docker.sock" -v "/home/runner/work/_temp/_github_home":"/github/home" -v "/home/runner/work/_temp/_github_workflow":"/github/workflow" -v "/home/runner/work/_temp/_runner_file_commands":"/github/file_commands" -v "/home/runner/work/nox-build-matrix/nox-build-matrix":"/github/workspace" 6c0442:33becab96daa523ff69398091d787775  "test/noxfile.py" "not ignored"
+2023-05-01T12:14:11.3656547Z ##[warning]The `set-output` command is deprecated and will be disabled soon. Please upgrade to using Environment Files. For more information see: https://github.blog/changelog/2022-10-11-github-actions-deprecating-save-state-and-set-output-commands/
