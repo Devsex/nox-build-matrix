@@ -1,0 +1,211 @@
+2023-05-01T12:14:13.8733185Z Requested labels: ubuntu-latest
+2023-05-01T12:14:13.8733452Z Job defined at: Devlynnx/nox-build-matrix/.github/workflows/test.yml@refs/heads/main
+2023-05-01T12:14:13.8733548Z Waiting for a runner to pick up this job...
+2023-05-01T12:14:14.2821428Z Job is waiting for a hosted runner to come online.
+2023-05-01T12:14:17.5277750Z Job is about to start running on the hosted runner: GitHub Actions 4 (hosted)
+2023-05-01T12:14:19.8896104Z Current runner version: '2.303.0'
+2023-05-01T12:14:19.8938969Z ##[group]Operating System
+2023-05-01T12:14:19.8939726Z Ubuntu
+2023-05-01T12:14:19.8940047Z 22.04.2
+2023-05-01T12:14:19.8940351Z LTS
+2023-05-01T12:14:19.8940621Z ##[endgroup]
+2023-05-01T12:14:19.8941106Z ##[group]Runner Image
+2023-05-01T12:14:19.8941500Z Image: ubuntu-22.04
+2023-05-01T12:14:19.8941800Z Version: 20230426.1
+2023-05-01T12:14:19.8942350Z Included Software: https://github.com/actions/runner-images/blob/ubuntu22/20230426.1/images/linux/Ubuntu2204-Readme.md
+2023-05-01T12:14:19.8943448Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu22%2F20230426.1
+2023-05-01T12:14:19.8944007Z ##[endgroup]
+2023-05-01T12:14:19.8945495Z ##[group]Runner Image Provisioner
+2023-05-01T12:14:19.8945915Z 2.0.161.1
+2023-05-01T12:14:19.8946241Z ##[endgroup]
+2023-05-01T12:14:19.8947188Z ##[group]GITHUB_TOKEN Permissions
+2023-05-01T12:14:19.8948008Z Contents: read
+2023-05-01T12:14:19.8950356Z Metadata: read
+2023-05-01T12:14:19.8951287Z Packages: read
+2023-05-01T12:14:19.8952049Z ##[endgroup]
+2023-05-01T12:14:19.8958150Z Secret source: Actions
+2023-05-01T12:14:19.8960079Z Prepare workflow directory
+2023-05-01T12:14:20.0003373Z Prepare all required actions
+2023-05-01T12:14:20.0257198Z Getting action download info
+2023-05-01T12:14:20.2207621Z Download action repository 'actions/checkout@v2' (SHA:ee0669bd1cc54295c223e0bb666b733df41de1c5)
+2023-05-01T12:14:20.9458472Z Download action repository 'excitedleigh/setup-nox@v2.0.0' (SHA:38c698655f40d5fe659b8589764ed04ee36d0414)
+2023-05-01T12:14:21.5952763Z Complete job name: Run Nox (custom_name)
+2023-05-01T12:14:21.7394861Z ##[group]Run actions/checkout@v2
+2023-05-01T12:14:21.7395344Z with:
+2023-05-01T12:14:21.7395635Z   repository: Devlynnx/nox-build-matrix
+2023-05-01T12:14:21.7396287Z   token: ***
+2023-05-01T12:14:21.7396670Z   ssh-strict: true
+2023-05-01T12:14:21.7396953Z   persist-credentials: true
+2023-05-01T12:14:21.7397271Z   clean: true
+2023-05-01T12:14:21.7397563Z   fetch-depth: 1
+2023-05-01T12:14:21.7398355Z   lfs: false
+2023-05-01T12:14:21.7398658Z   submodules: false
+2023-05-01T12:14:21.7398972Z   set-safe-directory: true
+2023-05-01T12:14:21.7399265Z ##[endgroup]
+2023-05-01T12:14:22.1228225Z Syncing repository: Devlynnx/nox-build-matrix
+2023-05-01T12:14:22.1230866Z ##[group]Getting Git version info
+2023-05-01T12:14:22.1231643Z Working directory is '/home/runner/work/nox-build-matrix/nox-build-matrix'
+2023-05-01T12:14:22.1232479Z [command]/usr/bin/git version
+2023-05-01T12:14:22.1412630Z git version 2.40.1
+2023-05-01T12:14:22.1445828Z ##[endgroup]
+2023-05-01T12:14:22.1475500Z Temporarily overriding HOME='/home/runner/work/_temp/3b1e4f20-1790-42e0-a45d-c3c1c98dc846' before making global git config changes
+2023-05-01T12:14:22.1476614Z Adding repository directory to the temporary git global config as a safe directory
+2023-05-01T12:14:22.1477404Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/nox-build-matrix/nox-build-matrix
+2023-05-01T12:14:22.1539657Z Deleting the contents of '/home/runner/work/nox-build-matrix/nox-build-matrix'
+2023-05-01T12:14:22.1545943Z ##[group]Initializing the repository
+2023-05-01T12:14:22.1551201Z [command]/usr/bin/git init /home/runner/work/nox-build-matrix/nox-build-matrix
+2023-05-01T12:14:22.1664293Z hint: Using 'master' as the name for the initial branch. This default branch name
+2023-05-01T12:14:22.1665562Z hint: is subject to change. To configure the initial branch name to use in all
+2023-05-01T12:14:22.1667055Z hint: of your new repositories, which will suppress this warning, call:
+2023-05-01T12:14:22.1667490Z hint: 
+2023-05-01T12:14:22.1668348Z hint: 	git config --global init.defaultBranch <name>
+2023-05-01T12:14:22.1668852Z hint: 
+2023-05-01T12:14:22.1669332Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2023-05-01T12:14:22.1669954Z hint: 'development'. The just-created branch can be renamed via this command:
+2023-05-01T12:14:22.1670360Z hint: 
+2023-05-01T12:14:22.1670835Z hint: 	git branch -m <name>
+2023-05-01T12:14:22.1684689Z Initialized empty Git repository in /home/runner/work/nox-build-matrix/nox-build-matrix/.git/
+2023-05-01T12:14:22.1701015Z [command]/usr/bin/git remote add origin https://github.com/Devlynnx/nox-build-matrix
+2023-05-01T12:14:22.1761300Z ##[endgroup]
+2023-05-01T12:14:22.1762588Z ##[group]Disabling automatic garbage collection
+2023-05-01T12:14:22.1766268Z [command]/usr/bin/git config --local gc.auto 0
+2023-05-01T12:14:22.1808884Z ##[endgroup]
+2023-05-01T12:14:22.1810067Z ##[group]Setting up auth
+2023-05-01T12:14:22.1821723Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2023-05-01T12:14:22.1864372Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2023-05-01T12:14:22.2368591Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2023-05-01T12:14:22.2409961Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2023-05-01T12:14:22.2697323Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2023-05-01T12:14:22.2852354Z ##[endgroup]
+2023-05-01T12:14:22.2854567Z ##[group]Fetching the repository
+2023-05-01T12:14:22.2864019Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin +fcdde2dfa4187bc90d115d22551f70c5f1983de9:refs/remotes/origin/main
+2023-05-01T12:14:22.6171574Z remote: Enumerating objects: 17, done.        
+2023-05-01T12:14:22.6193524Z remote: Counting objects:   5% (1/17)        
+2023-05-01T12:14:22.6194238Z remote: Counting objects:  11% (2/17)        
+2023-05-01T12:14:22.6194620Z remote: Counting objects:  17% (3/17)        
+2023-05-01T12:14:22.6195348Z remote: Counting objects:  23% (4/17)        
+2023-05-01T12:14:22.6196016Z remote: Counting objects:  29% (5/17)        
+2023-05-01T12:14:22.6196571Z remote: Counting objects:  35% (6/17)        
+2023-05-01T12:14:22.6197089Z remote: Counting objects:  41% (7/17)        
+2023-05-01T12:14:22.6197384Z remote: Counting objects:  47% (8/17)        
+2023-05-01T12:14:22.6197745Z remote: Counting objects:  52% (9/17)        
+2023-05-01T12:14:22.6199877Z remote: Counting objects:  58% (10/17)        
+2023-05-01T12:14:22.6200481Z remote: Counting objects:  64% (11/17)        
+2023-05-01T12:14:22.6200863Z remote: Counting objects:  70% (12/17)        
+2023-05-01T12:14:22.6201406Z remote: Counting objects:  76% (13/17)        
+2023-05-01T12:14:22.6201878Z remote: Counting objects:  82% (14/17)        
+2023-05-01T12:14:22.6202214Z remote: Counting objects:  88% (15/17)        
+2023-05-01T12:14:22.6202570Z remote: Counting objects:  94% (16/17)        
+2023-05-01T12:14:22.6203074Z remote: Counting objects: 100% (17/17)        
+2023-05-01T12:14:22.6203393Z remote: Counting objects: 100% (17/17), done.        
+2023-05-01T12:14:22.6203982Z remote: Compressing objects:   7% (1/14)        
+2023-05-01T12:14:22.6204346Z remote: Compressing objects:  14% (2/14)        
+2023-05-01T12:14:22.6204646Z remote: Compressing objects:  21% (3/14)        
+2023-05-01T12:14:22.6204987Z remote: Compressing objects:  28% (4/14)        
+2023-05-01T12:14:22.6225614Z remote: Compressing objects:  35% (5/14)        
+2023-05-01T12:14:22.6228775Z remote: Compressing objects:  42% (6/14)        
+2023-05-01T12:14:22.6231479Z remote: Compressing objects:  50% (7/14)        
+2023-05-01T12:14:22.6234249Z remote: Compressing objects:  57% (8/14)        
+2023-05-01T12:14:22.6237764Z remote: Compressing objects:  64% (9/14)        
+2023-05-01T12:14:22.6241188Z remote: Compressing objects:  71% (10/14)        
+2023-05-01T12:14:22.6253711Z remote: Compressing objects:  78% (11/14)        
+2023-05-01T12:14:22.6256890Z remote: Compressing objects:  85% (12/14)        
+2023-05-01T12:14:22.6260035Z remote: Compressing objects:  92% (13/14)        
+2023-05-01T12:14:22.6264475Z remote: Compressing objects: 100% (14/14)        
+2023-05-01T12:14:22.6265147Z remote: Compressing objects: 100% (14/14), done.        
+2023-05-01T12:14:22.6497121Z remote: Total 17 (delta 1), reused 4 (delta 0), pack-reused 0        
+2023-05-01T12:14:22.6549301Z From https://github.com/Devlynnx/nox-build-matrix
+2023-05-01T12:14:22.6550675Z  * [new ref]         fcdde2dfa4187bc90d115d22551f70c5f1983de9 -> origin/main
+2023-05-01T12:14:22.6588888Z ##[endgroup]
+2023-05-01T12:14:22.6590507Z ##[group]Determining the checkout info
+2023-05-01T12:14:22.6591923Z ##[endgroup]
+2023-05-01T12:14:22.6592978Z ##[group]Checking out the ref
+2023-05-01T12:14:22.6598130Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2023-05-01T12:14:22.6680709Z Switched to a new branch 'main'
+2023-05-01T12:14:22.6682693Z branch 'main' set up to track 'origin/main'.
+2023-05-01T12:14:22.6688907Z ##[endgroup]
+2023-05-01T12:14:22.6738083Z [command]/usr/bin/git log -1 --format='%H'
+2023-05-01T12:14:22.6769378Z 'fcdde2dfa4187bc90d115d22551f70c5f1983de9'
+2023-05-01T12:14:22.7122154Z ##[group]Run excitedleigh/setup-nox@v2.0.0
+2023-05-01T12:14:22.7122591Z ##[endgroup]
+2023-05-01T12:14:22.8073599Z [ '3.10.11', '3.11.3', '3.7.16', '3.8.16', '3.9.16' ] [ '3.7.13', '3.8.16', '3.9.16' ]
+2023-05-01T12:14:22.8118807Z /opt/hostedtoolcache/PyPy/3.7.13/x64
+2023-05-01T12:14:22.8125313Z /opt/hostedtoolcache/PyPy/3.8.16/x64
+2023-05-01T12:14:22.8138408Z /opt/hostedtoolcache/PyPy/3.9.16/x64
+2023-05-01T12:14:22.8138803Z 3.10.11
+2023-05-01T12:14:22.8139794Z /opt/hostedtoolcache/Python/3.10.11/x64
+2023-05-01T12:14:22.8172128Z root dir contents [
+2023-05-01T12:14:22.8172620Z   'Python-3.10.11.tgz',
+2023-05-01T12:14:22.8172880Z   'bin',
+2023-05-01T12:14:22.8173146Z   'build_output.txt',
+2023-05-01T12:14:22.8173411Z   'include',
+2023-05-01T12:14:22.8173639Z   'lib',
+2023-05-01T12:14:22.8173882Z   'python',
+2023-05-01T12:14:22.8174122Z   'share',
+2023-05-01T12:14:22.8174377Z   'tools_structure.txt'
+2023-05-01T12:14:22.8174634Z ]
+2023-05-01T12:14:22.8175115Z 3.11.3
+2023-05-01T12:14:22.8176268Z /opt/hostedtoolcache/Python/3.11.3/x64
+2023-05-01T12:14:22.8176540Z root dir contents [
+2023-05-01T12:14:22.8176854Z   'Python-3.11.3.tgz',
+2023-05-01T12:14:22.8177113Z   'bin',
+2023-05-01T12:14:22.8177357Z   'build_output.txt',
+2023-05-01T12:14:22.8177622Z   'include',
+2023-05-01T12:14:22.8177858Z   'lib',
+2023-05-01T12:14:22.8178080Z   'python',
+2023-05-01T12:14:22.8178317Z   'share',
+2023-05-01T12:14:22.8178582Z   'tools_structure.txt'
+2023-05-01T12:14:22.8178795Z ]
+2023-05-01T12:14:22.8178986Z 3.7.16
+2023-05-01T12:14:22.8180010Z /opt/hostedtoolcache/Python/3.7.16/x64
+2023-05-01T12:14:22.8180290Z root dir contents [
+2023-05-01T12:14:22.8180572Z   'Python-3.7.16.tgz',
+2023-05-01T12:14:22.8180830Z   'bin',
+2023-05-01T12:14:22.8181275Z   'build_output.txt',
+2023-05-01T12:14:22.8181717Z   'include',
+2023-05-01T12:14:22.8181959Z   'lib',
+2023-05-01T12:14:22.8182193Z   'python',
+2023-05-01T12:14:22.8182428Z   'share',
+2023-05-01T12:14:22.8182693Z   'tools_structure.txt'
+2023-05-01T12:14:22.8182921Z ]
+2023-05-01T12:14:22.8184013Z 3.8.16
+2023-05-01T12:14:22.8185011Z /opt/hostedtoolcache/Python/3.8.16/x64
+2023-05-01T12:14:22.8185292Z root dir contents [
+2023-05-01T12:14:22.8185606Z   'Python-3.8.16.tgz',
+2023-05-01T12:14:22.8185847Z   'bin',
+2023-05-01T12:14:22.8186108Z   'build_output.txt',
+2023-05-01T12:14:22.8186729Z   'include',
+2023-05-01T12:14:22.8187068Z   'lib',
+2023-05-01T12:14:22.8187314Z   'python',
+2023-05-01T12:14:22.8187555Z   'share',
+2023-05-01T12:14:22.8187807Z   'tools_structure.txt'
+2023-05-01T12:14:22.8188035Z ]
+2023-05-01T12:14:22.8188227Z 3.9.16
+2023-05-01T12:14:22.8189231Z /opt/hostedtoolcache/Python/3.9.16/x64
+2023-05-01T12:14:22.8189495Z root dir contents [
+2023-05-01T12:14:22.8189792Z   'Python-3.9.16.tgz',
+2023-05-01T12:14:22.8190049Z   'bin',
+2023-05-01T12:14:22.8190295Z   'build_output.txt',
+2023-05-01T12:14:22.8190555Z   'include',
+2023-05-01T12:14:22.8190792Z   'lib',
+2023-05-01T12:14:22.8191456Z   'python',
+2023-05-01T12:14:22.8191697Z   'share',
+2023-05-01T12:14:22.8191977Z   'tools_structure.txt'
+2023-05-01T12:14:22.8192189Z ]
+2023-05-01T12:14:27.4357519Z ##[error]The operation was canceled.
+2023-05-01T12:14:27.4433096Z Post job cleanup.
+2023-05-01T12:14:27.6197402Z [command]/usr/bin/git version
+2023-05-01T12:14:27.6261426Z git version 2.40.1
+2023-05-01T12:14:27.6323679Z Temporarily overriding HOME='/home/runner/work/_temp/2393d5d3-18cb-4786-93bc-6e40e2ac9f9d' before making global git config changes
+2023-05-01T12:14:27.6324431Z Adding repository directory to the temporary git global config as a safe directory
+2023-05-01T12:14:27.6329713Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/nox-build-matrix/nox-build-matrix
+2023-05-01T12:14:27.6396780Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2023-05-01T12:14:27.6443499Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2023-05-01T12:14:27.6829518Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2023-05-01T12:14:27.6895051Z http.https://github.com/.extraheader
+2023-05-01T12:14:27.6895683Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2023-05-01T12:14:27.6931011Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2023-05-01T12:14:27.7529146Z Cleaning up orphan processes
+2023-05-01T12:14:27.7907459Z Terminate orphan process: pid (1989) (sh)
+2023-05-01T12:14:27.7977816Z Terminate orphan process: pid (1990) (python)
+2023-05-01T12:14:27.8050746Z Terminate orphan process: pid (2006) (rustc)
