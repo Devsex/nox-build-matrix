@@ -1,0 +1,1058 @@
+2023-06-07T13:03:40.0088780Z Requested labels: ubuntu-latest
+2023-06-07T13:03:40.0089484Z Job defined at: actions/checkout/.github/workflows/test.yml@refs/pull/1369/merge
+2023-06-07T13:03:40.0089623Z Waiting for a runner to pick up this job...
+2023-06-07T13:03:43.0010088Z Job is waiting for a hosted runner to come online.
+2023-06-07T13:03:44.2071842Z Job is about to start running on the hosted runner: GitHub Actions 6 (hosted)
+2023-06-07T13:03:47.9450546Z Current runner version: '2.304.0'
+2023-06-07T13:03:47.9479599Z ##[group]Operating System
+2023-06-07T13:03:47.9480162Z Ubuntu
+2023-06-07T13:03:47.9480408Z 22.04.2
+2023-06-07T13:03:47.9480811Z LTS
+2023-06-07T13:03:47.9481114Z ##[endgroup]
+2023-06-07T13:03:47.9481402Z ##[group]Runner Image
+2023-06-07T13:03:47.9481763Z Image: ubuntu-22.04
+2023-06-07T13:03:47.9482089Z Version: 20230606.2
+2023-06-07T13:03:47.9482590Z Included Software: https://github.com/actions/runner-images/blob/ubuntu22/20230606.2/images/linux/Ubuntu2204-Readme.md
+2023-06-07T13:03:47.9483238Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu22%2F20230606.2
+2023-06-07T13:03:47.9483695Z ##[endgroup]
+2023-06-07T13:03:47.9484045Z ##[group]Runner Image Provisioner
+2023-06-07T13:03:47.9484336Z 2.0.194.1
+2023-06-07T13:03:47.9484662Z ##[endgroup]
+2023-06-07T13:03:47.9485598Z ##[group]GITHUB_TOKEN Permissions
+2023-06-07T13:03:47.9486244Z Actions: read
+2023-06-07T13:03:47.9486514Z Checks: read
+2023-06-07T13:03:47.9487100Z Contents: read
+2023-06-07T13:03:47.9487516Z Deployments: read
+2023-06-07T13:03:47.9487867Z Discussions: read
+2023-06-07T13:03:47.9488198Z Issues: read
+2023-06-07T13:03:47.9488463Z Metadata: read
+2023-06-07T13:03:47.9488781Z Packages: read
+2023-06-07T13:03:47.9489092Z Pages: read
+2023-06-07T13:03:47.9489393Z PullRequests: read
+2023-06-07T13:03:47.9489759Z RepositoryProjects: read
+2023-06-07T13:03:47.9490132Z SecurityEvents: read
+2023-06-07T13:03:47.9490416Z Statuses: read
+2023-06-07T13:03:47.9490733Z ##[endgroup]
+2023-06-07T13:03:47.9494476Z Secret source: None
+2023-06-07T13:03:47.9494925Z Prepare workflow directory
+2023-06-07T13:03:48.0442208Z Prepare all required actions
+2023-06-07T13:03:48.0627578Z Getting action download info
+2023-06-07T13:03:48.3374797Z Download action repository 'actions/checkout@v3' (SHA:8e5e7e5ab8b370d6c329ec480221332ada57f0ab)
+2023-06-07T13:03:49.4206955Z Complete job name: test-git-container
+2023-06-07T13:03:49.4900758Z ##[group]Checking docker version
+2023-06-07T13:03:49.4917464Z ##[command]/usr/bin/docker version --format '{{.Server.APIVersion}}'
+2023-06-07T13:03:49.7156622Z '1.41'
+2023-06-07T13:03:49.7177329Z Docker daemon API version: '1.41'
+2023-06-07T13:03:49.7177753Z ##[command]/usr/bin/docker version --format '{{.Client.APIVersion}}'
+2023-06-07T13:03:49.7456453Z '1.41'
+2023-06-07T13:03:49.7480865Z Docker client API version: '1.41'
+2023-06-07T13:03:49.7487855Z ##[endgroup]
+2023-06-07T13:03:49.7491007Z ##[group]Clean up resources from previous jobs
+2023-06-07T13:03:49.7497538Z ##[command]/usr/bin/docker ps --all --quiet --no-trunc --filter "label=ed866e"
+2023-06-07T13:03:49.7712247Z ##[command]/usr/bin/docker network prune --force --filter "label=ed866e"
+2023-06-07T13:03:49.7954896Z ##[endgroup]
+2023-06-07T13:03:49.7955230Z ##[group]Create local container network
+2023-06-07T13:03:49.7965845Z ##[command]/usr/bin/docker network create --label ed866e github_network_d14ce24c78044de09c5b9e2d5abb5e3c
+2023-06-07T13:03:49.8669423Z 81afd56c8edfc59224713162ea559fdb9bae58914b35d4c40303b22f8cb08bc3
+2023-06-07T13:03:49.8692656Z ##[endgroup]
+2023-06-07T13:03:49.8782724Z ##[group]Starting job container
+2023-06-07T13:03:49.8802856Z ##[command]/usr/bin/docker pull bitnami/git:latest
+2023-06-07T13:03:50.8018281Z latest: Pulling from bitnami/git
+2023-06-07T13:03:51.0221708Z 2fc2fc0df149: Pulling fs layer
+2023-06-07T13:03:51.7601475Z 2fc2fc0df149: Verifying Checksum
+2023-06-07T13:03:51.7603228Z 2fc2fc0df149: Download complete
+2023-06-07T13:03:53.4547517Z 2fc2fc0df149: Pull complete
+2023-06-07T13:03:53.4616811Z Digest: sha256:602f1eefa1d7affef6723e38dbdad1afa1c8414d64b37cf3b470f1138da60597
+2023-06-07T13:03:53.4636973Z Status: Downloaded newer image for bitnami/git:latest
+2023-06-07T13:03:53.4657667Z docker.io/bitnami/git:latest
+2023-06-07T13:03:53.4791320Z ##[command]/usr/bin/docker create --name 057806f0fddf4038a52518d320dd61b4_bitnamigitlatest_6c75a0 --label ed866e --workdir /__w/checkout/checkout --network github_network_d14ce24c78044de09c5b9e2d5abb5e3c  -e "HOME=/github/home" -e GITHUB_ACTIONS=true -e CI=true -v "/var/run/docker.sock":"/var/run/docker.sock" -v "/home/runner/work":"/__w" -v "/home/runner/runners/2.304.0/externals":"/__e":ro -v "/home/runner/work/_temp":"/__w/_temp" -v "/home/runner/work/_actions":"/__w/_actions" -v "/opt/hostedtoolcache":"/__t" -v "/home/runner/work/_temp/_github_home":"/github/home" -v "/home/runner/work/_temp/_github_workflow":"/github/workflow" --entrypoint "tail" bitnami/git:latest "-f" "/dev/null"
+2023-06-07T13:03:53.9716688Z 7c2735b5a8dddeef28c0ad89ab55a5604b8042c9e0ab977485f340322343f49f
+2023-06-07T13:03:53.9736407Z ##[command]/usr/bin/docker start 7c2735b5a8dddeef28c0ad89ab55a5604b8042c9e0ab977485f340322343f49f
+2023-06-07T13:03:54.3281031Z 7c2735b5a8dddeef28c0ad89ab55a5604b8042c9e0ab977485f340322343f49f
+2023-06-07T13:03:54.3302368Z ##[command]/usr/bin/docker ps --all --filter id=7c2735b5a8dddeef28c0ad89ab55a5604b8042c9e0ab977485f340322343f49f --filter status=running --no-trunc --format "{{.ID}} {{.Status}}"
+2023-06-07T13:03:54.3514529Z 7c2735b5a8dddeef28c0ad89ab55a5604b8042c9e0ab977485f340322343f49f Up Less than a second
+2023-06-07T13:03:54.3541493Z ##[command]/usr/bin/docker inspect --format "{{range .Config.Env}}{{println .}}{{end}}" 7c2735b5a8dddeef28c0ad89ab55a5604b8042c9e0ab977485f340322343f49f
+2023-06-07T13:03:54.3947225Z HOME=/github/home
+2023-06-07T13:03:54.3947978Z GITHUB_ACTIONS=true
+2023-06-07T13:03:54.3948793Z CI=true
+2023-06-07T13:03:54.3949128Z PATH=/opt/bitnami/git/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+2023-06-07T13:03:54.3949446Z OS_ARCH=amd64
+2023-06-07T13:03:54.3965162Z OS_FLAVOUR=debian-11
+2023-06-07T13:03:54.3967286Z OS_NAME=linux
+2023-06-07T13:03:54.3969394Z APP_VERSION=2.41.0
+2023-06-07T13:03:54.3971525Z BITNAMI_APP_NAME=git
+2023-06-07T13:03:54.3973707Z NSS_WRAPPER_LIB=/opt/bitnami/common/lib/libnss_wrapper.so
+2023-06-07T13:03:54.3989995Z ##[endgroup]
+2023-06-07T13:03:54.4022711Z ##[group]Waiting for all services to be ready
+2023-06-07T13:03:54.4024953Z ##[endgroup]
+2023-06-07T13:03:54.4437407Z ##[group]Run actions/checkout@v3
+2023-06-07T13:03:54.4437683Z with:
+2023-06-07T13:03:54.4437882Z   path: v3
+2023-06-07T13:03:54.4438110Z   repository: actions/checkout
+2023-06-07T13:03:54.4438593Z   token: ***
+2023-06-07T13:03:54.4438799Z   ssh-strict: true
+2023-06-07T13:03:54.4439029Z   persist-credentials: true
+2023-06-07T13:03:54.4439239Z   clean: true
+2023-06-07T13:03:54.4439440Z   fetch-depth: 1
+2023-06-07T13:03:54.4439637Z   lfs: false
+2023-06-07T13:03:54.4439819Z   submodules: false
+2023-06-07T13:03:54.4440041Z   set-safe-directory: true
+2023-06-07T13:03:54.4440261Z ##[endgroup]
+2023-06-07T13:03:54.4583123Z ##[command]/usr/bin/docker exec  7c2735b5a8dddeef28c0ad89ab55a5604b8042c9e0ab977485f340322343f49f sh -c "cat /etc/*release | grep ^ID"
+2023-06-07T13:03:54.9080639Z Syncing repository: actions/checkout
+2023-06-07T13:03:54.9082337Z ##[group]Getting Git version info
+2023-06-07T13:03:54.9082869Z Working directory is '/__w/checkout/checkout/v3'
+2023-06-07T13:03:54.9083509Z [command]/opt/bitnami/git/bin/git version
+2023-06-07T13:03:54.9083764Z git version 2.41.0
+2023-06-07T13:03:54.9084867Z ##[endgroup]
+2023-06-07T13:03:54.9099182Z Temporarily overriding HOME='/__w/_temp/17d25974-98cc-40ed-b73b-0e0db68cc792' before making global git config changes
+2023-06-07T13:03:54.9099655Z Adding repository directory to the temporary git global config as a safe directory
+2023-06-07T13:03:54.9100376Z [command]/opt/bitnami/git/bin/git config --global --add safe.directory /__w/checkout/checkout/v3
+2023-06-07T13:03:54.9119932Z ##[group]Initializing the repository
+2023-06-07T13:03:54.9124291Z [command]/opt/bitnami/git/bin/git init /__w/checkout/checkout/v3
+2023-06-07T13:03:54.9168282Z hint: Using 'master' as the name for the initial branch. This default branch name
+2023-06-07T13:03:54.9170715Z hint: is subject to change. To configure the initial branch name to use in all
+2023-06-07T13:03:54.9187325Z hint: of your new repositories, which will suppress this warning, call:
+2023-06-07T13:03:54.9187631Z hint: 
+2023-06-07T13:03:54.9188048Z hint: 	git config --global init.defaultBranch <name>
+2023-06-07T13:03:54.9188592Z hint: 
+2023-06-07T13:03:54.9188932Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2023-06-07T13:03:54.9189404Z hint: 'development'. The just-created branch can be renamed via this command:
+2023-06-07T13:03:54.9189678Z hint: 
+2023-06-07T13:03:54.9189905Z hint: 	git branch -m <name>
+2023-06-07T13:03:54.9199330Z Initialized empty Git repository in /__w/checkout/checkout/v3/.git/
+2023-06-07T13:03:54.9212793Z [command]/opt/bitnami/git/bin/git remote add origin https://github.com/actions/checkout
+2023-06-07T13:03:54.9261982Z ##[endgroup]
+2023-06-07T13:03:54.9262399Z ##[group]Disabling automatic garbage collection
+2023-06-07T13:03:54.9262911Z [command]/opt/bitnami/git/bin/git config --local gc.auto 0
+2023-06-07T13:03:54.9300132Z ##[endgroup]
+2023-06-07T13:03:54.9300527Z ##[group]Setting up auth
+2023-06-07T13:03:54.9306034Z [command]/opt/bitnami/git/bin/git config --local --name-only --get-regexp core\.sshCommand
+2023-06-07T13:03:54.9344077Z [command]/opt/bitnami/git/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2023-06-07T13:03:54.9590676Z [command]/opt/bitnami/git/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2023-06-07T13:03:54.9626249Z [command]/opt/bitnami/git/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2023-06-07T13:03:54.9868208Z [command]/opt/bitnami/git/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2023-06-07T13:03:54.9926731Z ##[endgroup]
+2023-06-07T13:03:54.9927131Z ##[group]Fetching the repository
+2023-06-07T13:03:54.9946677Z [command]/opt/bitnami/git/bin/git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin +26d26a98d2552554bad0b972c4edcf5c943dd1ab:refs/remotes/pull/1369/merge
+2023-06-07T13:03:55.4057636Z remote: Enumerating objects: 118, done.        
+2023-06-07T13:03:55.4057958Z remote: Counting objects:   0% (1/118)        
+2023-06-07T13:03:55.4058321Z remote: Counting objects:   1% (2/118)        
+2023-06-07T13:03:55.4058574Z remote: Counting objects:   2% (3/118)        
+2023-06-07T13:03:55.4062741Z remote: Counting objects:   3% (4/118)        
+2023-06-07T13:03:55.4063030Z remote: Counting objects:   4% (5/118)        
+2023-06-07T13:03:55.4063293Z remote: Counting objects:   5% (6/118)        
+2023-06-07T13:03:55.4063565Z remote: Counting objects:   6% (8/118)        
+2023-06-07T13:03:55.4063820Z remote: Counting objects:   7% (9/118)        
+2023-06-07T13:03:55.4064085Z remote: Counting objects:   8% (10/118)        
+2023-06-07T13:03:55.4064338Z remote: Counting objects:   9% (11/118)        
+2023-06-07T13:03:55.4064621Z remote: Counting objects:  10% (12/118)        
+2023-06-07T13:03:55.4064884Z remote: Counting objects:  11% (13/118)        
+2023-06-07T13:03:55.4065145Z remote: Counting objects:  12% (15/118)        
+2023-06-07T13:03:55.4065405Z remote: Counting objects:  13% (16/118)        
+2023-06-07T13:03:55.4065661Z remote: Counting objects:  14% (17/118)        
+2023-06-07T13:03:55.4065903Z remote: Counting objects:  15% (18/118)        
+2023-06-07T13:03:55.4066153Z remote: Counting objects:  16% (19/118)        
+2023-06-07T13:03:55.4066406Z remote: Counting objects:  17% (21/118)        
+2023-06-07T13:03:55.4066649Z remote: Counting objects:  18% (22/118)        
+2023-06-07T13:03:55.4066903Z remote: Counting objects:  19% (23/118)        
+2023-06-07T13:03:55.4067197Z remote: Counting objects:  20% (24/118)        
+2023-06-07T13:03:55.4067450Z remote: Counting objects:  21% (25/118)        
+2023-06-07T13:03:55.4067695Z remote: Counting objects:  22% (26/118)        
+2023-06-07T13:03:55.4067948Z remote: Counting objects:  23% (28/118)        
+2023-06-07T13:03:55.4068216Z remote: Counting objects:  24% (29/118)        
+2023-06-07T13:03:55.4068812Z remote: Counting objects:  25% (30/118)        
+2023-06-07T13:03:55.4069073Z remote: Counting objects:  26% (31/118)        
+2023-06-07T13:03:55.4069325Z remote: Counting objects:  27% (32/118)        
+2023-06-07T13:03:55.4069579Z remote: Counting objects:  28% (34/118)        
+2023-06-07T13:03:55.4069820Z remote: Counting objects:  29% (35/118)        
+2023-06-07T13:03:55.4070075Z remote: Counting objects:  30% (36/118)        
+2023-06-07T13:03:55.4070332Z remote: Counting objects:  31% (37/118)        
+2023-06-07T13:03:55.4070572Z remote: Counting objects:  32% (38/118)        
+2023-06-07T13:03:55.4070825Z remote: Counting objects:  33% (39/118)        
+2023-06-07T13:03:55.4071082Z remote: Counting objects:  34% (41/118)        
+2023-06-07T13:03:55.4071322Z remote: Counting objects:  35% (42/118)        
+2023-06-07T13:03:55.4071575Z remote: Counting objects:  36% (43/118)        
+2023-06-07T13:03:55.4071839Z remote: Counting objects:  37% (44/118)        
+2023-06-07T13:03:55.4072087Z remote: Counting objects:  38% (45/118)        
+2023-06-07T13:03:55.4072340Z remote: Counting objects:  39% (47/118)        
+2023-06-07T13:03:55.4072590Z remote: Counting objects:  40% (48/118)        
+2023-06-07T13:03:55.4072846Z remote: Counting objects:  41% (49/118)        
+2023-06-07T13:03:55.4073087Z remote: Counting objects:  42% (50/118)        
+2023-06-07T13:03:55.4073340Z remote: Counting objects:  43% (51/118)        
+2023-06-07T13:03:55.4073592Z remote: Counting objects:  44% (52/118)        
+2023-06-07T13:03:55.4073837Z remote: Counting objects:  45% (54/118)        
+2023-06-07T13:03:55.4074087Z remote: Counting objects:  46% (55/118)        
+2023-06-07T13:03:55.4074339Z remote: Counting objects:  47% (56/118)        
+2023-06-07T13:03:55.4074581Z remote: Counting objects:  48% (57/118)        
+2023-06-07T13:03:55.4074834Z remote: Counting objects:  49% (58/118)        
+2023-06-07T13:03:55.4075226Z remote: Counting objects:  50% (59/118)        
+2023-06-07T13:03:55.4075482Z remote: Counting objects:  51% (61/118)        
+2023-06-07T13:03:55.4075730Z remote: Counting objects:  52% (62/118)        
+2023-06-07T13:03:55.4126343Z remote: Counting objects:  53% (63/118)        
+2023-06-07T13:03:55.4127625Z remote: Counting objects:  54% (64/118)        
+2023-06-07T13:03:55.4128739Z remote: Counting objects:  55% (65/118)        
+2023-06-07T13:03:55.4129865Z remote: Counting objects:  56% (67/118)        
+2023-06-07T13:03:55.4130732Z remote: Counting objects:  57% (68/118)        
+2023-06-07T13:03:55.4131026Z remote: Counting objects:  58% (69/118)        
+2023-06-07T13:03:55.4131293Z remote: Counting objects:  59% (70/118)        
+2023-06-07T13:03:55.4131634Z remote: Counting objects:  60% (71/118)        
+2023-06-07T13:03:55.4131897Z remote: Counting objects:  61% (72/118)        
+2023-06-07T13:03:55.4132227Z remote: Counting objects:  62% (74/118)        
+2023-06-07T13:03:55.4132504Z remote: Counting objects:  63% (75/118)        
+2023-06-07T13:03:55.4132853Z remote: Counting objects:  64% (76/118)        
+2023-06-07T13:03:55.4133219Z remote: Counting objects:  65% (77/118)        
+2023-06-07T13:03:55.4133465Z remote: Counting objects:  66% (78/118)        
+2023-06-07T13:03:55.4133722Z remote: Counting objects:  67% (80/118)        
+2023-06-07T13:03:55.4134064Z remote: Counting objects:  68% (81/118)        
+2023-06-07T13:03:55.4134307Z remote: Counting objects:  69% (82/118)        
+2023-06-07T13:03:55.4134639Z remote: Counting objects:  70% (83/118)        
+2023-06-07T13:03:55.4134897Z remote: Counting objects:  71% (84/118)        
+2023-06-07T13:03:55.4135144Z remote: Counting objects:  72% (85/118)        
+2023-06-07T13:03:55.4135479Z remote: Counting objects:  73% (87/118)        
+2023-06-07T13:03:55.4135735Z remote: Counting objects:  74% (88/118)        
+2023-06-07T13:03:55.4135991Z remote: Counting objects:  75% (89/118)        
+2023-06-07T13:03:55.4136232Z remote: Counting objects:  76% (90/118)        
+2023-06-07T13:03:55.4136576Z remote: Counting objects:  77% (91/118)        
+2023-06-07T13:03:55.4137232Z remote: Counting objects:  78% (93/118)        
+2023-06-07T13:03:55.4137475Z remote: Counting objects:  79% (94/118)        
+2023-06-07T13:03:55.4137738Z remote: Counting objects:  80% (95/118)        
+2023-06-07T13:03:55.4138072Z remote: Counting objects:  81% (96/118)        
+2023-06-07T13:03:55.4138317Z remote: Counting objects:  82% (97/118)        
+2023-06-07T13:03:55.4138572Z remote: Counting objects:  83% (98/118)        
+2023-06-07T13:03:55.4138913Z remote: Counting objects:  84% (100/118)        
+2023-06-07T13:03:55.4139174Z remote: Counting objects:  85% (101/118)        
+2023-06-07T13:03:55.4139437Z remote: Counting objects:  86% (102/118)        
+2023-06-07T13:03:55.4140099Z remote: Counting objects:  87% (103/118)        
+2023-06-07T13:03:55.4140395Z remote: Counting objects:  88% (104/118)        
+2023-06-07T13:03:55.4140728Z remote: Counting objects:  89% (106/118)        
+2023-06-07T13:03:55.4141105Z remote: Counting objects:  90% (107/118)        
+2023-06-07T13:03:55.4141471Z remote: Counting objects:  91% (108/118)        
+2023-06-07T13:03:55.4141812Z remote: Counting objects:  92% (109/118)        
+2023-06-07T13:03:55.4142141Z remote: Counting objects:  93% (110/118)        
+2023-06-07T13:03:55.4142491Z remote: Counting objects:  94% (111/118)        
+2023-06-07T13:03:55.4142774Z remote: Counting objects:  95% (113/118)        
+2023-06-07T13:03:55.4143101Z remote: Counting objects:  96% (114/118)        
+2023-06-07T13:03:55.4143477Z remote: Counting objects:  97% (115/118)        
+2023-06-07T13:03:55.4143753Z remote: Counting objects:  98% (116/118)        
+2023-06-07T13:03:55.4144090Z remote: Counting objects:  99% (117/118)        
+2023-06-07T13:03:55.4144419Z remote: Counting objects: 100% (118/118)        
+2023-06-07T13:03:55.4144712Z remote: Counting objects: 100% (118/118), done.        
+2023-06-07T13:03:55.4145121Z remote: Compressing objects:   1% (1/94)        
+2023-06-07T13:03:55.4145649Z remote: Compressing objects:   2% (2/94)        
+2023-06-07T13:03:55.4146016Z remote: Compressing objects:   3% (3/94)        
+2023-06-07T13:03:55.4146316Z remote: Compressing objects:   4% (4/94)        
+2023-06-07T13:03:55.4146687Z remote: Compressing objects:   5% (5/94)        
+2023-06-07T13:03:55.4147048Z remote: Compressing objects:   6% (6/94)        
+2023-06-07T13:03:55.4147341Z remote: Compressing objects:   7% (7/94)        
+2023-06-07T13:03:55.4147671Z remote: Compressing objects:   8% (8/94)        
+2023-06-07T13:03:55.4148023Z remote: Compressing objects:   9% (9/94)        
+2023-06-07T13:03:55.4148346Z remote: Compressing objects:  10% (10/94)        
+2023-06-07T13:03:55.4148702Z remote: Compressing objects:  11% (11/94)        
+2023-06-07T13:03:55.4149045Z remote: Compressing objects:  12% (12/94)        
+2023-06-07T13:03:55.4170201Z remote: Compressing objects:  13% (13/94)        
+2023-06-07T13:03:55.4170545Z remote: Compressing objects:  14% (14/94)        
+2023-06-07T13:03:55.4171028Z remote: Compressing objects:  15% (15/94)        
+2023-06-07T13:03:55.4171387Z remote: Compressing objects:  17% (16/94)        
+2023-06-07T13:03:55.4171683Z remote: Compressing objects:  18% (17/94)        
+2023-06-07T13:03:55.4172025Z remote: Compressing objects:  19% (18/94)        
+2023-06-07T13:03:55.4172406Z remote: Compressing objects:  20% (19/94)        
+2023-06-07T13:03:55.4172698Z remote: Compressing objects:  21% (20/94)        
+2023-06-07T13:03:55.4173037Z remote: Compressing objects:  22% (21/94)        
+2023-06-07T13:03:55.4173372Z remote: Compressing objects:  23% (22/94)        
+2023-06-07T13:03:55.4173707Z remote: Compressing objects:  24% (23/94)        
+2023-06-07T13:03:55.4174031Z remote: Compressing objects:  25% (24/94)        
+2023-06-07T13:03:55.4174362Z remote: Compressing objects:  26% (25/94)        
+2023-06-07T13:03:55.4174703Z remote: Compressing objects:  27% (26/94)        
+2023-06-07T13:03:55.4174992Z remote: Compressing objects:  28% (27/94)        
+2023-06-07T13:03:55.4175354Z remote: Compressing objects:  29% (28/94)        
+2023-06-07T13:03:55.4175970Z remote: Compressing objects:  30% (29/94)        
+2023-06-07T13:03:55.4176262Z remote: Compressing objects:  31% (30/94)        
+2023-06-07T13:03:55.4367310Z remote: Compressing objects:  32% (31/94)        
+2023-06-07T13:03:55.4367761Z remote: Compressing objects:  34% (32/94)        
+2023-06-07T13:03:55.4368243Z remote: Compressing objects:  35% (33/94)        
+2023-06-07T13:03:55.4382584Z remote: Compressing objects:  36% (34/94)        
+2023-06-07T13:03:55.4382977Z remote: Compressing objects:  37% (35/94)        
+2023-06-07T13:03:55.4383351Z remote: Compressing objects:  38% (36/94)        
+2023-06-07T13:03:55.4383650Z remote: Compressing objects:  39% (37/94)        
+2023-06-07T13:03:55.4384076Z remote: Compressing objects:  40% (38/94)        
+2023-06-07T13:03:55.4384415Z remote: Compressing objects:  41% (39/94)        
+2023-06-07T13:03:55.4384784Z remote: Compressing objects:  42% (40/94)        
+2023-06-07T13:03:55.4385102Z remote: Compressing objects:  43% (41/94)        
+2023-06-07T13:03:55.4385495Z remote: Compressing objects:  44% (42/94)        
+2023-06-07T13:03:55.4385839Z remote: Compressing objects:  45% (43/94)        
+2023-06-07T13:03:55.4386126Z remote: Compressing objects:  46% (44/94)        
+2023-06-07T13:03:55.4386470Z remote: Compressing objects:  47% (45/94)        
+2023-06-07T13:03:55.4386811Z remote: Compressing objects:  48% (46/94)        
+2023-06-07T13:03:55.4387128Z remote: Compressing objects:  50% (47/94)        
+2023-06-07T13:03:55.4387488Z remote: Compressing objects:  51% (48/94)        
+2023-06-07T13:03:55.4387839Z remote: Compressing objects:  52% (49/94)        
+2023-06-07T13:03:55.4388175Z remote: Compressing objects:  53% (50/94)        
+2023-06-07T13:03:55.4388470Z remote: Compressing objects:  54% (51/94)        
+2023-06-07T13:03:55.4446323Z remote: Compressing objects:  55% (52/94)        
+2023-06-07T13:03:55.4446815Z remote: Compressing objects:  56% (53/94)        
+2023-06-07T13:03:55.4447481Z remote: Compressing objects:  57% (54/94)        
+2023-06-07T13:03:55.4447846Z remote: Compressing objects:  58% (55/94)        
+2023-06-07T13:03:55.4448278Z remote: Compressing objects:  59% (56/94)        
+2023-06-07T13:03:55.4448570Z remote: Compressing objects:  60% (57/94)        
+2023-06-07T13:03:55.4449400Z remote: Compressing objects:  61% (58/94)        
+2023-06-07T13:03:55.4450165Z remote: Compressing objects:  62% (59/94)        
+2023-06-07T13:03:55.4450558Z remote: Compressing objects:  63% (60/94)        
+2023-06-07T13:03:55.4451004Z remote: Compressing objects:  64% (61/94)        
+2023-06-07T13:03:55.4451401Z remote: Compressing objects:  65% (62/94)        
+2023-06-07T13:03:55.4451750Z remote: Compressing objects:  67% (63/94)        
+2023-06-07T13:03:55.4452042Z remote: Compressing objects:  68% (64/94)        
+2023-06-07T13:03:55.4452387Z remote: Compressing objects:  69% (65/94)        
+2023-06-07T13:03:55.4452791Z remote: Compressing objects:  70% (66/94)        
+2023-06-07T13:03:55.4453134Z remote: Compressing objects:  71% (67/94)        
+2023-06-07T13:03:55.4453430Z remote: Compressing objects:  72% (68/94)        
+2023-06-07T13:03:55.4453765Z remote: Compressing objects:  73% (69/94)        
+2023-06-07T13:03:55.4454130Z remote: Compressing objects:  74% (70/94)        
+2023-06-07T13:03:55.4454431Z remote: Compressing objects:  75% (71/94)        
+2023-06-07T13:03:55.4454761Z remote: Compressing objects:  76% (72/94)        
+2023-06-07T13:03:55.4455096Z remote: Compressing objects:  77% (73/94)        
+2023-06-07T13:03:55.4455383Z remote: Compressing objects:  78% (74/94)        
+2023-06-07T13:03:55.4455753Z remote: Compressing objects:  79% (75/94)        
+2023-06-07T13:03:55.4456084Z remote: Compressing objects:  80% (76/94)        
+2023-06-07T13:03:55.4456421Z remote: Compressing objects:  81% (77/94)        
+2023-06-07T13:03:55.4456706Z remote: Compressing objects:  82% (78/94)        
+2023-06-07T13:03:55.4457036Z remote: Compressing objects:  84% (79/94)        
+2023-06-07T13:03:55.4457411Z remote: Compressing objects:  85% (80/94)        
+2023-06-07T13:03:55.4457921Z remote: Compressing objects:  86% (81/94)        
+2023-06-07T13:03:55.4458384Z remote: Compressing objects:  87% (82/94)        
+2023-06-07T13:03:55.4458734Z remote: Compressing objects:  88% (83/94)        
+2023-06-07T13:03:55.4459301Z remote: Compressing objects:  89% (84/94)        
+2023-06-07T13:03:55.4459655Z remote: Compressing objects:  90% (85/94)        
+2023-06-07T13:03:55.4460237Z remote: Compressing objects:  91% (86/94)        
+2023-06-07T13:03:55.4460661Z remote: Compressing objects:  92% (87/94)        
+2023-06-07T13:03:55.4461022Z remote: Compressing objects:  93% (88/94)        
+2023-06-07T13:03:55.4461483Z remote: Compressing objects:  94% (89/94)        
+2023-06-07T13:03:55.4461899Z remote: Compressing objects:  95% (90/94)        
+2023-06-07T13:03:55.4462338Z remote: Compressing objects:  96% (91/94)        
+2023-06-07T13:03:55.4462761Z remote: Compressing objects:  97% (92/94)        
+2023-06-07T13:03:55.4463214Z remote: Compressing objects:  98% (93/94)        
+2023-06-07T13:03:55.4463576Z remote: Compressing objects: 100% (94/94)        
+2023-06-07T13:03:55.4464003Z remote: Compressing objects: 100% (94/94), done.        
+2023-06-07T13:03:55.4655865Z Receiving objects:   0% (1/118)
+2023-06-07T13:03:55.4656226Z Receiving objects:   1% (2/118)
+2023-06-07T13:03:55.4656516Z Receiving objects:   2% (3/118)
+2023-06-07T13:03:55.4656802Z Receiving objects:   3% (4/118)
+2023-06-07T13:03:55.4657196Z Receiving objects:   4% (5/118)
+2023-06-07T13:03:55.4657501Z Receiving objects:   5% (6/118)
+2023-06-07T13:03:55.4657754Z Receiving objects:   6% (8/118)
+2023-06-07T13:03:55.4658069Z Receiving objects:   7% (9/118)
+2023-06-07T13:03:55.4658404Z Receiving objects:   8% (10/118)
+2023-06-07T13:03:55.4658712Z Receiving objects:   9% (11/118)
+2023-06-07T13:03:55.4658964Z Receiving objects:  10% (12/118)
+2023-06-07T13:03:55.4659275Z Receiving objects:  11% (13/118)
+2023-06-07T13:03:55.4659578Z Receiving objects:  12% (15/118)
+2023-06-07T13:03:55.4660279Z Receiving objects:  13% (16/118)
+2023-06-07T13:03:55.4660610Z Receiving objects:  14% (17/118)
+2023-06-07T13:03:55.4660924Z Receiving objects:  15% (18/118)
+2023-06-07T13:03:55.4661175Z Receiving objects:  16% (19/118)
+2023-06-07T13:03:55.4661473Z Receiving objects:  17% (21/118)
+2023-06-07T13:03:55.4661811Z Receiving objects:  18% (22/118)
+2023-06-07T13:03:55.4662067Z Receiving objects:  19% (23/118)
+2023-06-07T13:03:55.4662379Z Receiving objects:  20% (24/118)
+2023-06-07T13:03:55.4662676Z Receiving objects:  21% (25/118)
+2023-06-07T13:03:55.4662927Z Receiving objects:  22% (26/118)
+2023-06-07T13:03:55.4663253Z Receiving objects:  23% (28/118)
+2023-06-07T13:03:55.4663563Z Receiving objects:  24% (29/118)
+2023-06-07T13:03:55.4663814Z Receiving objects:  25% (30/118)
+2023-06-07T13:03:55.4664109Z Receiving objects:  26% (31/118)
+2023-06-07T13:03:55.4664430Z Receiving objects:  27% (32/118)
+2023-06-07T13:03:55.4664683Z Receiving objects:  28% (34/118)
+2023-06-07T13:03:55.4665002Z Receiving objects:  29% (35/118)
+2023-06-07T13:03:55.4665517Z Receiving objects:  30% (36/118)
+2023-06-07T13:03:55.4665985Z Receiving objects:  31% (37/118)
+2023-06-07T13:03:55.4950149Z Receiving objects:  32% (38/118)
+2023-06-07T13:03:55.4950574Z Receiving objects:  33% (39/118)
+2023-06-07T13:03:55.4950929Z Receiving objects:  34% (41/118)
+2023-06-07T13:03:55.4951224Z Receiving objects:  35% (42/118)
+2023-06-07T13:03:55.4951672Z Receiving objects:  36% (43/118)
+2023-06-07T13:03:55.4952048Z Receiving objects:  37% (44/118)
+2023-06-07T13:03:55.4952339Z Receiving objects:  38% (45/118)
+2023-06-07T13:03:55.4952845Z Receiving objects:  39% (47/118)
+2023-06-07T13:03:55.4953270Z Receiving objects:  40% (48/118)
+2023-06-07T13:03:55.4953767Z Receiving objects:  41% (49/118)
+2023-06-07T13:03:55.4954555Z Receiving objects:  42% (50/118)
+2023-06-07T13:03:55.4955674Z Receiving objects:  43% (51/118)
+2023-06-07T13:03:55.5034452Z Receiving objects:  44% (52/118)
+2023-06-07T13:03:55.5034992Z Receiving objects:  45% (54/118)
+2023-06-07T13:03:55.5035316Z Receiving objects:  46% (55/118)
+2023-06-07T13:03:55.5035942Z Receiving objects:  47% (56/118)
+2023-06-07T13:03:55.5036291Z Receiving objects:  48% (57/118)
+2023-06-07T13:03:55.5036605Z Receiving objects:  49% (58/118)
+2023-06-07T13:03:55.5040835Z Receiving objects:  50% (59/118)
+2023-06-07T13:03:55.5041230Z Receiving objects:  51% (61/118)
+2023-06-07T13:03:55.5041531Z Receiving objects:  52% (62/118)
+2023-06-07T13:03:55.5041884Z Receiving objects:  53% (63/118)
+2023-06-07T13:03:55.5222552Z Receiving objects:  54% (64/118)
+2023-06-07T13:03:55.5223024Z Receiving objects:  55% (65/118)
+2023-06-07T13:03:55.5223350Z Receiving objects:  56% (67/118)
+2023-06-07T13:03:55.5223674Z Receiving objects:  57% (68/118)
+2023-06-07T13:03:55.5223979Z Receiving objects:  58% (69/118)
+2023-06-07T13:03:55.5224242Z Receiving objects:  59% (70/118)
+2023-06-07T13:03:55.5224580Z Receiving objects:  60% (71/118)
+2023-06-07T13:03:55.5224884Z Receiving objects:  61% (72/118)
+2023-06-07T13:03:55.5225167Z Receiving objects:  62% (74/118)
+2023-06-07T13:03:55.5225473Z Receiving objects:  63% (75/118)
+2023-06-07T13:03:55.5225812Z Receiving objects:  64% (76/118)
+2023-06-07T13:03:55.5226066Z Receiving objects:  65% (77/118)
+2023-06-07T13:03:55.5226373Z Receiving objects:  66% (78/118)
+2023-06-07T13:03:55.5228175Z Receiving objects:  67% (80/118)
+2023-06-07T13:03:55.5228443Z Receiving objects:  68% (81/118)
+2023-06-07T13:03:55.5228806Z Receiving objects:  69% (82/118)
+2023-06-07T13:03:55.5229109Z Receiving objects:  70% (83/118)
+2023-06-07T13:03:55.5229375Z Receiving objects:  71% (84/118)
+2023-06-07T13:03:55.5229672Z Receiving objects:  72% (85/118)
+2023-06-07T13:03:55.5229974Z Receiving objects:  73% (87/118)
+2023-06-07T13:03:55.5230455Z Receiving objects:  74% (88/118)
+2023-06-07T13:03:55.5230795Z Receiving objects:  75% (89/118)
+2023-06-07T13:03:55.6222437Z Receiving objects:  76% (90/118)
+2023-06-07T13:03:55.6223581Z Receiving objects:  77% (91/118)
+2023-06-07T13:03:55.6766256Z Receiving objects:  78% (93/118)
+2023-06-07T13:03:55.6767076Z Receiving objects:  79% (94/118)
+2023-06-07T13:03:55.6767475Z Receiving objects:  80% (95/118)
+2023-06-07T13:03:55.6768168Z remote: Total 118 (delta 35), reused 56 (delta 16), pack-reused 0        
+2023-06-07T13:03:55.6768608Z Receiving objects:  81% (96/118)
+2023-06-07T13:03:55.6778682Z Receiving objects:  82% (97/118)
+2023-06-07T13:03:55.6779079Z Receiving objects:  83% (98/118)
+2023-06-07T13:03:55.6779381Z Receiving objects:  84% (100/118)
+2023-06-07T13:03:55.6779754Z Receiving objects:  85% (101/118)
+2023-06-07T13:03:55.6780501Z Receiving objects:  86% (102/118)
+2023-06-07T13:03:55.6780797Z Receiving objects:  87% (103/118)
+2023-06-07T13:03:55.6781142Z Receiving objects:  88% (104/118)
+2023-06-07T13:03:55.6781502Z Receiving objects:  89% (106/118)
+2023-06-07T13:03:55.6781793Z Receiving objects:  90% (107/118)
+2023-06-07T13:03:55.6782189Z Receiving objects:  91% (108/118)
+2023-06-07T13:03:55.6782534Z Receiving objects:  92% (109/118)
+2023-06-07T13:03:55.6782839Z Receiving objects:  93% (110/118)
+2023-06-07T13:03:55.6790616Z Receiving objects:  94% (111/118)
+2023-06-07T13:03:55.6791016Z Receiving objects:  95% (113/118)
+2023-06-07T13:03:55.6791469Z Receiving objects:  96% (114/118)
+2023-06-07T13:03:55.6791761Z Receiving objects:  97% (115/118)
+2023-06-07T13:03:55.6792121Z Receiving objects:  98% (116/118)
+2023-06-07T13:03:55.6792464Z Receiving objects:  99% (117/118)
+2023-06-07T13:03:55.6792755Z Receiving objects: 100% (118/118)
+2023-06-07T13:03:55.6793175Z Receiving objects: 100% (118/118), 471.77 KiB | 2.16 MiB/s, done.
+2023-06-07T13:03:55.6793554Z Resolving deltas:   0% (0/35)
+2023-06-07T13:03:55.6793860Z Resolving deltas:   2% (1/35)
+2023-06-07T13:03:55.6794205Z Resolving deltas:   5% (2/35)
+2023-06-07T13:03:55.6794576Z Resolving deltas:   8% (3/35)
+2023-06-07T13:03:55.6794862Z Resolving deltas:  11% (4/35)
+2023-06-07T13:03:55.6795214Z Resolving deltas:  14% (5/35)
+2023-06-07T13:03:55.6795552Z Resolving deltas:  17% (6/35)
+2023-06-07T13:03:55.6795836Z Resolving deltas:  20% (7/35)
+2023-06-07T13:03:55.6796239Z Resolving deltas:  22% (8/35)
+2023-06-07T13:03:55.6796914Z Resolving deltas:  25% (9/35)
+2023-06-07T13:03:55.6797215Z Resolving deltas:  28% (10/35)
+2023-06-07T13:03:55.6797470Z Resolving deltas:  31% (11/35)
+2023-06-07T13:03:55.6797766Z Resolving deltas:  34% (12/35)
+2023-06-07T13:03:55.6798105Z Resolving deltas:  37% (13/35)
+2023-06-07T13:03:55.6798353Z Resolving deltas:  40% (14/35)
+2023-06-07T13:03:55.6798650Z Resolving deltas:  42% (15/35)
+2023-06-07T13:03:55.6798948Z Resolving deltas:  45% (16/35)
+2023-06-07T13:03:55.6803145Z Resolving deltas:  48% (17/35)
+2023-06-07T13:03:55.6803485Z Resolving deltas:  51% (18/35)
+2023-06-07T13:03:55.6803786Z Resolving deltas:  54% (19/35)
+2023-06-07T13:03:55.6804038Z Resolving deltas:  57% (20/35)
+2023-06-07T13:03:55.6804335Z Resolving deltas:  60% (21/35)
+2023-06-07T13:03:55.6804676Z Resolving deltas:  62% (22/35)
+2023-06-07T13:03:55.6804925Z Resolving deltas:  65% (23/35)
+2023-06-07T13:03:55.6805221Z Resolving deltas:  68% (24/35)
+2023-06-07T13:03:55.6805548Z Resolving deltas:  71% (25/35)
+2023-06-07T13:03:55.6806361Z Resolving deltas:  74% (26/35)
+2023-06-07T13:03:55.6806613Z Resolving deltas:  77% (27/35)
+2023-06-07T13:03:55.6806914Z Resolving deltas:  80% (28/35)
+2023-06-07T13:03:55.6807215Z Resolving deltas:  82% (29/35)
+2023-06-07T13:03:55.6807461Z Resolving deltas:  85% (30/35)
+2023-06-07T13:03:55.6807794Z Resolving deltas:  88% (31/35)
+2023-06-07T13:03:55.6808090Z Resolving deltas:  91% (32/35)
+2023-06-07T13:03:55.6808337Z Resolving deltas:  94% (33/35)
+2023-06-07T13:03:55.6808633Z Resolving deltas:  97% (34/35)
+2023-06-07T13:03:55.6808946Z Resolving deltas: 100% (35/35)
+2023-06-07T13:03:55.6809229Z Resolving deltas: 100% (35/35), done.
+2023-06-07T13:03:55.6888437Z From https://github.com/actions/checkout
+2023-06-07T13:03:55.6889108Z  * [new ref]         26d26a98d2552554bad0b972c4edcf5c943dd1ab -> pull/1369/merge
+2023-06-07T13:03:55.6913914Z ##[endgroup]
+2023-06-07T13:03:55.6914434Z ##[group]Determining the checkout info
+2023-06-07T13:03:55.6918450Z ##[endgroup]
+2023-06-07T13:03:55.6919024Z ##[group]Checking out the ref
+2023-06-07T13:03:55.7104117Z [command]/opt/bitnami/git/bin/git checkout --progress --force refs/remotes/pull/1369/merge
+2023-06-07T13:03:55.7131108Z Note: switching to 'refs/remotes/pull/1369/merge'.
+2023-06-07T13:03:55.7131302Z 
+2023-06-07T13:03:55.7131547Z You are in 'detached HEAD' state. You can look around, make experimental
+2023-06-07T13:03:55.7131928Z changes and commit them, and you can discard any commits you make in this
+2023-06-07T13:03:55.7132290Z state without impacting any branches by switching back to a branch.
+2023-06-07T13:03:55.7132492Z 
+2023-06-07T13:03:55.7132660Z If you want to create a new branch to retain commits you create, you may
+2023-06-07T13:03:55.7133069Z do so (now or later) by using -c with the switch command. Example:
+2023-06-07T13:03:55.7133254Z 
+2023-06-07T13:03:55.7133410Z   git switch -c <new-branch-name>
+2023-06-07T13:03:55.7133563Z 
+2023-06-07T13:03:55.7133661Z Or undo this operation with:
+2023-06-07T13:03:55.7133822Z 
+2023-06-07T13:03:55.7133902Z   git switch -
+2023-06-07T13:03:55.7134035Z 
+2023-06-07T13:03:55.7134212Z Turn off this advice by setting config variable advice.detachedHead to false
+2023-06-07T13:03:55.7134421Z 
+2023-06-07T13:03:55.7134656Z HEAD is now at 26d26a9 Merge 25d6c12a40fe31e2e7ea716a2facc3bbae34a8a2 into f095bcc56b7c2baf48f3ac70d6d6782f4f553222
+2023-06-07T13:03:55.7135620Z ##[endgroup]
+2023-06-07T13:03:55.7163853Z [command]/opt/bitnami/git/bin/git log -1 --format='%H'
+2023-06-07T13:03:55.7195081Z '26d26a98d2552554bad0b972c4edcf5c943dd1ab'
+2023-06-07T13:03:55.7543045Z ##[group]Run ./v3
+2023-06-07T13:03:55.7543276Z with:
+2023-06-07T13:03:55.7543482Z   ref: test-data/v2/basic
+2023-06-07T13:03:55.7543702Z   repository: actions/checkout
+2023-06-07T13:03:55.7544146Z   token: ***
+2023-06-07T13:03:55.7544351Z   ssh-strict: true
+2023-06-07T13:03:55.7544579Z   persist-credentials: true
+2023-06-07T13:03:55.7544792Z   clean: true
+2023-06-07T13:03:55.7545026Z   sparse-checkout-cone-mode: true
+2023-06-07T13:03:55.7545273Z   fetch-depth: 1
+2023-06-07T13:03:55.7545642Z   lfs: false
+2023-06-07T13:03:55.7545839Z   submodules: false
+2023-06-07T13:03:55.7546060Z   set-safe-directory: true
+2023-06-07T13:03:55.7546272Z ##[endgroup]
+2023-06-07T13:03:55.7550225Z ##[command]/usr/bin/docker exec  7c2735b5a8dddeef28c0ad89ab55a5604b8042c9e0ab977485f340322343f49f sh -c "cat /etc/*release | grep ^ID"
+2023-06-07T13:03:56.0196248Z Syncing repository: actions/checkout
+2023-06-07T13:03:56.0200684Z ##[group]Getting Git version info
+2023-06-07T13:03:56.0202844Z Working directory is '/__w/checkout/checkout'
+2023-06-07T13:03:56.0244151Z [command]/opt/bitnami/git/bin/git version
+2023-06-07T13:03:56.0287339Z git version 2.41.0
+2023-06-07T13:03:56.0318037Z ##[endgroup]
+2023-06-07T13:03:56.0337084Z Temporarily overriding HOME='/__w/_temp/17d4d358-2787-4333-919b-e4084534d06f' before making global git config changes
+2023-06-07T13:03:56.0338423Z Adding repository directory to the temporary git global config as a safe directory
+2023-06-07T13:03:56.0345910Z [command]/opt/bitnami/git/bin/git config --global --add safe.directory /__w/checkout/checkout
+2023-06-07T13:03:56.0395191Z Deleting the contents of '/__w/checkout/checkout'
+2023-06-07T13:03:56.0487612Z ##[group]Initializing the repository
+2023-06-07T13:03:56.0492033Z [command]/opt/bitnami/git/bin/git init /__w/checkout/checkout
+2023-06-07T13:03:56.0528331Z hint: Using 'master' as the name for the initial branch. This default branch name
+2023-06-07T13:03:56.0528797Z hint: is subject to change. To configure the initial branch name to use in all
+2023-06-07T13:03:56.0529186Z hint: of your new repositories, which will suppress this warning, call:
+2023-06-07T13:03:56.0529514Z hint: 
+2023-06-07T13:03:56.0529836Z hint: 	git config --global init.defaultBranch <name>
+2023-06-07T13:03:56.0530069Z hint: 
+2023-06-07T13:03:56.0530419Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2023-06-07T13:03:56.0531065Z hint: 'development'. The just-created branch can be renamed via this command:
+2023-06-07T13:03:56.0531331Z hint: 
+2023-06-07T13:03:56.0531764Z hint: 	git branch -m <name>
+2023-06-07T13:03:56.0537044Z Initialized empty Git repository in /__w/checkout/checkout/.git/
+2023-06-07T13:03:56.0554240Z [command]/opt/bitnami/git/bin/git remote add origin https://github.com/actions/checkout
+2023-06-07T13:03:56.0596718Z ##[endgroup]
+2023-06-07T13:03:56.0597150Z ##[group]Disabling automatic garbage collection
+2023-06-07T13:03:56.0601270Z [command]/opt/bitnami/git/bin/git config --local gc.auto 0
+2023-06-07T13:03:56.0647243Z ##[endgroup]
+2023-06-07T13:03:56.0647646Z ##[group]Setting up auth
+2023-06-07T13:03:56.0648175Z [command]/opt/bitnami/git/bin/git config --local --name-only --get-regexp core\.sshCommand
+2023-06-07T13:03:56.0697583Z [command]/opt/bitnami/git/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2023-06-07T13:03:56.0948995Z [command]/opt/bitnami/git/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2023-06-07T13:03:56.0979697Z [command]/opt/bitnami/git/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2023-06-07T13:03:56.1221170Z [command]/opt/bitnami/git/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2023-06-07T13:03:56.1267799Z ##[endgroup]
+2023-06-07T13:03:56.1268551Z ##[group]Fetching the repository
+2023-06-07T13:03:56.1278188Z [command]/opt/bitnami/git/bin/git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin +refs/heads/test-data/v2/basic*:refs/remotes/origin/test-data/v2/basic* +refs/tags/test-data/v2/basic*:refs/tags/test-data/v2/basic*
+2023-06-07T13:03:56.6447503Z remote: Enumerating objects: 3, done.        
+2023-06-07T13:03:56.6447878Z remote: Counting objects:  33% (1/3)        
+2023-06-07T13:03:56.6448200Z remote: Counting objects:  66% (2/3)        
+2023-06-07T13:03:56.6448911Z remote: Counting objects: 100% (3/3)        
+2023-06-07T13:03:56.6449228Z remote: Counting objects: 100% (3/3), done.        
+2023-06-07T13:03:56.6449931Z remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0        
+2023-06-07T13:03:56.6498320Z From https://github.com/actions/checkout
+2023-06-07T13:03:56.6499098Z  * [new branch]      test-data/v2/basic -> origin/test-data/v2/basic
+2023-06-07T13:03:56.6528830Z ##[endgroup]
+2023-06-07T13:03:56.6529392Z ##[group]Determining the checkout info
+2023-06-07T13:03:56.6537824Z [command]/opt/bitnami/git/bin/git branch --list --remote origin/test-data/v2/basic
+2023-06-07T13:03:56.6568467Z   origin/test-data/v2/basic
+2023-06-07T13:03:56.6575352Z ##[endgroup]
+2023-06-07T13:03:56.6575736Z ##[group]Checking out the ref
+2023-06-07T13:03:56.6580092Z [command]/opt/bitnami/git/bin/git checkout --progress --force -B test-data/v2/basic refs/remotes/origin/test-data/v2/basic
+2023-06-07T13:03:56.6628005Z Switched to a new branch 'test-data/v2/basic'
+2023-06-07T13:03:56.6628456Z branch 'test-data/v2/basic' set up to track 'origin/test-data/v2/basic'.
+2023-06-07T13:03:56.6635405Z ##[endgroup]
+2023-06-07T13:03:56.6675485Z [command]/opt/bitnami/git/bin/git log -1 --format='%H'
+2023-06-07T13:03:56.6703827Z '82f71901cf8c021332310dcc8cdba84c4193ff5d'
+2023-06-07T13:03:56.6889448Z ##[group]Run if [ ! -f "./basic-file.txt" ]; then
+2023-06-07T13:03:56.6889836Z [36;1mif [ ! -f "./basic-file.txt" ]; then[0m
+2023-06-07T13:03:56.6890127Z [36;1m    echo "Expected basic file does not exist"[0m
+2023-06-07T13:03:56.6890374Z [36;1m    exit 1[0m
+2023-06-07T13:03:56.6890557Z [36;1mfi[0m
+2023-06-07T13:03:56.6890740Z [36;1m[0m
+2023-06-07T13:03:56.6890950Z [36;1m# Verify .git folder[0m
+2023-06-07T13:03:56.6891166Z [36;1mif [ ! -d "./.git" ]; then[0m
+2023-06-07T13:03:56.6891426Z [36;1m  echo "Expected ./.git folder to exist"[0m
+2023-06-07T13:03:56.6891676Z [36;1m  exit 1[0m
+2023-06-07T13:03:56.6891851Z [36;1mfi[0m
+2023-06-07T13:03:56.6892058Z [36;1m[0m
+2023-06-07T13:03:56.6892261Z [36;1m# Verify auth token[0m
+2023-06-07T13:03:56.6892517Z [36;1mgit config --global --add safe.directory "*"[0m
+2023-06-07T13:03:56.6892875Z [36;1mgit fetch --no-tags --depth=1 origin +refs/heads/main:refs/remotes/origin/main[0m
+2023-06-07T13:03:56.6897541Z shell: sh -e {0}
+2023-06-07T13:03:56.6897762Z ##[endgroup]
+2023-06-07T13:03:57.7938999Z From https://github.com/actions/checkout
+2023-06-07T13:03:57.7939736Z  * [new branch]      main       -> origin/main
+2023-06-07T13:03:57.8081224Z ##[group]Run actions/checkout@v3
+2023-06-07T13:03:57.8081474Z with:
+2023-06-07T13:03:57.8081653Z   path: v3
+2023-06-07T13:03:57.8081870Z   repository: actions/checkout
+2023-06-07T13:03:57.8082326Z   token: ***
+2023-06-07T13:03:57.8082514Z   ssh-strict: true
+2023-06-07T13:03:57.8082741Z   persist-credentials: true
+2023-06-07T13:03:57.8082962Z   clean: true
+2023-06-07T13:03:57.8083146Z   fetch-depth: 1
+2023-06-07T13:03:57.8083350Z   lfs: false
+2023-06-07T13:03:57.8083566Z   submodules: false
+2023-06-07T13:03:57.8083789Z   set-safe-directory: true
+2023-06-07T13:03:57.8083994Z ##[endgroup]
+2023-06-07T13:03:57.8087153Z ##[command]/usr/bin/docker exec  7c2735b5a8dddeef28c0ad89ab55a5604b8042c9e0ab977485f340322343f49f sh -c "cat /etc/*release | grep ^ID"
+2023-06-07T13:03:58.0793159Z Syncing repository: actions/checkout
+2023-06-07T13:03:58.0806414Z ##[group]Getting Git version info
+2023-06-07T13:03:58.0808850Z Working directory is '/__w/checkout/checkout/v3'
+2023-06-07T13:03:58.0841585Z [command]/opt/bitnami/git/bin/git version
+2023-06-07T13:03:58.0887503Z git version 2.41.0
+2023-06-07T13:03:58.0922549Z ##[endgroup]
+2023-06-07T13:03:58.0937614Z Copying '/github/home/.gitconfig' to '/__w/_temp/83da73f9-803e-4261-a700-98de77d76564/.gitconfig'
+2023-06-07T13:03:58.0951460Z Temporarily overriding HOME='/__w/_temp/83da73f9-803e-4261-a700-98de77d76564' before making global git config changes
+2023-06-07T13:03:58.0953784Z Adding repository directory to the temporary git global config as a safe directory
+2023-06-07T13:03:58.0960300Z [command]/opt/bitnami/git/bin/git config --global --add safe.directory /__w/checkout/checkout/v3
+2023-06-07T13:03:58.1009749Z ##[group]Initializing the repository
+2023-06-07T13:03:58.1014417Z [command]/opt/bitnami/git/bin/git init /__w/checkout/checkout/v3
+2023-06-07T13:03:58.1052049Z hint: Using 'master' as the name for the initial branch. This default branch name
+2023-06-07T13:03:58.1054161Z hint: is subject to change. To configure the initial branch name to use in all
+2023-06-07T13:03:58.1055824Z hint: of your new repositories, which will suppress this warning, call:
+2023-06-07T13:03:58.1057284Z hint: 
+2023-06-07T13:03:58.1059143Z hint: 	git config --global init.defaultBranch <name>
+2023-06-07T13:03:58.1060875Z hint: 
+2023-06-07T13:03:58.1061395Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2023-06-07T13:03:58.1062178Z hint: 'development'. The just-created branch can be renamed via this command:
+2023-06-07T13:03:58.1062812Z hint: 
+2023-06-07T13:03:58.1063436Z hint: 	git branch -m <name>
+2023-06-07T13:03:58.1071663Z Initialized empty Git repository in /__w/checkout/checkout/v3/.git/
+2023-06-07T13:03:58.1085874Z [command]/opt/bitnami/git/bin/git remote add origin https://github.com/actions/checkout
+2023-06-07T13:03:58.1135191Z ##[endgroup]
+2023-06-07T13:03:58.1137564Z ##[group]Disabling automatic garbage collection
+2023-06-07T13:03:58.1144187Z [command]/opt/bitnami/git/bin/git config --local gc.auto 0
+2023-06-07T13:03:58.1182355Z ##[endgroup]
+2023-06-07T13:03:58.1183258Z ##[group]Setting up auth
+2023-06-07T13:03:58.1193208Z [command]/opt/bitnami/git/bin/git config --local --name-only --get-regexp core\.sshCommand
+2023-06-07T13:03:58.1232764Z [command]/opt/bitnami/git/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2023-06-07T13:03:58.1484951Z [command]/opt/bitnami/git/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2023-06-07T13:03:58.1525110Z [command]/opt/bitnami/git/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2023-06-07T13:03:58.1778929Z [command]/opt/bitnami/git/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2023-06-07T13:03:58.1832802Z ##[endgroup]
+2023-06-07T13:03:58.1833555Z ##[group]Fetching the repository
+2023-06-07T13:03:58.1842191Z [command]/opt/bitnami/git/bin/git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin +26d26a98d2552554bad0b972c4edcf5c943dd1ab:refs/remotes/pull/1369/merge
+2023-06-07T13:03:58.6454224Z remote: Enumerating objects: 118, done.        
+2023-06-07T13:03:58.6454601Z remote: Counting objects:   0% (1/118)        
+2023-06-07T13:03:58.6454914Z remote: Counting objects:   1% (2/118)        
+2023-06-07T13:03:58.6455228Z remote: Counting objects:   2% (3/118)        
+2023-06-07T13:03:58.6455532Z remote: Counting objects:   3% (4/118)        
+2023-06-07T13:03:58.6455828Z remote: Counting objects:   4% (5/118)        
+2023-06-07T13:03:58.6456122Z remote: Counting objects:   5% (6/118)        
+2023-06-07T13:03:58.6456402Z remote: Counting objects:   6% (8/118)        
+2023-06-07T13:03:58.6456698Z remote: Counting objects:   7% (9/118)        
+2023-06-07T13:03:58.6456995Z remote: Counting objects:   8% (10/118)        
+2023-06-07T13:03:58.6457301Z remote: Counting objects:   9% (11/118)        
+2023-06-07T13:03:58.6457595Z remote: Counting objects:  10% (12/118)        
+2023-06-07T13:03:58.6457890Z remote: Counting objects:  11% (13/118)        
+2023-06-07T13:03:58.6458173Z remote: Counting objects:  12% (15/118)        
+2023-06-07T13:03:58.6458463Z remote: Counting objects:  13% (16/118)        
+2023-06-07T13:03:58.6458759Z remote: Counting objects:  14% (17/118)        
+2023-06-07T13:03:58.6459050Z remote: Counting objects:  15% (18/118)        
+2023-06-07T13:03:58.6459783Z remote: Counting objects:  16% (19/118)        
+2023-06-07T13:03:58.6460256Z remote: Counting objects:  17% (21/118)        
+2023-06-07T13:03:58.6460557Z remote: Counting objects:  18% (22/118)        
+2023-06-07T13:03:58.6460920Z remote: Counting objects:  19% (23/118)        
+2023-06-07T13:03:58.6461199Z remote: Counting objects:  20% (24/118)        
+2023-06-07T13:03:58.6461487Z remote: Counting objects:  21% (25/118)        
+2023-06-07T13:03:58.6461786Z remote: Counting objects:  22% (26/118)        
+2023-06-07T13:03:58.6462064Z remote: Counting objects:  23% (28/118)        
+2023-06-07T13:03:58.6462350Z remote: Counting objects:  24% (29/118)        
+2023-06-07T13:03:58.6462643Z remote: Counting objects:  25% (30/118)        
+2023-06-07T13:03:58.6462918Z remote: Counting objects:  26% (31/118)        
+2023-06-07T13:03:58.6463203Z remote: Counting objects:  27% (32/118)        
+2023-06-07T13:03:58.6463494Z remote: Counting objects:  28% (34/118)        
+2023-06-07T13:03:58.6463784Z remote: Counting objects:  29% (35/118)        
+2023-06-07T13:03:58.6464061Z remote: Counting objects:  30% (36/118)        
+2023-06-07T13:03:58.6464397Z remote: Counting objects:  31% (37/118)        
+2023-06-07T13:03:58.6464683Z remote: Counting objects:  32% (38/118)        
+2023-06-07T13:03:58.6464959Z remote: Counting objects:  33% (39/118)        
+2023-06-07T13:03:58.6465247Z remote: Counting objects:  34% (41/118)        
+2023-06-07T13:03:58.6465539Z remote: Counting objects:  35% (42/118)        
+2023-06-07T13:03:58.6465819Z remote: Counting objects:  36% (43/118)        
+2023-06-07T13:03:58.6466106Z remote: Counting objects:  37% (44/118)        
+2023-06-07T13:03:58.6466394Z remote: Counting objects:  38% (45/118)        
+2023-06-07T13:03:58.6466668Z remote: Counting objects:  39% (47/118)        
+2023-06-07T13:03:58.6466957Z remote: Counting objects:  40% (48/118)        
+2023-06-07T13:03:58.6467247Z remote: Counting objects:  41% (49/118)        
+2023-06-07T13:03:58.6467536Z remote: Counting objects:  42% (50/118)        
+2023-06-07T13:03:58.6467809Z remote: Counting objects:  43% (51/118)        
+2023-06-07T13:03:58.6468101Z remote: Counting objects:  44% (52/118)        
+2023-06-07T13:03:58.6468388Z remote: Counting objects:  45% (54/118)        
+2023-06-07T13:03:58.6468661Z remote: Counting objects:  46% (55/118)        
+2023-06-07T13:03:58.6468946Z remote: Counting objects:  47% (56/118)        
+2023-06-07T13:03:58.6469411Z remote: Counting objects:  48% (57/118)        
+2023-06-07T13:03:58.6469700Z remote: Counting objects:  49% (58/118)        
+2023-06-07T13:03:58.6469992Z remote: Counting objects:  50% (59/118)        
+2023-06-07T13:03:58.6470285Z remote: Counting objects:  51% (61/118)        
+2023-06-07T13:03:58.6470561Z remote: Counting objects:  52% (62/118)        
+2023-06-07T13:03:58.6470854Z remote: Counting objects:  53% (63/118)        
+2023-06-07T13:03:58.6471133Z remote: Counting objects:  54% (64/118)        
+2023-06-07T13:03:58.6471441Z remote: Counting objects:  55% (65/118)        
+2023-06-07T13:03:58.6471725Z remote: Counting objects:  56% (67/118)        
+2023-06-07T13:03:58.6471998Z remote: Counting objects:  57% (68/118)        
+2023-06-07T13:03:58.6472291Z remote: Counting objects:  58% (69/118)        
+2023-06-07T13:03:58.6472582Z remote: Counting objects:  59% (70/118)        
+2023-06-07T13:03:58.6472871Z remote: Counting objects:  60% (71/118)        
+2023-06-07T13:03:58.6473145Z remote: Counting objects:  61% (72/118)        
+2023-06-07T13:03:58.6473438Z remote: Counting objects:  62% (74/118)        
+2023-06-07T13:03:58.6473725Z remote: Counting objects:  63% (75/118)        
+2023-06-07T13:03:58.6473999Z remote: Counting objects:  64% (76/118)        
+2023-06-07T13:03:58.6474287Z remote: Counting objects:  65% (77/118)        
+2023-06-07T13:03:58.6474575Z remote: Counting objects:  66% (78/118)        
+2023-06-07T13:03:58.6474849Z remote: Counting objects:  67% (80/118)        
+2023-06-07T13:03:58.6475138Z remote: Counting objects:  68% (81/118)        
+2023-06-07T13:03:58.6475545Z remote: Counting objects:  69% (82/118)        
+2023-06-07T13:03:58.6475832Z remote: Counting objects:  70% (83/118)        
+2023-06-07T13:03:58.6476107Z remote: Counting objects:  71% (84/118)        
+2023-06-07T13:03:58.6476393Z remote: Counting objects:  72% (85/118)        
+2023-06-07T13:03:58.6476681Z remote: Counting objects:  73% (87/118)        
+2023-06-07T13:03:58.6476954Z remote: Counting objects:  74% (88/118)        
+2023-06-07T13:03:58.6477244Z remote: Counting objects:  75% (89/118)        
+2023-06-07T13:03:58.6477532Z remote: Counting objects:  76% (90/118)        
+2023-06-07T13:03:58.6477808Z remote: Counting objects:  77% (91/118)        
+2023-06-07T13:03:58.6478097Z remote: Counting objects:  78% (93/118)        
+2023-06-07T13:03:58.6478382Z remote: Counting objects:  79% (94/118)        
+2023-06-07T13:03:58.6478655Z remote: Counting objects:  80% (95/118)        
+2023-06-07T13:03:58.6478945Z remote: Counting objects:  81% (96/118)        
+2023-06-07T13:03:58.6479237Z remote: Counting objects:  82% (97/118)        
+2023-06-07T13:03:58.6479521Z remote: Counting objects:  83% (98/118)        
+2023-06-07T13:03:58.6479904Z remote: Counting objects:  84% (100/118)        
+2023-06-07T13:03:58.6480175Z remote: Counting objects:  85% (101/118)        
+2023-06-07T13:03:58.6480437Z remote: Counting objects:  86% (102/118)        
+2023-06-07T13:03:58.6480686Z remote: Counting objects:  87% (103/118)        
+2023-06-07T13:03:58.6480948Z remote: Counting objects:  88% (104/118)        
+2023-06-07T13:03:58.6481208Z remote: Counting objects:  89% (106/118)        
+2023-06-07T13:03:58.6481451Z remote: Counting objects:  90% (107/118)        
+2023-06-07T13:03:58.6481707Z remote: Counting objects:  91% (108/118)        
+2023-06-07T13:03:58.6481962Z remote: Counting objects:  92% (109/118)        
+2023-06-07T13:03:58.6482203Z remote: Counting objects:  93% (110/118)        
+2023-06-07T13:03:58.6482459Z remote: Counting objects:  94% (111/118)        
+2023-06-07T13:03:58.6482719Z remote: Counting objects:  95% (113/118)        
+2023-06-07T13:03:58.6482975Z remote: Counting objects:  96% (114/118)        
+2023-06-07T13:03:58.6483216Z remote: Counting objects:  97% (115/118)        
+2023-06-07T13:03:58.6483467Z remote: Counting objects:  98% (116/118)        
+2023-06-07T13:03:58.6483722Z remote: Counting objects:  99% (117/118)        
+2023-06-07T13:03:58.6483965Z remote: Counting objects: 100% (118/118)        
+2023-06-07T13:03:58.6484330Z remote: Counting objects: 100% (118/118), done.        
+2023-06-07T13:03:58.6512901Z remote: Compressing objects:   1% (1/94)        
+2023-06-07T13:03:58.6513200Z remote: Compressing objects:   2% (2/94)        
+2023-06-07T13:03:58.6513482Z remote: Compressing objects:   3% (3/94)        
+2023-06-07T13:03:58.6513754Z remote: Compressing objects:   4% (4/94)        
+2023-06-07T13:03:58.6514027Z remote: Compressing objects:   5% (5/94)        
+2023-06-07T13:03:58.6514284Z remote: Compressing objects:   6% (6/94)        
+2023-06-07T13:03:58.6514567Z remote: Compressing objects:   7% (7/94)        
+2023-06-07T13:03:58.6514833Z remote: Compressing objects:   8% (8/94)        
+2023-06-07T13:03:58.6515086Z remote: Compressing objects:   9% (9/94)        
+2023-06-07T13:03:58.6515358Z remote: Compressing objects:  10% (10/94)        
+2023-06-07T13:03:58.6515634Z remote: Compressing objects:  11% (11/94)        
+2023-06-07T13:03:58.6515895Z remote: Compressing objects:  12% (12/94)        
+2023-06-07T13:03:58.6516173Z remote: Compressing objects:  13% (13/94)        
+2023-06-07T13:03:58.6516442Z remote: Compressing objects:  14% (14/94)        
+2023-06-07T13:03:58.6516697Z remote: Compressing objects:  15% (15/94)        
+2023-06-07T13:03:58.6585841Z remote: Compressing objects:  17% (16/94)        
+2023-06-07T13:03:58.6586162Z remote: Compressing objects:  18% (17/94)        
+2023-06-07T13:03:58.6586445Z remote: Compressing objects:  19% (18/94)        
+2023-06-07T13:03:58.6586703Z remote: Compressing objects:  20% (19/94)        
+2023-06-07T13:03:58.6587274Z remote: Compressing objects:  21% (20/94)        
+2023-06-07T13:03:58.6587549Z remote: Compressing objects:  22% (21/94)        
+2023-06-07T13:03:58.6587801Z remote: Compressing objects:  23% (22/94)        
+2023-06-07T13:03:58.6588072Z remote: Compressing objects:  24% (23/94)        
+2023-06-07T13:03:58.6588341Z remote: Compressing objects:  25% (24/94)        
+2023-06-07T13:03:58.6588605Z remote: Compressing objects:  26% (25/94)        
+2023-06-07T13:03:58.6588868Z remote: Compressing objects:  27% (26/94)        
+2023-06-07T13:03:58.6589137Z remote: Compressing objects:  28% (27/94)        
+2023-06-07T13:03:58.6589398Z remote: Compressing objects:  29% (28/94)        
+2023-06-07T13:03:58.6589652Z remote: Compressing objects:  30% (29/94)        
+2023-06-07T13:03:58.6589915Z remote: Compressing objects:  31% (30/94)        
+2023-06-07T13:03:58.6785525Z remote: Compressing objects:  32% (31/94)        
+2023-06-07T13:03:58.6786134Z remote: Compressing objects:  34% (32/94)        
+2023-06-07T13:03:58.6786757Z remote: Compressing objects:  35% (33/94)        
+2023-06-07T13:03:58.6787369Z remote: Compressing objects:  36% (34/94)        
+2023-06-07T13:03:58.6787971Z remote: Compressing objects:  37% (35/94)        
+2023-06-07T13:03:58.6788547Z remote: Compressing objects:  38% (36/94)        
+2023-06-07T13:03:58.6789161Z remote: Compressing objects:  39% (37/94)        
+2023-06-07T13:03:58.6789759Z remote: Compressing objects:  40% (38/94)        
+2023-06-07T13:03:58.6855386Z remote: Compressing objects:  41% (39/94)        
+2023-06-07T13:03:58.6855747Z remote: Compressing objects:  42% (40/94)        
+2023-06-07T13:03:58.6856053Z remote: Compressing objects:  43% (41/94)        
+2023-06-07T13:03:58.6856371Z remote: Compressing objects:  44% (42/94)        
+2023-06-07T13:03:58.6856683Z remote: Compressing objects:  45% (43/94)        
+2023-06-07T13:03:58.6856979Z remote: Compressing objects:  46% (44/94)        
+2023-06-07T13:03:58.6857288Z remote: Compressing objects:  47% (45/94)        
+2023-06-07T13:03:58.6857605Z remote: Compressing objects:  48% (46/94)        
+2023-06-07T13:03:58.6857896Z remote: Compressing objects:  50% (47/94)        
+2023-06-07T13:03:58.6858201Z remote: Compressing objects:  51% (48/94)        
+2023-06-07T13:03:58.6858504Z remote: Compressing objects:  52% (49/94)        
+2023-06-07T13:03:58.6858794Z remote: Compressing objects:  53% (50/94)        
+2023-06-07T13:03:58.6859107Z remote: Compressing objects:  54% (51/94)        
+2023-06-07T13:03:58.6859921Z remote: Compressing objects:  55% (52/94)        
+2023-06-07T13:03:58.6860248Z remote: Compressing objects:  56% (53/94)        
+2023-06-07T13:03:58.6860544Z remote: Compressing objects:  57% (54/94)        
+2023-06-07T13:03:58.6860854Z remote: Compressing objects:  58% (55/94)        
+2023-06-07T13:03:58.6861160Z remote: Compressing objects:  59% (56/94)        
+2023-06-07T13:03:58.6861458Z remote: Compressing objects:  60% (57/94)        
+2023-06-07T13:03:58.6861761Z remote: Compressing objects:  61% (58/94)        
+2023-06-07T13:03:58.6862077Z remote: Compressing objects:  62% (59/94)        
+2023-06-07T13:03:58.6862373Z remote: Compressing objects:  63% (60/94)        
+2023-06-07T13:03:58.6862681Z remote: Compressing objects:  64% (61/94)        
+2023-06-07T13:03:58.6862981Z remote: Compressing objects:  65% (62/94)        
+2023-06-07T13:03:58.6863285Z remote: Compressing objects:  67% (63/94)        
+2023-06-07T13:03:58.6863579Z remote: Compressing objects:  68% (64/94)        
+2023-06-07T13:03:58.6863884Z remote: Compressing objects:  69% (65/94)        
+2023-06-07T13:03:58.6864189Z remote: Compressing objects:  70% (66/94)        
+2023-06-07T13:03:58.6864479Z remote: Compressing objects:  71% (67/94)        
+2023-06-07T13:03:58.6864774Z remote: Compressing objects:  72% (68/94)        
+2023-06-07T13:03:58.6865081Z remote: Compressing objects:  73% (69/94)        
+2023-06-07T13:03:58.6865371Z remote: Compressing objects:  74% (70/94)        
+2023-06-07T13:03:58.6865671Z remote: Compressing objects:  75% (71/94)        
+2023-06-07T13:03:58.6866126Z remote: Compressing objects:  76% (72/94)        
+2023-06-07T13:03:58.6866417Z remote: Compressing objects:  77% (73/94)        
+2023-06-07T13:03:58.6866728Z remote: Compressing objects:  78% (74/94)        
+2023-06-07T13:03:58.6867031Z remote: Compressing objects:  79% (75/94)        
+2023-06-07T13:03:58.6867340Z remote: Compressing objects:  80% (76/94)        
+2023-06-07T13:03:58.6867631Z remote: Compressing objects:  81% (77/94)        
+2023-06-07T13:03:58.6867941Z remote: Compressing objects:  82% (78/94)        
+2023-06-07T13:03:58.6868246Z remote: Compressing objects:  84% (79/94)        
+2023-06-07T13:03:58.6868535Z remote: Compressing objects:  85% (80/94)        
+2023-06-07T13:03:58.6868836Z remote: Compressing objects:  86% (81/94)        
+2023-06-07T13:03:58.6869138Z remote: Compressing objects:  87% (82/94)        
+2023-06-07T13:03:58.6869427Z remote: Compressing objects:  88% (83/94)        
+2023-06-07T13:03:58.6869726Z remote: Compressing objects:  89% (84/94)        
+2023-06-07T13:03:58.6870031Z remote: Compressing objects:  90% (85/94)        
+2023-06-07T13:03:58.6870332Z remote: Compressing objects:  91% (86/94)        
+2023-06-07T13:03:58.6870617Z remote: Compressing objects:  92% (87/94)        
+2023-06-07T13:03:58.6870916Z remote: Compressing objects:  93% (88/94)        
+2023-06-07T13:03:58.6871214Z remote: Compressing objects:  94% (89/94)        
+2023-06-07T13:03:58.6871502Z remote: Compressing objects:  95% (90/94)        
+2023-06-07T13:03:58.6871806Z remote: Compressing objects:  96% (91/94)        
+2023-06-07T13:03:58.6872106Z remote: Compressing objects:  97% (92/94)        
+2023-06-07T13:03:58.6872392Z remote: Compressing objects:  98% (93/94)        
+2023-06-07T13:03:58.6872693Z remote: Compressing objects: 100% (94/94)        
+2023-06-07T13:03:58.6873018Z remote: Compressing objects: 100% (94/94), done.        
+2023-06-07T13:03:58.7052727Z Receiving objects:   0% (1/118)
+2023-06-07T13:03:58.7053159Z Receiving objects:   1% (2/118)
+2023-06-07T13:03:58.7053944Z Receiving objects:   2% (3/118)
+2023-06-07T13:03:58.7061069Z Receiving objects:   3% (4/118)
+2023-06-07T13:03:58.7061375Z Receiving objects:   4% (5/118)
+2023-06-07T13:03:58.7061654Z Receiving objects:   5% (6/118)
+2023-06-07T13:03:58.7061928Z Receiving objects:   6% (8/118)
+2023-06-07T13:03:58.7062184Z Receiving objects:   7% (9/118)
+2023-06-07T13:03:58.7062454Z Receiving objects:   8% (10/118)
+2023-06-07T13:03:58.7062730Z Receiving objects:   9% (11/118)
+2023-06-07T13:03:58.7062990Z Receiving objects:  10% (12/118)
+2023-06-07T13:03:58.7063621Z Receiving objects:  11% (13/118)
+2023-06-07T13:03:58.7063897Z Receiving objects:  12% (15/118)
+2023-06-07T13:03:58.7064165Z Receiving objects:  13% (16/118)
+2023-06-07T13:03:58.7064416Z Receiving objects:  14% (17/118)
+2023-06-07T13:03:58.7064679Z Receiving objects:  15% (18/118)
+2023-06-07T13:03:58.7092777Z Receiving objects:  16% (19/118)
+2023-06-07T13:03:58.7093315Z Receiving objects:  17% (21/118)
+2023-06-07T13:03:58.7093911Z Receiving objects:  18% (22/118)
+2023-06-07T13:03:58.7094915Z Receiving objects:  19% (23/118)
+2023-06-07T13:03:58.7095290Z Receiving objects:  20% (24/118)
+2023-06-07T13:03:58.7095928Z Receiving objects:  21% (25/118)
+2023-06-07T13:03:58.7096550Z Receiving objects:  22% (26/118)
+2023-06-07T13:03:58.7097152Z Receiving objects:  23% (28/118)
+2023-06-07T13:03:58.7097659Z Receiving objects:  24% (29/118)
+2023-06-07T13:03:58.7098291Z Receiving objects:  25% (30/118)
+2023-06-07T13:03:58.7098912Z Receiving objects:  26% (31/118)
+2023-06-07T13:03:58.7099590Z Receiving objects:  27% (32/118)
+2023-06-07T13:03:58.7100275Z Receiving objects:  28% (34/118)
+2023-06-07T13:03:58.7100538Z Receiving objects:  29% (35/118)
+2023-06-07T13:03:58.7101005Z Receiving objects:  30% (36/118)
+2023-06-07T13:03:58.7101626Z Receiving objects:  31% (37/118)
+2023-06-07T13:03:58.7439951Z Receiving objects:  32% (38/118)
+2023-06-07T13:03:58.7445112Z Receiving objects:  33% (39/118)
+2023-06-07T13:03:58.7445552Z Receiving objects:  34% (41/118)
+2023-06-07T13:03:58.7446456Z Receiving objects:  35% (42/118)
+2023-06-07T13:03:58.7447125Z Receiving objects:  36% (43/118)
+2023-06-07T13:03:58.7447397Z Receiving objects:  37% (44/118)
+2023-06-07T13:03:58.7447651Z Receiving objects:  38% (45/118)
+2023-06-07T13:03:58.7447915Z Receiving objects:  39% (47/118)
+2023-06-07T13:03:58.7448183Z Receiving objects:  40% (48/118)
+2023-06-07T13:03:58.7448504Z Receiving objects:  41% (49/118)
+2023-06-07T13:03:58.7448765Z Receiving objects:  42% (50/118)
+2023-06-07T13:03:58.7449036Z Receiving objects:  43% (51/118)
+2023-06-07T13:03:58.7619574Z Receiving objects:  44% (52/118)
+2023-06-07T13:03:58.7620041Z Receiving objects:  45% (54/118)
+2023-06-07T13:03:58.7620321Z Receiving objects:  46% (55/118)
+2023-06-07T13:03:58.7620591Z Receiving objects:  47% (56/118)
+2023-06-07T13:03:58.7620846Z Receiving objects:  48% (57/118)
+2023-06-07T13:03:58.7621115Z Receiving objects:  49% (58/118)
+2023-06-07T13:03:58.7621391Z Receiving objects:  50% (59/118)
+2023-06-07T13:03:58.7621708Z Receiving objects:  51% (61/118)
+2023-06-07T13:03:58.7622030Z Receiving objects:  52% (62/118)
+2023-06-07T13:03:58.7622296Z Receiving objects:  53% (63/118)
+2023-06-07T13:03:58.7622545Z Receiving objects:  54% (64/118)
+2023-06-07T13:03:58.7622806Z Receiving objects:  55% (65/118)
+2023-06-07T13:03:58.7623069Z Receiving objects:  56% (67/118)
+2023-06-07T13:03:58.7673341Z Receiving objects:  57% (68/118)
+2023-06-07T13:03:58.7674365Z Receiving objects:  58% (69/118)
+2023-06-07T13:03:58.7674919Z Receiving objects:  59% (70/118)
+2023-06-07T13:03:58.7675652Z Receiving objects:  60% (71/118)
+2023-06-07T13:03:58.7676113Z Receiving objects:  61% (72/118)
+2023-06-07T13:03:58.7676797Z Receiving objects:  62% (74/118)
+2023-06-07T13:03:58.7677218Z Receiving objects:  63% (75/118)
+2023-06-07T13:03:58.7678157Z Receiving objects:  64% (76/118)
+2023-06-07T13:03:58.7678614Z Receiving objects:  65% (77/118)
+2023-06-07T13:03:58.7679503Z Receiving objects:  66% (78/118)
+2023-06-07T13:03:58.7680479Z Receiving objects:  67% (80/118)
+2023-06-07T13:03:58.7680883Z Receiving objects:  68% (81/118)
+2023-06-07T13:03:58.7681516Z Receiving objects:  69% (82/118)
+2023-06-07T13:03:58.7682233Z Receiving objects:  70% (83/118)
+2023-06-07T13:03:58.7682965Z Receiving objects:  71% (84/118)
+2023-06-07T13:03:58.7683690Z Receiving objects:  72% (85/118)
+2023-06-07T13:03:58.7684333Z Receiving objects:  73% (87/118)
+2023-06-07T13:03:58.7741366Z Receiving objects:  74% (88/118)
+2023-06-07T13:03:58.7746137Z Receiving objects:  75% (89/118)
+2023-06-07T13:03:58.8796605Z Receiving objects:  76% (90/118)
+2023-06-07T13:03:58.8797614Z Receiving objects:  77% (91/118)
+2023-06-07T13:03:58.9209583Z Receiving objects:  78% (93/118)
+2023-06-07T13:03:58.9210831Z remote: Total 118 (delta 35), reused 56 (delta 16), pack-reused 0        
+2023-06-07T13:03:58.9251685Z Receiving objects:  79% (94/118)
+2023-06-07T13:03:58.9252242Z Receiving objects:  80% (95/118)
+2023-06-07T13:03:58.9255276Z Receiving objects:  81% (96/118)
+2023-06-07T13:03:58.9255999Z Receiving objects:  82% (97/118)
+2023-06-07T13:03:58.9259766Z Receiving objects:  83% (98/118)
+2023-06-07T13:03:58.9260407Z Receiving objects:  84% (100/118)
+2023-06-07T13:03:58.9264677Z Receiving objects:  85% (101/118)
+2023-06-07T13:03:58.9265306Z Receiving objects:  86% (102/118)
+2023-06-07T13:03:58.9273895Z Receiving objects:  87% (103/118)
+2023-06-07T13:03:58.9274405Z Receiving objects:  88% (104/118)
+2023-06-07T13:03:58.9275258Z Receiving objects:  89% (106/118)
+2023-06-07T13:03:58.9275724Z Receiving objects:  90% (107/118)
+2023-06-07T13:03:58.9276514Z Receiving objects:  91% (108/118)
+2023-06-07T13:03:58.9276928Z Receiving objects:  92% (109/118)
+2023-06-07T13:03:58.9277721Z Receiving objects:  93% (110/118)
+2023-06-07T13:03:58.9278122Z Receiving objects:  94% (111/118)
+2023-06-07T13:03:58.9278883Z Receiving objects:  95% (113/118)
+2023-06-07T13:03:58.9279283Z Receiving objects:  96% (114/118)
+2023-06-07T13:03:58.9280072Z Receiving objects:  97% (115/118)
+2023-06-07T13:03:58.9280457Z Receiving objects:  98% (116/118)
+2023-06-07T13:03:58.9282518Z Receiving objects:  99% (117/118)
+2023-06-07T13:03:58.9284005Z Receiving objects: 100% (118/118)
+2023-06-07T13:03:58.9284834Z Receiving objects: 100% (118/118), 471.77 KiB | 2.08 MiB/s, done.
+2023-06-07T13:03:58.9285357Z Resolving deltas:   0% (0/35)
+2023-06-07T13:03:58.9285910Z Resolving deltas:   2% (1/35)
+2023-06-07T13:03:58.9286502Z Resolving deltas:   5% (2/35)
+2023-06-07T13:03:58.9287294Z Resolving deltas:   8% (3/35)
+2023-06-07T13:03:58.9287728Z Resolving deltas:  11% (4/35)
+2023-06-07T13:03:58.9288054Z Resolving deltas:  14% (5/35)
+2023-06-07T13:03:58.9288354Z Resolving deltas:  17% (6/35)
+2023-06-07T13:03:58.9289201Z Resolving deltas:  20% (7/35)
+2023-06-07T13:03:58.9289816Z Resolving deltas:  22% (8/35)
+2023-06-07T13:03:58.9290347Z Resolving deltas:  25% (9/35)
+2023-06-07T13:03:58.9290873Z Resolving deltas:  28% (10/35)
+2023-06-07T13:03:58.9297496Z Resolving deltas:  31% (11/35)
+2023-06-07T13:03:58.9297831Z Resolving deltas:  34% (12/35)
+2023-06-07T13:03:58.9301075Z Resolving deltas:  37% (13/35)
+2023-06-07T13:03:58.9302356Z Resolving deltas:  40% (14/35)
+2023-06-07T13:03:58.9302759Z Resolving deltas:  42% (15/35)
+2023-06-07T13:03:58.9303531Z Resolving deltas:  45% (16/35)
+2023-06-07T13:03:58.9304654Z Resolving deltas:  48% (17/35)
+2023-06-07T13:03:58.9305270Z Resolving deltas:  51% (18/35)
+2023-06-07T13:03:58.9306294Z Resolving deltas:  54% (19/35)
+2023-06-07T13:03:58.9306896Z Resolving deltas:  57% (20/35)
+2023-06-07T13:03:58.9307616Z Resolving deltas:  60% (21/35)
+2023-06-07T13:03:58.9308144Z Resolving deltas:  62% (22/35)
+2023-06-07T13:03:58.9308773Z Resolving deltas:  65% (23/35)
+2023-06-07T13:03:58.9309329Z Resolving deltas:  68% (24/35)
+2023-06-07T13:03:58.9309965Z Resolving deltas:  71% (25/35)
+2023-06-07T13:03:58.9310702Z Resolving deltas:  74% (26/35)
+2023-06-07T13:03:58.9311072Z Resolving deltas:  77% (27/35)
+2023-06-07T13:03:58.9311290Z Resolving deltas:  80% (28/35)
+2023-06-07T13:03:58.9311519Z Resolving deltas:  82% (29/35)
+2023-06-07T13:03:58.9311751Z Resolving deltas:  85% (30/35)
+2023-06-07T13:03:58.9311983Z Resolving deltas:  88% (31/35)
+2023-06-07T13:03:58.9312206Z Resolving deltas:  91% (32/35)
+2023-06-07T13:03:58.9312433Z Resolving deltas:  94% (33/35)
+2023-06-07T13:03:58.9312738Z Resolving deltas:  97% (34/35)
+2023-06-07T13:03:58.9312965Z Resolving deltas: 100% (35/35)
+2023-06-07T13:03:58.9313306Z Resolving deltas: 100% (35/35), done.
+2023-06-07T13:03:58.9370719Z From https://github.com/actions/checkout
+2023-06-07T13:03:58.9371581Z  * [new ref]         26d26a98d2552554bad0b972c4edcf5c943dd1ab -> pull/1369/merge
+2023-06-07T13:03:58.9399238Z ##[endgroup]
+2023-06-07T13:03:58.9399851Z ##[group]Determining the checkout info
+2023-06-07T13:03:58.9404951Z ##[endgroup]
+2023-06-07T13:03:58.9405454Z ##[group]Checking out the ref
+2023-06-07T13:03:58.9411502Z [command]/opt/bitnami/git/bin/git checkout --progress --force refs/remotes/pull/1369/merge
+2023-06-07T13:03:58.9591224Z Note: switching to 'refs/remotes/pull/1369/merge'.
+2023-06-07T13:03:58.9591897Z 
+2023-06-07T13:03:58.9592262Z You are in 'detached HEAD' state. You can look around, make experimental
+2023-06-07T13:03:58.9592670Z changes and commit them, and you can discard any commits you make in this
+2023-06-07T13:03:58.9607405Z state without impacting any branches by switching back to a branch.
+2023-06-07T13:03:58.9607633Z 
+2023-06-07T13:03:58.9607807Z If you want to create a new branch to retain commits you create, you may
+2023-06-07T13:03:58.9608339Z do so (now or later) by using -c with the switch command. Example:
+2023-06-07T13:03:58.9608535Z 
+2023-06-07T13:03:58.9608701Z   git switch -c <new-branch-name>
+2023-06-07T13:03:58.9608867Z 
+2023-06-07T13:03:58.9608973Z Or undo this operation with:
+2023-06-07T13:03:58.9609120Z 
+2023-06-07T13:03:58.9609203Z   git switch -
+2023-06-07T13:03:58.9609328Z 
+2023-06-07T13:03:58.9609510Z Turn off this advice by setting config variable advice.detachedHead to false
+2023-06-07T13:03:58.9609722Z 
+2023-06-07T13:03:58.9609944Z HEAD is now at 26d26a9 Merge 25d6c12a40fe31e2e7ea716a2facc3bbae34a8a2 into f095bcc56b7c2baf48f3ac70d6d6782f4f553222
+2023-06-07T13:03:58.9611473Z ##[endgroup]
+2023-06-07T13:03:58.9651439Z [command]/opt/bitnami/git/bin/git log -1 --format='%H'
+2023-06-07T13:03:58.9681184Z '26d26a98d2552554bad0b972c4edcf5c943dd1ab'
+2023-06-07T13:03:58.9843899Z Post job cleanup.
+2023-06-07T13:03:58.9847100Z ##[command]/usr/bin/docker exec  7c2735b5a8dddeef28c0ad89ab55a5604b8042c9e0ab977485f340322343f49f sh -c "cat /etc/*release | grep ^ID"
+2023-06-07T13:03:59.2582812Z [command]/opt/bitnami/git/bin/git version
+2023-06-07T13:03:59.2634995Z git version 2.41.0
+2023-06-07T13:03:59.2685189Z Copying '/github/home/.gitconfig' to '/__w/_temp/bc18fde3-d85a-4fcf-a794-c034c3b163b6/.gitconfig'
+2023-06-07T13:03:59.2700940Z Temporarily overriding HOME='/__w/_temp/bc18fde3-d85a-4fcf-a794-c034c3b163b6' before making global git config changes
+2023-06-07T13:03:59.2701763Z Adding repository directory to the temporary git global config as a safe directory
+2023-06-07T13:03:59.2709567Z [command]/opt/bitnami/git/bin/git config --global --add safe.directory /__w/checkout/checkout/v3
+2023-06-07T13:03:59.2755942Z [command]/opt/bitnami/git/bin/git config --local --name-only --get-regexp core\.sshCommand
+2023-06-07T13:03:59.2799577Z [command]/opt/bitnami/git/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2023-06-07T13:03:59.3048984Z [command]/opt/bitnami/git/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2023-06-07T13:03:59.3079436Z http.https://github.com/.extraheader
+2023-06-07T13:03:59.3094594Z [command]/opt/bitnami/git/bin/git config --local --unset-all http.https://github.com/.extraheader
+2023-06-07T13:03:59.3136850Z [command]/opt/bitnami/git/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2023-06-07T13:03:59.3573987Z Post job cleanup.
+2023-06-07T13:03:59.3577591Z ##[command]/usr/bin/docker exec  7c2735b5a8dddeef28c0ad89ab55a5604b8042c9e0ab977485f340322343f49f sh -c "cat /etc/*release | grep ^ID"
+2023-06-07T13:03:59.6233580Z [command]/opt/bitnami/git/bin/git version
+2023-06-07T13:03:59.6301551Z git version 2.41.0
+2023-06-07T13:03:59.6357290Z Copying '/github/home/.gitconfig' to '/__w/_temp/c80d867e-ea18-4207-8e68-fe10a45be62c/.gitconfig'
+2023-06-07T13:03:59.6374192Z Temporarily overriding HOME='/__w/_temp/c80d867e-ea18-4207-8e68-fe10a45be62c' before making global git config changes
+2023-06-07T13:03:59.6378556Z Adding repository directory to the temporary git global config as a safe directory
+2023-06-07T13:03:59.6387290Z [command]/opt/bitnami/git/bin/git config --global --add safe.directory /__w/checkout/checkout
+2023-06-07T13:03:59.6439393Z [command]/opt/bitnami/git/bin/git config --local --name-only --get-regexp core\.sshCommand
+2023-06-07T13:03:59.6484513Z [command]/opt/bitnami/git/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2023-06-07T13:03:59.6749259Z [command]/opt/bitnami/git/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2023-06-07T13:03:59.6777077Z http.https://github.com/.extraheader
+2023-06-07T13:03:59.6795160Z [command]/opt/bitnami/git/bin/git config --local --unset-all http.https://github.com/.extraheader
+2023-06-07T13:03:59.6837840Z [command]/opt/bitnami/git/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2023-06-07T13:03:59.7256311Z Post job cleanup.
+2023-06-07T13:03:59.7259770Z ##[command]/usr/bin/docker exec  7c2735b5a8dddeef28c0ad89ab55a5604b8042c9e0ab977485f340322343f49f sh -c "cat /etc/*release | grep ^ID"
+2023-06-07T13:04:00.0383293Z [command]/opt/bitnami/git/bin/git version
+2023-06-07T13:04:00.0461725Z git version 2.41.0
+2023-06-07T13:04:00.0513470Z Copying '/github/home/.gitconfig' to '/__w/_temp/7fa97651-85b9-47d5-8218-09a9929760dc/.gitconfig'
+2023-06-07T13:04:00.0530134Z Temporarily overriding HOME='/__w/_temp/7fa97651-85b9-47d5-8218-09a9929760dc' before making global git config changes
+2023-06-07T13:04:00.0530725Z Adding repository directory to the temporary git global config as a safe directory
+2023-06-07T13:04:00.0538532Z [command]/opt/bitnami/git/bin/git config --global --add safe.directory /__w/checkout/checkout/v3
+2023-06-07T13:04:00.0594020Z [command]/opt/bitnami/git/bin/git config --local --name-only --get-regexp core\.sshCommand
+2023-06-07T13:04:00.0641595Z [command]/opt/bitnami/git/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2023-06-07T13:04:00.0922723Z [command]/opt/bitnami/git/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2023-06-07T13:04:00.0960018Z [command]/opt/bitnami/git/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2023-06-07T13:04:00.1386577Z Stop and remove container: 057806f0fddf4038a52518d320dd61b4_bitnamigitlatest_6c75a0
+2023-06-07T13:04:00.1392052Z ##[command]/usr/bin/docker rm --force 7c2735b5a8dddeef28c0ad89ab55a5604b8042c9e0ab977485f340322343f49f
+2023-06-07T13:04:00.3107830Z 7c2735b5a8dddeef28c0ad89ab55a5604b8042c9e0ab977485f340322343f49f
+2023-06-07T13:04:00.3141898Z Remove container network: github_network_d14ce24c78044de09c5b9e2d5abb5e3c
+2023-06-07T13:04:00.3148389Z ##[command]/usr/bin/docker network rm github_network_d14ce24c78044de09c5b9e2d5abb5e3c
+2023-06-07T13:04:00.5205446Z github_network_d14ce24c78044de09c5b9e2d5abb5e3c
+2023-06-07T13:04:00.5354697Z Cleaning up orphan processes
