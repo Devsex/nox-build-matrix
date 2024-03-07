@@ -1,0 +1,108 @@
++ [Nd | 2022/09/27 21:16:40 | S136DLUDU2BVG5]
+--data_resizing
+--delete_apn_changes
+RP
+reboot_reason=UNKNOWN
++ [oJ | 2022/07/25 14:46:57 | S136DLUDU2BVG5]
+--just_exit
+--locale=
+--reason=[SIMBasedChangeCSC] TFN/[TFN] -> TFV/[TFV]
+RP
+reboot_reason=UNKNOWN
++ [xo | 2022/11/27 05:11:02 | S136DLUDU2BVG5]
+--update_package=/cache/fota/update.zip
+--locale=en-US
+--carry_out=open_fota
+RP
+reboot_reason=UNKNOWN
++ [gK | 2022/12/13 04:29:52 | S136DLUDS3BVJ2]
+--wipe_data
+--requested_time=2022/12/12 22:29:19.032
+--reason=MasterClearConfirm,2022-12-12T22:29:34Z
+--locale=en-US
+RP
+reboot_reason=UNKNOWN
++ [Ny | 2023/03/02 18:39:56 | S136DLUDS3BVJ2]
+--wipe_data
+--reason=DevicePolicyManager.wipeDataWithReason() from com.upgenicsint.phonechecklite/.misc.D, organization-owned? false,2023-03-02T13:39:37Z
+--locale=en-US
+RP
+reboot_reason=UNKNOWN
++ [TH | 2023/03/27 20:37:23 | S136DLUDS3BVJ2]
+--wipe_data
+--requested_time=2023/03/27 16:36:48.944
+--reason=MasterClearConfirm,2023-03-27T16:37:03Z
+--locale=en-US
+RP
+reboot_reason=UNKNOWN
++ [TY | 2023/09/26 02:37:21 | S136DLUDS3BVJ2]
+--update_package=@/cache/recovery/block.map
+--locale=en-US
+--carry_out=open_fota
+--update_org_package=/data/fota/update.zip
+RP
+reboot_reason=UNKNOWN
++ [ww | 2023/10/01 22:34:00 | S136DLUDU4CWA3]
+--update_package=@/cache/recovery/block.map
+--locale=en-US
+--carry_out=open_fota
+--update_org_package=/data/fota/update.zip
+RP
+reboot_reason=UNKNOWN
++ [gi | 2023/10/01 23:51:28 | S136DLUDU6DWF7]
+--update_package=/cache/fota/update.zip
+--locale=en-US
+--carry_out=open_fota
+RP
+reboot_reason=UNKNOWN
++ [vB | 2023/10/12 04:42:41 | S136DLUDS7DWH3]
+MP
+reboot_reason=UNKNOWN
++ [OW | 2023/11/14 10:05:13 | S136DLUDS7DWH3]
+--update_package=@/cache/recovery/block.map
+--locale=en-US
+--carry_out=open_fota
+--update_org_package=/data/fota/update.zip
+RP
+reboot_reason=UNKNOWN
++ [mV | 2023/11/27 15:27:28 | S136DLUDU7DWJ1]
+RP
+reboot_reason=UNKNOWN
++ [RD | 2023/11/27 16:14:24 | S136DLUDU7DWJ1]
+RP
+reboot_reason=UNKNOWN
++ [MJ | 2023/12/13 09:01:43 | S136DLUDU7DWJ1]
+RP
+reboot_reason=UNKNOWN
++ [Wz | 2023/12/13 19:16:24 | S136DLUDU7DWJ1]
+RP
+reboot_reason=UNKNOWN
++ [fb | 2023/12/14 09:38:41 | S136DLUDU7DWJ1]
+RP
+reboot_reason=UNKNOWN
++ [oV | 2023/12/14 10:25:44 | S136DLUDU7DWJ1]
+NP
+reboot_reason=UNKNOWN
++ [cI | 2023/12/18 13:42:19 | S136DLUDU7DWJ1]
+NP
+reboot_reason=UNKNOWN
++ [cd | 2023/12/23 15:57:17 | S136DLUDU7DWJ1]
+--reason=update_in_progress
+MP
+reboot_reason=UNKNOWN
++ [ht | 2023/12/26 14:22:51 | S136DLUDU7DWJ1]
+RP
+reboot_reason=UNKNOWN
++ [Tb | 2023/12/27 13:10:05 | S136DLUDU7DWJ1]
+--reason=update_in_progress
+RP
+reboot_reason=UNKNOWN
++ [FK | 2024/01/02 17:11:22 | S136DLUDU7DWJ1]
+--update_package=/cache/fota/update.zip
+--locale=en-US
+--carry_out=open_fota
+RP
+reboot_reason=UNKNOWN
++ [xN | 2024/01/16 21:14:42 | S136DLUDS8DWK2]
+MP
+reboot_reason=UNKNOWN
